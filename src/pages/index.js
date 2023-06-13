@@ -52,11 +52,57 @@ export default function Example() {
               <h1 className="text-5xl font-bold mb-4 font-poppins text-black">FIND A PRIVATE DENTIST <span className='text-5xl font-bold font-poppins text-custom-blue'>NEAR YOU</span> </h1>
               <p className="mb-4 w-3/5 text-black	">Hundreds of dentists and practices around the UK showcase their portfolio work on Dentfolio - the home to the UK's best private dentists</p>
             </div>
+
+            {/* <div className="bg-white border-b border-gray-300 px-4 py-2 flex items-center">
+      <div className="flex items-center">
+        <img src="/images/icon-01.png" alt="Location Icon" className="w-6 h-6 mr-2" />
+        <span>Location A</span>
+      </div>
+      <div className="flex-grow"></div>
+      <div className="flex items-center">
+        <span>Location B</span>
+        <img src="/images/icon-01.png" alt="Location Icon" className="w-6 h-6 ml-2" />
+      </div>
+      <button className="bg-blue-500 text-white py-2 px-4 ml-4 rounded">Search</button>
+    </div> */}
+
+<div className="bg-white border border-gray-300">
+      <div className="flex items-center border border-gray-300 p-4">
+        {/* <img src="/path/to/location-icon-left.png" alt="Location Icon" className="mr-2" /> */}
+        <input type="text" placeholder="Search" className="flex-grow py-2 px-4 focus:outline-none" />
+        <button className="bg-blue-500 text-white px-4 py-2 rounded ml-2 focus:outline-none">Search</button>
+        {/* <img src="/path/to/location-icon-right.png" alt="Location Icon" className="ml-2" /> */}
+      </div>
+    </div>
+{/* <div className="bg-white border border-gray-300">
+      <div className="flex items-center border-b border-gray-300 p-4">
+        <img src="/images/icon-01.png" alt="Location Icon" className="mr-2" />
+        <input type="text" placeholder="Search" className="flex-grow border-none py-2 px-4 focus:outline-none" />
+        <img src="/images/icon-01.png" alt="Location Icon" className="ml-2" />
+      </div>
+      <div className="flex justify-end p-4">
+        <button className="bg-blue-500 text-white px-4 py-2 rounded focus:outline-none">Search</button>
+      </div>
+    </div> */}
+{/* <div className="bg-white border-b border-gray-300">
+      <div className="flex items-center p-4">
+      <img src="/images/icon-01.png" alt="Location Icon" className="w-6 h-6 mr-2" />
+
+        <div className='border border-gray-300 rounded-l-md rounded-r-none py-2 px-4 focus:outline-none'>
+        <input type="text" placeholder="Search" className="flex-grow " />
+        <img src="/images/icon-01.png" alt="Location Icon" className="w-6 h-6 mr-2" />
+
+        <button className="bg-blue-500 text-white px-4 py-2 rounded-r-md focus:outline-none">Search</button>
+        </div>
+      </div>
+    </div> */}
           </div>
           <div className='w-1/2'>
             <img src="/images/doctor-2.png" alt="Image" className="w-full max-w-[500px] mr-0 ml-auto" />
         </div>
+       
 
+      
         {/* <div className="lg:w-1/2"> */}
           {/* </div> */}
         </div>
