@@ -103,8 +103,7 @@ export default function Example() {
        
 
       
-        {/* <div className="lg:w-1/2"> */}
-          {/* </div> */}
+        
         </div>
       {/* </div> */}
     </div>
