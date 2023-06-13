@@ -7,6 +7,10 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+        <link
+          href='https://fonts.googleapis.com/css?family=Poppins'
+          rel="stylesheet"
+        />
       </body>
     </Html>
   )
