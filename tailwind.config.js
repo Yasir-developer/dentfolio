@@ -13,7 +13,12 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       fontFamily: {
-        'poppins': ['Poppins', 'sans-serif'],
+        'poppins': ['Poppins'],
+      },
+      textDecorationLine: {
+        'underline': 'underline',
+        'line-through': 'line-through',
+        // Add more custom decoration lines if needed
       },
       colors: {
         'custom-blue': '#0372E2',
