@@ -9,7 +9,7 @@ import cellular from "../../../public/images/cellular.png";
 
 const HowItWorks = () => {
   return (
-    <div className="mb-[100px] mt-[100px]">
+    <div className="mb-[100px] mt-[100px] max-w-[1800px] mx-auto px-8">
       <div className="flex items-center  w-full justify-center">
         <h1 className="text-5xl font-bold mb-4 font-poppins text-black">
           HOW IT{" "}
@@ -31,7 +31,7 @@ const HowItWorks = () => {
               for your dental needs.
             </p>
 
-            <p className="text-[14px] my-5 underline decoration-solid text-custom-blue">
+            <p className="text-[14px] my-5 underline decoration-solid text-custom-blue font-poppins font-semibold">
             Find Dentist
             </p>
             </div>
@@ -54,7 +54,7 @@ const HowItWorks = () => {
               showcasing exceptional treatments.
             </p>
 
-            <p className="text-[14px] my-5 underline decoration-solid text-custom-blue">
+            <p className="text-[14px] my-5 underline decoration-solid text-custom-blue font-poppins font-semibold">
             Find Dentist
             </p>
             </div>
@@ -76,7 +76,7 @@ const HowItWorks = () => {
               appointments easily with our convenient online platform
             </p>
 
-            <p className="text-[14px] my-5 underline decoration-solid text-custom-blue">
+            <p className="text-[14px] my-5 underline decoration-solid text-custom-blue font-poppins font-semibold">
             Find Dentist
             </p>
             </div>

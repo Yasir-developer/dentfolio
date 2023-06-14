@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import AppHeader from '@/components/Header/Header'
-import SearchBanner from '@/components/Header/SearchBanner'
-import HowItWorks from '@/components/Header/HowItWorks'
+import SearchBanner from '@/components/SearchBanner/SearchBanner'
+import HowItWorks from '@/components/HowItWorks/HowItWorks'
+import BecomeMember from '@/components/BecomeMember.jsx/BecomeMember'
 const navigation = [
   { name: 'Product', href: '#' },
   { name: 'Features', href: '#' },
@@ -19,6 +20,7 @@ export default function Example() {
 
   <SearchBanner/>
   <HowItWorks />
+  <BecomeMember/>
     
     </div>
   )
