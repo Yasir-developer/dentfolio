@@ -19,7 +19,7 @@ const BecomeMember = () => {
             <h3 className="text-[18px] font-medium text-white">
               ARE YOU A DENTIST?
             </h3>
-            <h1 className="flex items-center text-white">
+            <h1 className="flex items-center text-white font-poppins font-bold text-[41px]">
               BECOME A MEMBER NOW
             </h1>
             <h3 className="text-[18px] font-medium text-white mt-3">
@@ -28,7 +28,7 @@ const BecomeMember = () => {
               sed ornare.
             </h3>
 
-            <button className="bg-transparent border font-semibold border-white text-white font-bold py-2 px-[60px] mt-10 rounded w-139 text-sm">
+            <button className="bg-transparent border font-semibold border-white text-white py-2 px-[60px] mt-10 rounded w-139 text-sm">
             Find Out More          </button>
           </div>
           <div className="w-[50%]">

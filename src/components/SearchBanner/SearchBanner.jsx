@@ -7,8 +7,8 @@ const SearchBanner = () => {
         <div className="flex items-center max-w-[1800px] mx-auto px-8">
           <div className="w-1/2">
             <div className="lg:p-4">
-              <h1 className="text-5xl font-bold mb-4 font-poppins text-black">FIND A PRIVATE DENTIST <span className='text-5xl font-bold font-poppins text-custom-blue'>NEAR YOU</span> </h1>
-              <p className="mb-4 w-3/5 text-black	">Hundreds of dentists and practices around the UK showcase their portfolio work on Dentfolio - the home to the UK's best private dentists</p>
+              <h1 className="text-5xl font-bold mb-4 text-black">FIND A PRIVATE DENTIST <span className='text-5xl font-bold font-poppins text-custom-blue'>NEAR YOU</span> </h1>
+              <p className="mb-4 w-3/5 text-black font-medium">Hundreds of dentists and practices around the UK showcase their portfolio work on Dentfolio - the home to the UK's best private dentists</p>
             </div>
 
 

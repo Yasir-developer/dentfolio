@@ -23,10 +23,10 @@ const HowItWorks = () => {
           <div className="bg-[#EBFAF8] w-[346px] h-[263px] mx-5 px-5 font-poppins relative rounded-[7px]">
             {/* <div className="flex-row"> */}
 <div className="w-[70%]">
-            <h1 className="font-bold text-[18px] my-5 text-custom-blue">
+            <h1 className="font-bold text-[18px] mt-5 mb-2 text-custom-blue">
               FIND DENTISTS NEAR YOU
             </h1>
-            <p className="text-[14px] my-5">
+            <p className="text-[14px] ">
               Discover local dentists in your area and choose the perfect one
               for your dental needs.
             </p>
@@ -46,10 +46,10 @@ const HowItWorks = () => {
 
           <div className="bg-[#F7CBBF] w-[346px] h-[263px] mx-5 px-5 font-poppins relative rounded-[7px]">
           <div className="w-[80%]">
-            <h1 className="font-bold text-[18px] my-5 text-custom-blue">
+            <h1 className="font-bold text-[18px] mt-5 mb-2 text-custom-blue">
               EXPLORE DENTAL WORK
             </h1>
-            <p className=" text-[14px] my-5 ">
+            <p className=" text-[14px]">
               Discover impressive dental work through a collection of photos
               showcasing exceptional treatments.
             </p>
@@ -68,10 +68,10 @@ const HowItWorks = () => {
 
           <div className="bg-[#DCE8FA] w-[346px] h-[263px] mx-5 px-5 font-poppins relative rounded-[7px]">
             <div className="w-[80%]">
-            <h1 className="font-bold text-[18px] my-5 text-custom-blue">
+            <h1 className="font-bold text-[18px] mt-5 mb-2 text-custom-blue">
               CONTACT YOUR DENTAL
             </h1>
-            <p className=" text-[14px] my-5 font-extralight font-poppins">
+            <p className=" text-[14px] font-extralight font-poppins">
               Contact Your Dental: Find a local dentist and schedule
               appointments easily with our convenient online platform
             </p>

@@ -3,6 +3,7 @@ import AppHeader from '@/components/Header/Header'
 import SearchBanner from '@/components/SearchBanner/SearchBanner'
 import HowItWorks from '@/components/HowItWorks/HowItWorks'
 import BecomeMember from '@/components/BecomeMember.jsx/BecomeMember'
+import Footer from '@/components/Footer/Footer'
 const navigation = [
   { name: 'Product', href: '#' },
   { name: 'Features', href: '#' },
@@ -21,6 +22,7 @@ export default function Example() {
   <SearchBanner/>
   <HowItWorks />
   <BecomeMember/>
+  <Footer />
     
     </div>
   )
