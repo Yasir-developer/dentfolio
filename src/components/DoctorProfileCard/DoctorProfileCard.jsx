@@ -5,6 +5,7 @@ import location from "../../../public/images/location.svg";
 const DoctorProfileCard = () => {
   const doctorArray = [
     {
+      id: 1,
       name: "Dr. Dylan Taylor",
       country: "Manchester",
       description:
@@ -13,6 +14,7 @@ const DoctorProfileCard = () => {
     },
 
     {
+      id: 2,
       name: "Dr.Vincent Sullivan",
       country: "Manchester",
       description:
@@ -21,6 +23,7 @@ const DoctorProfileCard = () => {
     },
 
     {
+      id: 3,
       name: "Dr.Joan Jackson ",
       country: "Manchester",
       description:
@@ -28,6 +31,7 @@ const DoctorProfileCard = () => {
       img_url: "/images/profile3.png",
     },
     {
+      id: 4,
       name: "Dr. Dylan Taylor",
       country: "Manchester",
       description:
@@ -35,6 +39,7 @@ const DoctorProfileCard = () => {
       img_url: "/images/profile4.png",
     },
     {
+      id: 5,
       name: "Dr. Dylan Taylor",
       country: "Manchester",
       description:
@@ -46,7 +51,10 @@ const DoctorProfileCard = () => {
     <div>
       {doctorArray.map((item, index) => {
         return (
-          <div className="flex flex-row py-8 border-b border-[#70707030] ">
+          <div
+            className="flex flex-row py-8 border-b border-[#70707030] "
+            key={doctorArray.id}
+          >
             <div className="w-[300px]">
               <Image src={item.img_url} width={143} height={143} />
             </div>

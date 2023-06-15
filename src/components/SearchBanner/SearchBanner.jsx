@@ -29,7 +29,12 @@ const SearchBanner = () => {
                   alt="Location Icon"
                   className="w-6 h-6 ml-2"
                 /> */}
-                <Image src={locationCross} width={20} />
+                <Image
+                  src={locationCross}
+                  width={20}
+                  height={20}
+                  className="ml-2"
+                />
                 {/* <BiCurrentLocation size={24} color="#000" /> */}
 
                 <input
