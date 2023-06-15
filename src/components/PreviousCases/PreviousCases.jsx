@@ -47,12 +47,12 @@ const PreviousCases = () => {
                     efficitur sollicitudin.
                   </p>
                   <div className="flex flex-row flex-wrap gap-x-5 mt-3">
-                    {item.type.map((data) => (
-                      <div className="bg-custom-blue-light flex items-center justify-center h-8 px-3 rounded-[7px]">
-                        <p
-                          className="text-center text-custom-black text-[14px] font-semibold"
-                          key={data}
-                        >
+                    {item.type.map((data, dataIndex) => (
+                      <div
+                        className="bg-custom-blue-light flex items-center justify-center h-8 px-3 rounded-[7px]"
+                        key={dataIndex}
+                      >
+                        <p className="text-center text-custom-black text-[14px] font-semibold">
                           {data}
                         </p>
                       </div>
