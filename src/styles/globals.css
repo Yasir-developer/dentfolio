@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .sizingStyles {
+    @apply max-w-[1800px] mx-auto px-8;
+  }
+}
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap'); */
 :root {
   --foreground-rgb: 0, 0, 0;

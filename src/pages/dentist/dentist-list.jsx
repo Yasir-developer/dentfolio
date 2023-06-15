@@ -4,8 +4,8 @@ import { FaFilter } from "react-icons/fa";
 
 const dentistlist = () => {
   return (
-    <div className="bg-blue max-w-[1750px] mx-auto px-8 mt-8">
-      <h1 className="text-4xl font-semibold mb-4 text-black">
+    <div className="bg-blue sizingStyles mt-8">
+      <h1 className="text-4xl font-bold mb-4 text-custom-black">
         TOP{" "}
         <span className="text-4xl font-poppins text-custom-blue">
           CERTIFIED
@@ -50,7 +50,7 @@ const dentistlist = () => {
 
       <DoctorProfileCard />
       <div className="flex justify-center my-[80px]">
-        <button className="bg-custom-blue font-normal  text-[16px] py-3 px-[60px] mt-10  w-139 text-sm text-white rounded-[7px] ">
+        <button className="bg-custom-blue font-semibold text-[16px] py-3 px-[60px] mt-10  w-139 text-sm text-white rounded-[7px] ">
           Load More{" "}
         </button>
       </div>

@@ -5,7 +5,7 @@ const AppHeader = () => {
     <div className="border-b border-[#D1CDD2]">
       <header className="inset-x-0 top-0 z-50 max-w-[1800px] mx-auto px-8 ">
         <nav
-          className="flex items-center justify-between py-6 lg:px-8  mx-auto"
+          className="flex items-center justify-between py-6 mx-auto"
           aria-label="Global"
         >
           <div className="flex lg:flex-1">

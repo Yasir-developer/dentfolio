@@ -14,7 +14,7 @@ const BecomeMember = () => {
           backgroundSize: "cover",
         }}
       >
-        <div className="max-w-[1800px] mx-auto pt-[30px] pr-[100px] pb-[0px] pl-[100px] flex justify-between items-center">
+        <div className="sizingStyles pt-[30px] pr-[100px] pb-[0px] pl-[100px] flex justify-between items-center">
           <div className="w-[50%]">
             <h3 className="text-[18px] font-medium text-white">
               ARE YOU A DENTIST?
@@ -29,13 +29,14 @@ const BecomeMember = () => {
             </h3>
 
             <button className="bg-transparent border font-semibold border-white text-white py-2 px-[60px] mt-10 rounded w-139 text-sm">
-            Find Out More          </button>
+              Find Out More{" "}
+            </button>
           </div>
           <div className="w-[50%]">
             <Image src={doctor} />
           </div>
         </div>
-       
+
         {/* <Image src={Become} className='w-full'/> */}
         {/* <div style={{ position: 'absolute', top: '30%', left: '10%',  }}>
         <h3 className='text-[18px] font-medium'>ARE YOU A DENTIST?</h3>

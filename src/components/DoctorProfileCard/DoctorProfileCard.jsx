@@ -39,7 +39,7 @@ const DoctorProfileCard = () => {
       country: "Manchester",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur congue, sapien non efficitur sollicitudin, ex risus semper diam, sed ornare libero urna ac leo sit amet, consectetur adipiscing elit. Curabitur congue, sapien non efficitur sollicitudin, ex risus semper diam, se",
-      img_url: "/images/profile1.png",
+      img_url: "/images/profile6.png",
     },
   ];
   return (
@@ -64,11 +64,11 @@ const DoctorProfileCard = () => {
                 {item.description}
               </p>
 
-              <button className="bg-custom-blue font-normal  text-[16px] py-3 px-[60px] mt-10  w-139 text-sm text-white rounded-[7px]">
+              <button className="bg-custom-blue font-semibold  text-[16px] py-3 px-[60px] mt-10  w-139 text-sm text-white rounded-[7px]">
                 Contact Me
               </button>
 
-              <button className="bg-transparent border border-[#252525] font-normal  text-[16px] py-3 px-[60px] mt-10  w-139 text-sm text-[#252525] rounded-[7px] ml-8">
+              <button className="bg-transparent border border-[#252525] font-semibold  text-[16px] py-3 px-[60px] mt-10  w-139 text-sm text-[#252525] rounded-[7px] ml-8">
                 View Profile
               </button>
             </div>

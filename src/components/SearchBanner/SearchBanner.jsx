@@ -1,10 +1,11 @@
+import Image from "next/image";
 import React from "react";
-import { FaFilter, BiCurrentLocation } from "react-icons/fa";
-
+import { FaFilter } from "react-icons/fa";
+import locationCross from "../../../public/images/location-crosshairs-solid.svg";
 const SearchBanner = () => {
   return (
     <div className="bg-gradient-to-r from-custom-grey-dark to-custom-grey-light ">
-      <div className="flex items-center max-w-[1800px] mx-auto px-8">
+      <div className="flex items-center sizingStyles">
         <div className="w-1/2">
           <div className="lg:p-4">
             <h1 className="text-5xl font-bold mb-4 text-black">
@@ -23,12 +24,12 @@ const SearchBanner = () => {
           <div className="bg-white w-3/5 rounded-[7px] max-w-[1800px] mx-4	">
             <div className="flex items-center p-4 w-full">
               <div className="border border-gray-300 w-full flex items-center rounded-[5px]">
-                <img
+                {/* <img
                   src="/images/icon-01.png"
                   alt="Location Icon"
                   className="w-6 h-6 ml-2"
-                />
-
+                /> */}
+                <Image src={locationCross} width={20} />
                 {/* <BiCurrentLocation size={24} color="#000" /> */}
 
                 <input
