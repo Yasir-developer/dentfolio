@@ -18,7 +18,7 @@ const DoctorBasicDetail = () => {
             <div className="flex flex-col">
               <h3 className="text-custom-black text-[22px]">Orthodontist</h3>
 
-              <h2 className="text-custom-black text-[16px] font-extralight">
+              <h2 className="text-[#5D5D5D] text-[16px] font-normal">
                 BDS | RDS | C.PAED
               </h2>
             </div>
