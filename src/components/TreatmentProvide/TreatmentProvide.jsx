@@ -25,7 +25,10 @@ const TreatmentProvide = () => {
       <div className="flex mt-7 gap-x-5">
         {treatmentArray.map((item, index) => {
           return (
-            <div className="w-[25%] bg-custom-blue-light flex flex-col items-center justify-center py-5 text-center rounded-[7px]">
+            <div
+              className="w-[25%] bg-custom-blue-light flex flex-col items-center justify-center py-5 text-center rounded-[7px]"
+              key={index}
+            >
               <Image src={checkCircle} alt="logo" />
 
               <p className="text-custom-black text-[18px] font-semibold mt-3 mb-5">
