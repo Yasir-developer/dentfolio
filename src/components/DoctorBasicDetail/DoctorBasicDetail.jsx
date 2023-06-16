@@ -19,7 +19,7 @@ const DoctorBasicDetail = () => {
           >
             <FaTimes className="text-[#616161] w-[18px] h-[18px]" />
           </button>
-          <div className="flex items-center justify-center mt-[100px] ">
+          <div className="flex items-center justify-center mt-[50px] ">
             <Image src={checkCircle} alt="logo" />
           </div>
           <h1 className="text-custom-black text-center text-[34px] font-semibold mt-2">
