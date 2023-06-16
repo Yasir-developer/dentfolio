@@ -6,6 +6,10 @@
   .sizingStyles {
     @apply max-w-[1800px] mx-auto px-8;
   }
+
+  .inputStyles {
+    @apply border border-custom-grey rounded-[7px] p-4 w-[70%] text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight
+  }
 }
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap'); */
 :root {

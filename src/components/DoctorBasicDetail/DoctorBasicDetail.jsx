@@ -1,11 +1,84 @@
-import React from "react";
+import React, { useState } from "react";
 import profile from "../../../public/images/profile1.png";
 import Image from "next/image";
+import { FaTimes } from "react-icons/fa";
 
 import map from "../../../public/images/map.png";
 const DoctorBasicDetail = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const conversationModal = () => {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center z-50 bg-opacity-50 bg-gray-900 ">
+        <div className="bg-white p-6 rounded-[7px] shadow-lg w-[60%] relative">
+          <div className="mx-5">
+            <button
+              className="absolute right-[20px] top-[20px]  "
+              onClick={() => setShowModal(false)}
+            >
+              <FaTimes className="text-[#616161] w-[18px] h-[18px]" />
+            </button>
+            <div className="py-5 flex flex-row items-center ">
+              <div className="items-center pb-2">
+                <Image src={profile} width={67} height={66} />
+              </div>
+              <div className="mx-5">
+                <h2 className="text-custom-blue font-semibold text-[21px]">
+                  Dylan Taylor
+                </h2>
+                <div className="flex flex-col">
+                  <h3 className="text-custom-black text-[15px]">
+                    Orthodontist
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <form>
+              <div className="mb-4 gap-x-2 flex ">
+                <input
+                  type="text"
+                  id="fullName"
+                  placeholder="Full Name"
+                  className="inputStyles"
+                />
+                <input
+                  type="tel"
+                  id="phone"
+                  className="inputStyles"
+                  placeholder="Phone Number"
+                />
+                <input
+                  type="email"
+                  id="email"
+                  className="inputStyles"
+                  placeholder="Email Address"
+                />
+              </div>
+
+              <textarea
+                id="conversation"
+                placeholder="Start a conversation"
+                className="inputStyles w-full"
+                rows="5"
+              ></textarea>
+
+              <button
+                type="submit"
+                className="bg-custom-blue hover:bg-blue-600 text-white font-poppins font-medium py-2 mt-5 mb-7 px-[45px] rounded lg:justify-end text-sm"
+              >
+                Send
+              </button>
+            </form>
+          </div>
+          {/* Form fields and buttons */}
+        </div>
+      </div>
+    );
+  };
   return (
     <div className="sizingStyles flex flex-row justify-between">
+      {showModal && conversationModal()}
+
       <div className="w-[50%]">
         <div className=" px-8 py-10 flex flex-row items-center ">
           <div className="items-center">
@@ -33,7 +106,10 @@ const DoctorBasicDetail = () => {
             diam, sesectetur adipiscing elit.
           </p>
 
-          <button className="bg-custom-blue font-semibold text-[16px] py-3 px-[60px] mt-[70px] w-139 text-sm text-white rounded-[7px]">
+          <button
+            className="bg-custom-blue font-semibold text-[16px] py-3 px-[60px] mt-[70px] w-139 text-sm text-white rounded-[7px]"
+            onClick={() => setShowModal(true)}
+          >
             Contact Me
           </button>
         </div>

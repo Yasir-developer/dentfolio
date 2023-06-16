@@ -1,10 +1,18 @@
 import Image from "next/image";
 import React from "react";
 import footer from "../../../public/images/footerLogo.png";
-import facebook from "../../../public/images/facebook.png";
-import instagram from "../../../public/images/instagram.png";
-import linkedin from "../../../public/images/linkedin.png";
-import twitter from "../../../public/images/twitter.png";
+import facebook from "../../../public/images/facebook.svg";
+import instagram from "../../../public/images/instagram.svg";
+import linkedin from "../../../public/images/linkedin.svg";
+import twitter from "../../../public/images/twitter.svg";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedin,
+} from "react-icons/fa";
+import { SiFacebook, SiTwitter, SiInstagram, SiLinkedin } from "react-icons/si";
+import { RiLinkedinFill } from "react-icons/ri";
 
 const Footer = () => {
   return (
@@ -21,12 +29,66 @@ const Footer = () => {
           </p>
           <div className="flex gap-2 pr-2">
             <p className="text-white">Follow us on:</p>
-            <Image src={facebook} />
+            <div className="border border-white rounded-[20px] p-[5px]">
+              <FaFacebookF
+                style={{
+                  color: "#fff",
+                  width: "12px",
+                  height: "12px",
+                  // borderRadius: "15px",
+                }}
+              />{" "}
+            </div>
+            {/* FontAwesome */}
+            <div className="border border-white rounded-[20px] p-[5px]">
+              <SiTwitter
+                style={{
+                  color: "#fff",
+                  width: "12px",
+                  height: "12px",
+                  // borderRadius: "15px",
+                }}
+              />{" "}
+            </div>
+            {/* Simple Icons */}
+            <div className="border border-white rounded-[20px] p-[5px]">
+              <SiInstagram
+                style={{
+                  color: "#fff",
+                  width: "12px",
+                  height: "12px",
+                  // borderRadius: "15px",
+                }}
+              />{" "}
+            </div>
+            {/* FontAwesome */}
+            {/* <SiLinkedin
+              style={{
+                color: "#fff",
+              }}
+              
+            />{" "} */}
+            <div className="border border-white rounded-[20px] p-[5px]">
+              <RiLinkedinFill
+                style={{
+                  color: "#fff",
+                  width: "12px",
+                  height: "12px",
+                  // borderRadius: "15px",
+                }}
+              />
+            </div>
+            {/* Simple Icons */}
+            {/* <FaFacebook className="border border-white rounded bg-transparent" />
+            <FaTwitter />
+            <FaInstagram />
+            
+            {/* <Image src={facebook} />
             <Image src={twitter} />
 
             <Image src={instagram} />
 
-            <Image src={linkedin} />
+            <Image src={linkedin} /> */}
           </div>
         </div>
       </div>

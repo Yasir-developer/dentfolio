@@ -24,7 +24,7 @@ module.exports = {
         "custom-blue": "#0372E2",
         "custom-blue-dark": "#0056b3",
         "custom-blue-light": "#0372E221",
-
+        "custom-grey": "#707070",
         "footer-blue": "#001323",
         "custom-grey-dark": "#c8bfc3",
         "custom-black": "#252525",

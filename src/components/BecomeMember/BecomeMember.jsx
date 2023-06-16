@@ -14,7 +14,7 @@ const BecomeMember = () => {
           backgroundSize: "cover",
         }}
       >
-        <div className="sizingStyles pt-[30px] pr-[100px] pb-[0px] pl-[100px] flex justify-between items-center">
+        <div className="sizingStyles py-[50px] pr-[100px] pl-[100px] flex justify-between items-center">
           <div className="w-[50%]">
             <h3 className="text-[18px] font-medium text-white">
               ARE YOU A DENTIST?
