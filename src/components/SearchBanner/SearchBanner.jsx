@@ -6,22 +6,22 @@ const SearchBanner = () => {
   return (
     <div className="bg-gradient-to-r from-custom-grey-dark to-custom-grey-light ">
       <div className="flex items-center sizingStyles">
-        <div className="w-1/2">
+        <div className="w-[70%]">
           <div className="lg:p-4">
-            <h1 className="text-5xl font-bold mb-4 text-black">
+            <h1 className="text-5xl font-bold mb-4 text-black w-[80%]">
               FIND A PRIVATE DENTIST{" "}
               <span className="text-5xl font-bold font-poppins text-custom-blue">
                 NEAR YOU
               </span>{" "}
             </h1>
-            <p className="mb-4 w-3/5 text-black font-medium">
+            <p className="mb-4 text-black font-normal text-[16px]">
               Hundreds of dentists and practices around the UK showcase their
               portfolio work on Dentfolio - the home to the UK's best private
               dentists
             </p>
           </div>
 
-          <div className="bg-white w-3/5 rounded-[7px] max-w-[1800px] mx-4	">
+          <div className="bg-white w-3/5 rounded-[7px] max-w-[1140px] mx-4	">
             <div className="flex items-center p-4 w-full">
               <div className="border border-gray-300 w-full flex items-center rounded-[5px]">
                 {/* <img

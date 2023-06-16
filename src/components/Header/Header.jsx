@@ -3,7 +3,7 @@ import { useState } from "react";
 const AppHeader = () => {
   return (
     <div className="border-b border-[#D1CDD2]">
-      <header className="inset-x-0 top-0 z-50 max-w-[1800px] mx-auto px-8 ">
+      <header className="inset-x-0 top-0 z-50 sizingStyles ">
         <nav
           className="flex items-center justify-between py-6 mx-auto"
           aria-label="Global"

@@ -12,7 +12,7 @@ import {
 const Footer = () => {
   return (
     <footer className="bg-footer-blue">
-      <div className="max-w-[1800px] px-[100px] mx-auto pb-[70px]">
+      <div className="max-w-[1140px] px-[100px] mx-auto pb-[70px]">
         <div className="flex flex-col items-center justify-center pt-[70px]  ">
           <Image src={footer} />
 

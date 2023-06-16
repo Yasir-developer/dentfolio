@@ -4,7 +4,7 @@
 
 @layer components {
   .sizingStyles {
-    @apply max-w-[1800px] mx-auto px-8;
+    @apply max-w-[1140px] mx-auto px-8;
   }
 
   .inputStyles {

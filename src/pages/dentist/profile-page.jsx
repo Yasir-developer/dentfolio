@@ -6,7 +6,7 @@ import React from "react";
 const profilepage = () => {
   return (
     <div>
-      <DoctorBasicDetail to />
+      <DoctorBasicDetail />
       <TreatmentProvide />
       <PreviousCases />
     </div>

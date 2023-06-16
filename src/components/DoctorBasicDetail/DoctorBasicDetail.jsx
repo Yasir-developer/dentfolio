@@ -113,10 +113,15 @@ const DoctorBasicDetail = () => {
     <div className="sizingStyles flex flex-row justify-between">
       {showModal && conversationModal()}
       {showThankYouModal && thankYouModal()}
-      <div className="w-[50%]">
+      <div className="w-[60%]">
         <div className=" px-8 py-10 flex flex-row items-center ">
-          <div className="items-center">
-            <Image src={profile} width={205} height={205} />
+          <div className="w-[205px] h-[205px] rounded-[102.5px]">
+            <Image
+              src={profile}
+              width={205}
+              height={205}
+              className="rounded-[102.5px]"
+            />
           </div>
           <div className="mx-8">
             <h2 className="text-custom-blue font-semibold text-[33px]">
@@ -141,7 +146,7 @@ const DoctorBasicDetail = () => {
           </p>
 
           <button
-            className="bg-custom-blue font-semibold text-[16px] py-3 px-[60px] mt-[70px] w-139 text-sm text-white rounded-[7px]"
+            className="bg-custom-blue font-semibold text-[16px] py-3 px-[60px] mt-[35px] w-139 text-sm text-white rounded-[7px]"
             onClick={() => setShowModal(true)}
           >
             Contact Me

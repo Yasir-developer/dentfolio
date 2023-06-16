@@ -20,7 +20,7 @@ const PreviousCases = () => {
     },
   ];
   return (
-    <div className="sizingStyles ">
+    <div className="sizingStyles">
       <h2 className="text-[32px] text-black text-center font-medium mt-[70px]">
         MY PREVIOUS <span className=" text-custom-blue">CASES</span>
       </h2>
@@ -29,17 +29,23 @@ const PreviousCases = () => {
         {caseTypes.map((item, index) => {
           return (
             <div
-              className="border rounded-[7px] border-[#F6EBEB] border-b flex items-center px-2 mt-7"
+              className="border rounded-[7px] border-[#F6EBEB] border-b flex items-center px-3 mt-7"
               key={index}
             >
-              <Image src={item.img_url} alt="logo" width={217} height={170} />
+              <Image
+                src={item.img_url}
+                alt="logo"
+                width={217}
+                height={170}
+                className="h-[170px] my-3"
+              />
 
               <div className="flex flex-col px-5 pt-5 pb-5 justify-center">
                 <h2 className="text-[21px] text-custom-blue font-semibold">
                   Composite Bonding
                 </h2>
                 <div className="flex flex-col">
-                  <p className="text-[12px] font-light">
+                  <p className="text-[16px] font-light">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Curabitur congue, sapien non efficitur sollicitudin, ex
                     risus semper diam, sed ornare libero urna ac leo sit amet

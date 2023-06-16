@@ -1,6 +1,6 @@
 import DoctorProfileCard from "@/components/DoctorProfileCard/DoctorProfileCard";
 import React from "react";
-import { FaFilter } from "react-icons/fa";
+import { FaFilter, FaCrosshairs } from "react-icons/fa";
 
 const dentistlist = () => {
   return (
@@ -17,10 +17,10 @@ const dentistlist = () => {
         </span>
       </h1>
 
-      <h3 className="text-[26px] font-[500]">
+      <h3 className="text-[26px] font-normal">
         25 Dentist available in Manchester
       </h3>
-      <div className="w-[65%]">
+      <div className="w-[80%]">
         <p className="mt-8 text-[18px]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
           congue, sapien non efficitur sollicitudin, ex risus semper diam, sed
@@ -30,11 +30,7 @@ const dentistlist = () => {
       <div className="bg-white rounded-[7px] w-[35%]">
         <div className="flex items-center py-[30px] w-full">
           <div className="border border-gray-300 w-full flex items-center rounded-[5px] pr-[15px]">
-            <img
-              src="/images/icon-01.png"
-              alt="Location Icon"
-              className="w-6 h-6 ml-2"
-            />
+            <FaCrosshairs size={20} color="#000" className="ml-2" />
 
             {/* <BiCurrentLocation size={24} color="#000" /> */}
 

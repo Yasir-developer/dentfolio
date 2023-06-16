@@ -14,21 +14,21 @@ const BecomeMember = () => {
           backgroundSize: "cover",
         }}
       >
-        <div className="sizingStyles py-[50px] pr-[100px] pl-[100px] flex justify-between items-center">
-          <div className="w-[50%]">
-            <h3 className="text-[18px] font-medium text-white">
+        <div className="sizingStyles py-[50px] pr-[60px] pl-[60px] flex justify-between items-center">
+          <div className="w-[60%]">
+            <h3 className="text-[18px] font-normal text-white">
               ARE YOU A DENTIST?
             </h3>
             <h1 className="flex items-center text-white font-poppins font-bold text-[41px]">
               BECOME A MEMBER NOW
             </h1>
-            <h3 className="text-[18px] font-medium text-white mt-3">
+            <h3 className="text-[14px] font-light text-white mt-3">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
               congue, sapien non efficitur sollicitudin, ex risus semper diam,
               sed ornare.
             </h3>
 
-            <button className="bg-transparent border font-semibold border-white text-white py-2 px-[60px] mt-10 rounded w-139 text-sm">
+            <button className="bg-transparent border font-medium border-white text-white py-2 px-[60px] mt-10 rounded w-139 text-sm">
               Find Out More{" "}
             </button>
           </div>

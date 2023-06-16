@@ -55,8 +55,13 @@ const DoctorProfileCard = () => {
             className="flex flex-row py-8 border-b border-[#70707030] "
             key={doctorArray.id}
           >
-            <div className="w-[300px]">
-              <Image src={item.img_url} width={143} height={143} />
+            <div>
+              <Image
+                src={item.img_url}
+                width={173}
+                height={173}
+                className="rounded-[86.5px]"
+              />
             </div>
 
             <div className="mx-7">
@@ -68,7 +73,7 @@ const DoctorProfileCard = () => {
                 </h2>
               </div>
 
-              <p className="px-1 text-[18px] font-normal w-[70%] ">
+              <p className="px-1 text-[18px] font-normal w-[90%] ">
                 {item.description}
               </p>
 
