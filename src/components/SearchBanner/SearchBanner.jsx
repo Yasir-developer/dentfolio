@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { FaFilter } from "react-icons/fa";
+import { FaFilter, FaCrosshairs } from "react-icons/fa";
 import locationCross from "../../../public/images/location-crosshairs-solid.svg";
 const SearchBanner = () => {
   return (
@@ -29,12 +29,14 @@ const SearchBanner = () => {
                   alt="Location Icon"
                   className="w-6 h-6 ml-2"
                 /> */}
-                <Image
+                <FaCrosshairs size={20} color="#000" className="ml-2" />
+
+                {/* <Image
                   src={locationCross}
                   width={20}
                   height={20}
                   className="ml-2"
-                />
+                /> */}
                 {/* <BiCurrentLocation size={24} color="#000" /> */}
 
                 <input
@@ -42,7 +44,7 @@ const SearchBanner = () => {
                   placeholder="Location"
                   className="flex-grow py-2 px-4 focus:outline-none w-4/5"
                 />
-                <FaFilter size={24} color="#000" />
+                <FaFilter size={20} color="#000" />
 
                 <button className="bg-custom-blue text-white px-4 py-2 rounded ml-2 focus:outline-none">
                   Search
