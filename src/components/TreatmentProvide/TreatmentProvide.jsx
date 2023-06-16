@@ -26,7 +26,7 @@ const TreatmentProvide = () => {
         {treatmentArray.map((item, index) => {
           return (
             <div
-              className="w-[25%] bg-custom-blue-light flex flex-col items-center justify-center py-5 text-center rounded-[7px]"
+              className="w-[25%] bg-custom-blue-light flex flex-col items-center justify-center py-7 text-center rounded-[7px]"
               key={index}
             >
               <Image src={checkCircle} alt="logo" />
