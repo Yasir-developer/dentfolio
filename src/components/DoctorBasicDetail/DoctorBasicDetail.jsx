@@ -2,10 +2,40 @@ import React, { useState } from "react";
 import profile from "../../../public/images/profile1.png";
 import Image from "next/image";
 import { FaTimes } from "react-icons/fa";
+import checkCircle from "../../../public/images/check-circle2.svg";
 
 import map from "../../../public/images/map.png";
 const DoctorBasicDetail = () => {
   const [showModal, setShowModal] = useState(false);
+  const [showThankYouModal, setShowThankYouModal] = useState(false);
+
+  const thankYouModal = () => {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center z-50 bg-opacity-50 bg-gray-900 ">
+        <div className="bg-white p-6 rounded-[7px] shadow-lg w-[60%] relative max-w-[900px]">
+          <button
+            className="absolute right-[20px] top-[20px]  "
+            onClick={() => setShowThankYouModal(false)}
+          >
+            <FaTimes className="text-[#616161] w-[18px] h-[18px]" />
+          </button>
+          <div className="flex items-center justify-center mt-[100px] ">
+            <Image src={checkCircle} alt="logo" />
+          </div>
+          <h1 className="text-custom-black text-center text-[34px] font-semibold mt-2">
+            THANK YOU
+          </h1>
+
+          <p className="text-custom-black text-center text-[16px] font-semibold mt-2 mb-[50px]">
+            Your message has been successfully sent to the dentist. They will
+            contact you shortly via email or phone.
+          </p>
+
+          {/* Form fields and buttons */}
+        </div>
+      </div>
+    );
+  };
 
   const conversationModal = () => {
     return (
@@ -65,6 +95,10 @@ const DoctorBasicDetail = () => {
               <button
                 type="submit"
                 className="bg-custom-blue hover:bg-blue-600 text-white font-poppins font-medium py-2 mt-5 mb-7 px-[45px] rounded lg:justify-end text-sm"
+                onClick={() => {
+                  setShowModal(false);
+                  setShowThankYouModal(true);
+                }}
               >
                 Send
               </button>
@@ -78,7 +112,7 @@ const DoctorBasicDetail = () => {
   return (
     <div className="sizingStyles flex flex-row justify-between">
       {showModal && conversationModal()}
-
+      {showThankYouModal && thankYouModal()}
       <div className="w-[50%]">
         <div className=" px-8 py-10 flex flex-row items-center ">
           <div className="items-center">
