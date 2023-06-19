@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import DentistSearch from "./dentist/dentist-search";
+import DentistSearch from "./patient/dentist-search";
 
 const IndexPage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
