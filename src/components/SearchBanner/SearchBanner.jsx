@@ -69,7 +69,7 @@ const SearchBanner = () => {
             </p>
           </div>
 
-          <div className="bg-white w-full lg:w-3/5 rounded-[7px] max-w-[1140px] mx-auto my-10 lg:ml-4">
+          <div className="bg-white w-full lg:w-3/5 rounded-[7px] max-w-[1140px] mx-auto my-10 lg:my-0 lg:ml-4">
             <div className="flex items-center p-4 w-full">
               <div className="border border-gray-300 w-full flex items-center rounded-[5px]">
                 <FaCrosshairs size={20} color="#000" className="ml-2" />
