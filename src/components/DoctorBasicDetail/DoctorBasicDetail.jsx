@@ -114,7 +114,7 @@ const DoctorBasicDetail = () => {
       {showModal && conversationModal()}
       {showThankYouModal && thankYouModal()}
       <div className="w-full lg:w-[60%]">
-        <div className="lg:px-8 py-10 flex flex-row items-center items-center gap-x-[1rem]">
+        <div className="lg:px-8 py-10 flex flex-row items-center gap-x-[1rem]">
           <div className="lg:w-[205px] lg:h-[205px] rounded-[102.5px]">
             <Image
               src={profile}
@@ -128,7 +128,9 @@ const DoctorBasicDetail = () => {
               Dr. Dylan Taylor
             </h2>
             <div className="flex flex-col">
-              <h3 className="text-custom-black lg:text-[22px] text-[17px]">Orthodontist</h3>
+              <h3 className="text-custom-black lg:text-[22px] text-[17px]">
+                Orthodontist
+              </h3>
 
               <h2 className="text-[#5D5D5D] text-[16px] font-normal">
                 BDS | RDS | C.PAED
