@@ -110,25 +110,25 @@ const DoctorBasicDetail = () => {
     );
   };
   return (
-    <div className="sizingStyles flex flex-row justify-between">
+    <div className="sizingStyles flex flex-col lg:flex-row justify-between">
       {showModal && conversationModal()}
       {showThankYouModal && thankYouModal()}
-      <div className="w-[60%]">
-        <div className=" px-8 py-10 flex flex-row items-center ">
-          <div className="w-[205px] h-[205px] rounded-[102.5px]">
+      <div className="w-full lg:w-[60%]">
+        <div className="lg:px-8 py-10 flex flex-row items-center items-center gap-x-[1rem]">
+          <div className="lg:w-[205px] lg:h-[205px] rounded-[102.5px]">
             <Image
               src={profile}
               width={205}
               height={205}
-              className="rounded-[102.5px]"
+              className="rounded-[102.5px] max-w-[130px] lg:max-w-[205px]"
             />
           </div>
-          <div className="mx-8">
-            <h2 className="text-custom-blue font-semibold text-[33px]">
+          <div>
+            <h2 className="text-custom-blue font-semibold lg:text-[33px] text-[20px]">
               Dr. Dylan Taylor
             </h2>
             <div className="flex flex-col">
-              <h3 className="text-custom-black text-[22px]">Orthodontist</h3>
+              <h3 className="text-custom-black lg:text-[22px] text-[17px]">Orthodontist</h3>
 
               <h2 className="text-[#5D5D5D] text-[16px] font-normal">
                 BDS | RDS | C.PAED
@@ -136,7 +136,7 @@ const DoctorBasicDetail = () => {
             </div>
           </div>
         </div>
-        <div className="px-8">
+        <div className="lg:px-8">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
             congue, sapien non efficitur sollicitudin, ex risus semper diam, sed
@@ -144,13 +144,14 @@ const DoctorBasicDetail = () => {
             Curabitur congue, sapien non efficitur sollicitudin, ex risus semper
             diam, sesectetur adipiscing elit.
           </p>
-
-          <button
-            className="bg-custom-blue font-semibold text-[16px] py-3 px-[60px] mt-[35px] w-139 text-sm text-white rounded-[7px]"
-            onClick={() => setShowModal(true)}
-          >
-            Contact Me
-          </button>
+          <div className="lg:static fixed bottom-0 w-full left-0 lg:text-left text-center pb-5">
+            <button
+              className="bg-custom-blue font-semibold text-[16px] py-3 px-[60px] mt-[35px] w-139 text-sm text-white rounded-[7px]"
+              onClick={() => setShowModal(true)}
+            >
+              Contact Me
+            </button>
+          </div>
         </div>
       </div>
 
