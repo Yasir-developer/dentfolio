@@ -28,7 +28,7 @@ module.exports = {
         "footer-blue": "#001323",
         "custom-grey-dark": "#c8bfc3",
         "custom-black": "#252525",
-
+        "custom-grey-medium":"#d6d3cc",
         "custom-grey-light": "#d5d3d8",
       },
     },
