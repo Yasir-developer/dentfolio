@@ -8,7 +8,7 @@ import AuthInput from "@/components/Inputs/AuthInput";
 import { FaCheck } from "react-icons/fa";
 
 const Signup = () => {
-  //   const [isChecked, setIsChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
   return (
     <div className="lg:w-full flex flex-col lg:flex-row  bg-[#F9FBFC]">
       <div className="lg:w-full lg:py-[0px] py-[30px]  bg-gradient-radial from-[#0372E2] to-[#0B5FB4] justify-center flex items-center text-center">
