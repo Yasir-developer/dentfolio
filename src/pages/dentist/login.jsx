@@ -70,18 +70,18 @@ const login = () => {
     //   </div>
     // </div>
 
-    <div className="lg:w-full flex flex-col md:flex-row h-screen bg-[#F9FBFC]">
-      <div className="lg:w-full lg:py-[0px] py-[30px] md:w-2/5 bg-gradient-radial from-[#0372E2] to-[#0B5FB4] justify-center flex items-center text-center">
-        <Image src={logo} alt="logo" className="mx-auto hidden md:block" />
+    <div className="lg:w-full flex flex-col lg:flex-row h-screen bg-[#F9FBFC]">
+      <div className="lg:w-full lg:py-[0px] py-[30px] bg-gradient-radial from-[#0372E2] to-[#0B5FB4] justify-center flex items-center text-center">
+        <Image src={logo} alt="logo" className="mx-auto hidden lg:block" />
 
         <Image src={logoWhite} className="mx-auto lg:hidden" />
         {/* <Image src={logo} alt="logo" className="hidden" /> */}
       </div>
       <div className="lg:w-full md:w-3/5 flex flex-col justify-between h-[90%] bg-white my-[20px] lg:my-auto mx-[5%] md:mx-[100px] rounded-[7px]">
         <div className="flex flex-col items-center bg-white justify-center w-full">
-          <div className=" w-[100%] lg:w-4/5 md:w-[50%] m-auto bg-transparent">
+          <div className=" w-[100%] lg:w-4/5 md:px-[20px] m-auto bg-transparent">
             <img
-              className="mx-auto hidden md:block lg:mt-[20px]"
+              className="mx-auto hidden lg:block lg:mt-[20px]"
               src="/images/logo.png"
               alt=""
             />
