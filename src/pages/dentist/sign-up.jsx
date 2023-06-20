@@ -3,15 +3,12 @@ import React, { useState } from "react";
 import logo from "../../../public/images/loginLogo.svg";
 import logoWhite from "../../../public/images/logoWhite.png";
 import logotwo from "../../../public/images/logo.png";
-
-import { FaEye } from "react-icons/fa";
 import BlueButtons from "@/components/Buttons/BlueButtons";
 import AuthInput from "@/components/Inputs/AuthInput";
 import { FaCheck } from "react-icons/fa";
 
-import CheckInput from "@/components/Inputs/CheckInput";
-const signup = () => {
-  const [isChecked, setIsChecked] = useState(false);
+const Signup = () => {
+  //   const [isChecked, setIsChecked] = useState(false);
   return (
     <div className="lg:w-full flex flex-col lg:flex-row  bg-[#F9FBFC]">
       <div className="lg:w-full lg:py-[0px] py-[30px]  bg-gradient-radial from-[#0372E2] to-[#0B5FB4] justify-center flex items-center text-center">
@@ -139,4 +136,4 @@ const signup = () => {
   );
 };
 
-export default signup;
+export default Signup;
