@@ -30,6 +30,7 @@ const EditCasePage = () => {
       <div className="py-5 px-5 flex w-[90%] bg-white rounded-[7px] flex-col items-center justify-center mx-auto">
         {caseTypes.map((item, index) => (
           <EditCaseCard
+            id={index}
             name={item.name}
             description={item.description}
             img_url={item.img_url}

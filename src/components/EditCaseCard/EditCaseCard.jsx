@@ -3,14 +3,14 @@ import React from "react";
 import BlueButtons from "../Buttons/BlueButtons";
 import { FaEllipsisV } from "react-icons/fa";
 
-const EditCaseCard = ({ img_url, name, description }) => {
+const EditCaseCard = ({ img_url, name, description, id }) => {
   return (
     <div>
       <div className="mb-10">
         {/* <div> */}
         <div
           className="border rounded-[7px] border-[#F6EBEB] border-b flex flex-col-reverse lg:flex-row px-3 mt-7"
-          //   key={index}
+          key={id}
         >
           <Image
             src={img_url}
