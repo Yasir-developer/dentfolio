@@ -51,7 +51,12 @@ h1{
   outline: none;
   cursor: pointer;
 }
-
+main{
+  height: 100%;
+}
+#__next,#__next>div{
+  height: 100%;
+}
 .checkbox-round:checked {
   background-color: gray;
 }
