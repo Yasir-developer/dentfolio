@@ -95,8 +95,8 @@ const DentistTabs = () => {
             </ul>
           </nav>
         </div>
-        <div className=" flex-grow bg-gray-100 w-[85%]">
-          <div className="contentContainer">
+        <div className="bg-gray-100 w-[85%] flex flex-col justify-between">
+          <div className="contentContainer overflow-y-scroll">
             {activeTab === "editCase" && <EditCasePage />}
             {activeTab === "createCase" && <h2>Create Case Content</h2>}
             {activeTab === "editProfile" && <h2>Edit My Profile Content</h2>}

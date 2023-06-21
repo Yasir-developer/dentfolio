@@ -4,8 +4,8 @@ import Image from "next/image";
 import { FaAngleDown } from "react-icons/fa";
 const DashboardFooter = () => {
   return (
-    <div className="h-[100px] w-full flex">
-      <div className="w-full flex justify-between items-center">
+    <div className="w-full flex">
+      <div className="w-full flex justify-between items-center py-[20px] bg-white border-t border-b border-[#70707038]">
         <p className="px-[60px] text-[14px]">
           © Copyright 2023 Dentfolio. All Rights Reserved.
         </p>
