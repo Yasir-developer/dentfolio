@@ -15,7 +15,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div>
+    <div className="h-full">
       {/* Menu Panel */}
 
       <DentistTabs>

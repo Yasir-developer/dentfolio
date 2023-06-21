@@ -18,7 +18,7 @@ const DentistTabs = () => {
   };
 
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap h-full">
       {/* Menu Panel */}
       <DashboardHeader />
       <div
