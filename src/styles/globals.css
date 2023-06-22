@@ -10,6 +10,9 @@
   .inputStyles {
     @apply border border-custom-grey rounded-[7px] p-4 w-[70%] text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight
   }
+  .dentistBodyStyles{
+    @apply h-full bg-custom-dashboard-bg absolute top-0 bottom-0 w-full
+  }
 }
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap'); */
 :root {
@@ -54,11 +57,14 @@ h1{
 main{
   height: 100%;
 }
-#__next,#__next>div{
+/* #__next,#__next>div{
   height: 100%;
-}
+} */
 .checkbox-round:checked {
   background-color: gray;
+}
+.contentContainer{
+  overflow-y: overlay;
 }
 @media screen and (max-width:767px){
   .slick-slider.customSlider .slick-slide>div {

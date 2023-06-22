@@ -1,7 +1,7 @@
 import React from "react";
 import logoWhite from "../../../public/images/logoWhite.png";
 import Image from "next/image";
-import { FaAngleDown } from "react-icons/fa";
+import { FaAngleDown, FaRegBell } from "react-icons/fa";
 const DashboardHeader = () => {
   return (
     <div className="h-[100px] border-b border-[#c8bfc3] w-full flex ">
@@ -10,9 +10,13 @@ const DashboardHeader = () => {
 
         {/* <h1 className="text-lg font-bold">Dashboard</h1> */}
       </div>
-      <div className="w-[85%] flex justify-end ">
+
+      <div className="w-[85%] flex justify-end">
+        <div className="flex items-center justify-center mr-3">
+          <FaRegBell className="w-[36px] h-[36px]" />
+        </div>
         <div className="border-l border-l-[#c8bfc3] flex">
-          <div className="flex flex-row items-center justify-center px-5 ">
+          <div className="flex flex-row items-center justify-center pr-[80px] pl-[30px] ">
             <Image
               src={"/images/profileImg.png"}
               alt="logo"

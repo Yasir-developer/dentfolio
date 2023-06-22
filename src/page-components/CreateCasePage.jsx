@@ -11,37 +11,73 @@ const CreateCasePage = () => {
           //   style={{ margin: "10px" }}
         >
           <div className="flex flex-col">
-            <h1 className="text-[32px] font-semibold">Profile</h1>
+            <h1 className="text-[32px] font-semibold">Add Case</h1>
 
             <p className="mt-2 text-[16px] font-light mb-5">
-              Personal Information
+              Upload a treatment case that you've done to show off your skills
+              to potential patients.
             </p>
           </div>
           <div>
             <BlueButtons buttonText={"Add Case"} className={"px-[50px]"} />
           </div>
         </div>
-        <div className="py-5 px-5 flex w-[100%] bg-white rounded-[7px] flex-col items-start justify-center mx-auto">
-          <div className="w-full flex flex-wrap gap-x-2 lg:gap-x-7 gap-y-1 items-center justify-center">
-            <AuthInput placeholder={"Case Title"} className={"w-[80%]"} />
-            <AuthInput placeholder={"User Name"} />
-
-            {/* <div className="w-[45%] flex mb-[72px]  justify-start items-start">
-              <div className="flex flex-row flex-wrap gap-x-2 gap-y-2 lg:gap-x-5 mt-3">
-                {treatmentType.map((data, dataIndex) => (
-                  <div
-                    className="bg-custom-blue-light flex items-center justify-center h-8 px-3 rounded-[7px]"
-                    key={dataIndex}
-                  >
-                    <p className="text-center text-custom-black text-[14px] font-semibold">
-                      {data.type}
-                    </p>
-                  </div>
-                ))}
+        <form>
+          <div className="py-5 px-5 flex w-[100%] bg-white rounded-[7px] flex-col items-start justify-center mx-auto">
+            <div className="w-full flex flex-wrap gap-x-2 lg:gap-x-7 gap-y-1 items-center justify-center">
+              <AuthInput placeholder={"Case Title"} className={"w-[90%]"} />
+              <textarea
+                placeholder="Case Description"
+                className="w-[90%] border bg-white border-custom-grey rounded-[7px] p-3 focus:outline-none"
+                rows={4}
+              ></textarea>
+            </div>
+            <div className="flex flex-row pl-16 pt-5 items-center">
+              <p className="text-[18px] font-semibold">Case Visibility:</p>
+              <div className="px-5">
+                <label className="text-[16px] font-normal">
+                  <input
+                    type="radio"
+                    value="Male"
+                    className="ml-[15px] mr-[5px]"
+                    // checked={this.state.selectedOption === "Male"}
+                    // onChange={this.onValueChange}
+                  />
+                  Public
+                </label>
               </div>
-            </div> */}
+              <div className="radio">
+                <label className="text-[16px] font-normal">
+                  <input
+                    type="radio"
+                    value="Female"
+                    className="ml-[15px] mr-[5px]"
+
+                    // checked={this.state.selectedOption === "Female"}
+                    // onChange={this.onValueChange}
+                  />
+                  Private
+                </label>
+              </div>
+            </div>
+
+            <div className="ml-16 mt-10">
+              <p className="text-[18px] font-semibold">Upload Photos:</p>
+              <button className="py-2 px-8 bg-[#D4D4D4] rounded-[7px] h-12 mt-5">
+                <p className="text-left text-[16px] font-semibold">
+                  Select Images
+                </p>
+              </button>
+            </div>
+
+            <BlueButtons
+              buttonText={"Save"}
+              className={
+                "py-2 px-[60px] bg-[#D4D4D4] rounded-[7px] h-12 mt-10 ml-16 "
+              }
+            />
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );

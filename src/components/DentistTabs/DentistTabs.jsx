@@ -9,12 +9,14 @@ import EditCasePage from "@/page-components/EditCasePage";
 import DashboardFooter from "../DashboardFooter/DashboardFooter";
 import ViewProfilePage from "@/page-components/ViewProfilePage";
 import CreateCasePage from "@/page-components/CreateCasePage";
+import BlueButtons from "../Buttons/BlueButtons";
 const DentistTabs = () => {
   const router = useRouter();
 
-  const [activeTab, setActiveTab] = useState("editCase");
+  const [activeTab, setActiveTab] = useState("");
 
   const handleTabClick = (event, path) => {
+    console.log(path, "path >>>>>>>>>>>>>>");
     event.preventDefault();
 
     router.push(path);
@@ -30,43 +32,11 @@ const DentistTabs = () => {
           height: "calc(100% - 100px)",
         }}
       >
-        <div className=" bg-gradient-radial from-[#0372E2] to-[#0B5FB4] w-[18%]">
-          <nav className="p-2">
+        <div className=" bg-gradient-radial from-[#0372E2] to-[#0B5FB4] w-[18%] relative">
+          <nav className="p-2 ">
             <ul>
               <li
-                className={`py-2 px-4 cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold my-3 ${
-                  activeTab !== "editCase" &&
-                  "text-white text-[16px] font-semibold"
-                } ${
-                  activeTab === "editCase" &&
-                  "bg-white text-custom-blue rounded-[5px] w-[150px]"
-                }`}
-                onClick={(e) => {
-                  handleTabClick(e, "/dentist/edit-case");
-                  setActiveTab("editCase");
-                }}
-              >
-                <FaIdCard className="w-4 h-4 mx-2" />
-                Edit Case
-              </li>
-              <li
-                className={`py-2 px-4 cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold my-3 ${
-                  activeTab !== "createCase" &&
-                  "text-white text-[16px] font-semibold"
-                } ${
-                  activeTab === "createCase" &&
-                  "bg-white text-custom-blue rounded-[5px] w-[150px]"
-                }`}
-                onClick={(e) => {
-                  handleTabClick(e, "/dentist/create-case");
-                  setActiveTab("createCase");
-                }}
-              >
-                <FaUser className="w-4 h-4 mx-2" />
-                Create Case
-              </li>
-              <li
-                className={`py-2 px-4 cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold  my-3 ${
+                className={`py-2 cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold my-3 w-[70%] ${
                   activeTab !== "editProfile" && "text-white"
                 } ${
                   activeTab === "editProfile" &&
@@ -75,14 +45,14 @@ const DentistTabs = () => {
                 onClick={(e) => {
                   setActiveTab("editProfile");
 
-                  handleTabClick(e, "/dentist/edit-profile");
+                  handleTabClick(e, "/dentist/view-profile");
                 }}
               >
-                <FaFileAlt className="w-4 h-4 mx-2" />
+                <FaIdCard className="w-4 h-4 mx-2" />
                 Edit My Profile
               </li>
               <li
-                className={`py-2 px-4 cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold my-3  ${
+                className={`py-3 cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold my-3 w-[70%] ${
                   activeTab !== "viewProfile" && "text-white"
                 } ${
                   activeTab === "viewProfile" &&
@@ -94,15 +64,48 @@ const DentistTabs = () => {
                   handleTabClick(e, "/dentist/view-profile");
                 }}
               >
-                <FaEdit className="w-4 h-4 mx-2" />
+                <FaUser className="w-4 h-4 mx-2" />
                 View My Profile
               </li>
               <li
-                className={`py-2 px-4 cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold ${
+                className={` cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold my-3 w-[70%]  ${
+                  activeTab !== "createCase" &&
+                  "text-white text-[16px] font-semibold py-3"
+                } ${
+                  activeTab === "createCase" &&
+                  "bg-white text-custom-blue rounded-[5px]  py-3"
+                }`}
+                onClick={(e) => {
+                  handleTabClick(e, "/dentist/create-case");
+                  setActiveTab("createCase");
+                }}
+              >
+                <FaFileAlt className="w-4 h-4 mx-2" />
+                {/* <FaUser className="w-4 h-4 mx-2" /> */}
+                Create Case
+              </li>
+              <li
+                className={`cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold my-3 w-[70%] ${
+                  activeTab !== "editCase" &&
+                  "text-white text-[16px] font-semibold w-[60%] py-3"
+                } ${
+                  activeTab === "editCase" &&
+                  "bg-white text-custom-blue rounded-[5px] py-3"
+                }`}
+                onClick={(e) => {
+                  handleTabClick(e, "/dentist/edit-case");
+                  setActiveTab("editCase");
+                }}
+              >
+                <FaEdit className="w-4 h-4 mx-2" />
+                Edit Case
+              </li>
+              <li
+                className={`py-3 cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold w-[70%] ${
                   activeTab !== "settings" && "text-white"
                 } ${
                   activeTab === "settings" &&
-                  "bg-white text-custom-blue rounded-[5px] w-[150px]"
+                  "bg-white text-custom-blue rounded-[5px] w-[150px] py-3"
                 }`}
                 onClick={(e) => handleTabClick(e, "settings")}
               >
@@ -111,9 +114,15 @@ const DentistTabs = () => {
               </li>
             </ul>
           </nav>
+          <BlueButtons
+            className={
+              "bg-white absolute bottom-[100px] left-[40px] !text-custom-blue px-[50px] text-[16px] font-medium"
+            }
+            buttonText={"Sign Out"}
+          />
         </div>
         <div className="bg-gray-100 w-[85%] flex flex-col justify-between">
-          <div className="contentContainer overflow-y-scroll">
+          <div className="contentContainer overflow-y-scroll h-full">
             {activeTab === "editCase" && <EditCasePage />}
             {activeTab === "createCase" && <CreateCasePage />}
             {activeTab === "editProfile" && <ViewProfilePage />}

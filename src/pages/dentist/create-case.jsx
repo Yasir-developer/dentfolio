@@ -4,7 +4,7 @@ import React from "react";
 
 const createCase = () => {
   return (
-    <div>
+    <div className="dentistBodyStyles">
       <DentistTabs>
         <CreateCasePage />
       </DentistTabs>
