@@ -8,6 +8,7 @@ import DashboardHeader from "../DashboardHeader/DashboardHeader";
 import EditCasePage from "@/page-components/EditCasePage";
 import DashboardFooter from "../DashboardFooter/DashboardFooter";
 import ViewProfilePage from "@/page-components/ViewProfilePage";
+import CreateCasePage from "@/page-components/CreateCasePage";
 const DentistTabs = () => {
   const router = useRouter();
 
@@ -98,8 +99,8 @@ const DentistTabs = () => {
         </div>
         <div className="bg-gray-100 w-[85%] flex flex-col justify-between">
           <div className="contentContainer overflow-y-scroll">
-            {activeTab === "editCase" && <EditCasePage />}
-            {activeTab === "createCase" && <h2>Create Case Content</h2>}
+            {activeTab === "editCase" && <ViewProfilePage />}
+            {activeTab === "createCase" && <CreateCasePage />}
             {activeTab === "editProfile" && <h2>Edit My Profile Content</h2>}
             {activeTab === "viewProfile" && <h2>View My Profile Content</h2>}
             {activeTab === "settings" && <h2>Settings Content</h2>}

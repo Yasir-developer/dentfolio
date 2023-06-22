@@ -21,7 +21,7 @@ const EditCasePage = () => {
   ];
 
   return (
-    <div className="bg-custom-dashboard-bg items-center justify-center ">
+    <div className="items-center justify-center ">
       <div className=" my-8 mx-auto w-[90%]">
         <h1 className="text-[32px] font-semibold">Edit Case</h1>
 

@@ -1,12 +1,13 @@
 import DentistTabs from "@/components/DentistTabs/DentistTabs";
+import CreateCasePage from "@/page-components/CreateCasePage";
 import React from "react";
 
 const createCase = () => {
   return (
     <div>
-      <DentistTabs />
-
-      <h1>Edit case</h1>
+      <DentistTabs>
+        <CreateCasePage />
+      </DentistTabs>
     </div>
   );
 };
