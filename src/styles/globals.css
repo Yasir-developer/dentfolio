@@ -13,6 +13,9 @@
   .dentistBodyStyles{
     @apply h-full bg-custom-dashboard-bg absolute top-0 bottom-0 w-full
   }
+  .blueGradient{
+    @apply bg-gradient-radial from-[#0372E2] to-[#0B5FB4]
+  }
 }
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap'); */
 :root {
