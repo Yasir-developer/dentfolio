@@ -73,7 +73,8 @@ const Footer = () => {
     <>
       {router.pathname !== "/dentist/login" &&
       router.pathname !== "/dentist/sign-up" &&
-      router.pathname !== "/dentist/edit-case" ? (
+      router.pathname !== "/dentist/edit-case" &&
+      router.pathname !== "/dentist/view-profile" ? (
         <footer className="bg-footer-blue">
           <div className="max-w-[1140px] px-[20px] sm:px-[100px] mx-auto lg:pt-[0px] lg:pb-[20px] pt-[50px] pb-[50px] sm:pb-[70px]">
             <div className="flex flex-col items-center justify-center lg:pt-[50px] sm:pt-[70px]">

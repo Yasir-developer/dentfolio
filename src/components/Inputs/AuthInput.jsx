@@ -30,7 +30,7 @@ const AuthInput = ({
             value={value}
             onChange={onChange}
             {...rest}
-            className={`focus:outline-none border w-[45%] bg-white border-custom-grey rounded-[7px] p-3 text-lg placeholder-slate-400 text-[16px] font-light mb-5 ${className}`}
+            className={`focus:outline-none border w-[45%] bg-white border-custom-grey rounded-[7px] p-3 placeholder-slate-400 text-[16px] font-light mb-5 ${className}`}
           />
 
           {/* <button
@@ -46,7 +46,7 @@ const AuthInput = ({
         </button> */}
         </>
       ) : (
-        <div className="relative flex items-center bg-white border border-custom-grey rounded-[7px] p-3 w-[45%] text-lg placeholder-slate-400 text-[16px] font-light mb-5">
+        <div className="relative flex items-center bg-white border border-custom-grey rounded-[7px] p-3 w-[45%] placeholder-slate-400 text-[16px] font-light mb-5">
           <>
             <input
               type="password"

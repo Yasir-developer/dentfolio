@@ -33,7 +33,8 @@ const AppHeader = () => {
     <>
       {router.pathname !== "/dentist/login" &&
       router.pathname !== "/dentist/sign-up" &&
-      router.pathname !== "/dentist/edit-case" ? (
+      router.pathname !== "/dentist/edit-case" &&
+      router.pathname !== "/dentist/view-profile" ? (
         <div className="border-b border-[#D1CDD2]">
           <header className="inset-x-0 top-0 z-50 sizingStyles">
             <nav

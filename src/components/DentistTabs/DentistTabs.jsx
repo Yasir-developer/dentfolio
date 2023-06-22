@@ -7,6 +7,7 @@ import Link from "next/link";
 import DashboardHeader from "../DashboardHeader/DashboardHeader";
 import EditCasePage from "@/page-components/EditCasePage";
 import DashboardFooter from "../DashboardFooter/DashboardFooter";
+import ViewProfilePage from "@/page-components/ViewProfilePage";
 const DentistTabs = () => {
   const router = useRouter();
 

@@ -6,6 +6,7 @@ import Router from "next/router";
 import Link from "next/link";
 import DentistTabs from "@/components/DentistTabs/DentistTabs";
 import EditCasePage from "@/page-components/EditCasePage";
+import ViewProfilePage from "@/page-components/ViewProfilePage";
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState("editCase");
@@ -15,11 +16,11 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="h-full bg-custom-dashboard-bg">
+    <div className="h-full">
       {/* Menu Panel */}
 
       <DentistTabs>
-        <EditCasePage />
+        <ViewProfilePage />
         {/* <h1>Edit case</h1> */}
       </DentistTabs>
 
