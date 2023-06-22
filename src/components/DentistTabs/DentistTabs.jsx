@@ -16,6 +16,7 @@ const DentistTabs = () => {
 
   const handleTabClick = (event, path) => {
     event.preventDefault();
+
     router.push(path);
   };
 
@@ -40,7 +41,10 @@ const DentistTabs = () => {
                   activeTab === "editCase" &&
                   "bg-white text-custom-blue rounded-[5px] w-[150px]"
                 }`}
-                onClick={(e) => handleTabClick(e, "/dentist/edit-case")}
+                onClick={(e) => {
+                  handleTabClick(e, "/dentist/edit-case");
+                  setActiveTab("editCase");
+                }}
               >
                 <FaIdCard className="w-4 h-4 mx-2" />
                 Edit Case
@@ -53,7 +57,10 @@ const DentistTabs = () => {
                   activeTab === "createCase" &&
                   "bg-white text-custom-blue rounded-[5px] w-[150px]"
                 }`}
-                onClick={(e) => handleTabClick(e, "/dentist/create-case")}
+                onClick={(e) => {
+                  handleTabClick(e, "/dentist/create-case");
+                  setActiveTab("createCase");
+                }}
               >
                 <FaUser className="w-4 h-4 mx-2" />
                 Create Case
@@ -65,7 +72,11 @@ const DentistTabs = () => {
                   activeTab === "editProfile" &&
                   "bg-white text-custom-blue rounded-[5px] w-[150px]"
                 }`}
-                onClick={(e) => handleTabClick(e, "/dentist/edit-profile")}
+                onClick={(e) => {
+                  setActiveTab("editProfile");
+
+                  handleTabClick(e, "/dentist/edit-profile");
+                }}
               >
                 <FaFileAlt className="w-4 h-4 mx-2" />
                 Edit My Profile
@@ -77,7 +88,11 @@ const DentistTabs = () => {
                   activeTab === "viewProfile" &&
                   "bg-white text-custom-blue rounded-[5px] w-[150px]"
                 }`}
-                onClick={() => handleTabClick("viewProfile")}
+                onClick={(e) => {
+                  setActiveTab("viewProfile");
+
+                  handleTabClick(e, "/dentist/view-profile");
+                }}
               >
                 <FaEdit className="w-4 h-4 mx-2" />
                 View My Profile
@@ -89,7 +104,7 @@ const DentistTabs = () => {
                   activeTab === "settings" &&
                   "bg-white text-custom-blue rounded-[5px] w-[150px]"
                 }`}
-                onClick={() => handleTabClick("settings")}
+                onClick={(e) => handleTabClick(e, "settings")}
               >
                 <FaCog className="w-4 h-4 mx-2" />
                 Settings
@@ -99,10 +114,10 @@ const DentistTabs = () => {
         </div>
         <div className="bg-gray-100 w-[85%] flex flex-col justify-between">
           <div className="contentContainer overflow-y-scroll">
-            {activeTab === "editCase" && <ViewProfilePage />}
+            {activeTab === "editCase" && <EditCasePage />}
             {activeTab === "createCase" && <CreateCasePage />}
-            {activeTab === "editProfile" && <h2>Edit My Profile Content</h2>}
-            {activeTab === "viewProfile" && <h2>View My Profile Content</h2>}
+            {activeTab === "editProfile" && <ViewProfilePage />}
+            {activeTab === "viewProfile" && <ViewProfilePage />}
             {activeTab === "settings" && <h2>Settings Content</h2>}
           </div>
           <div className="footerContainer">

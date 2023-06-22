@@ -1,6 +1,7 @@
 import BlueButtons from "@/components/Buttons/BlueButtons";
 import AuthInput from "@/components/Inputs/AuthInput";
 import React from "react";
+import { FaTrashAlt, FaPlus } from "react-icons/fa";
 
 const ViewProfilePage = () => {
   const treatmentType = [
@@ -79,19 +80,26 @@ const ViewProfilePage = () => {
               className={"h-[100px] align-text-top"}
             /> */}
           </div>
-          <div className="w-[45%] flex flex-col mb-[72px] mx-[50px] justify-start items-start">
+          <div className="w-[45%] flex flex-col mx-[50px] mt-[-33px] justify-start items-start">
             <p className="text-[18px] font-semibold">Treatment Type:</p>
             <div className="flex flex-row flex-wrap gap-x-2 gap-y-2 lg:gap-x-5 mt-3">
               {treatmentType.map((data, dataIndex) => (
                 <div
-                  className="bg-custom-blue-light flex items-center justify-center h-8 px-3 rounded-[7px]"
+                  className="bg-custom-blue-light flex items-center justify-center h-10 px-5 rounded-[7px] grid-cols-2"
                   key={dataIndex}
                 >
                   <p className="text-center text-custom-black text-[14px] font-semibold">
                     {data.type}
                   </p>
+                  <FaTrashAlt className="w-5 h-5 pl-[10px]" />
                 </div>
               ))}
+              <div className="flex items-center justify-center h-10 px-3 py-3 rounded-[7px] bg-[#EBFAF8]">
+                <p className="text-center text-custom-black text-[14px] font-semibold">
+                  Add More
+                </p>
+                <FaPlus className="w-5 h-5 pl-[10px] " />
+              </div>
             </div>
           </div>
         </div>
