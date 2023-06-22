@@ -112,7 +112,7 @@ const DentistTabs = () => {
                   activeTab === "settings" &&
                   "bg-white text-custom-blue rounded-[5px] w-[150px] py-3"
                 }`}
-                // onClick={(e) => handleTabClick(e, "settings")}
+                onClick={(e) => setActiveTab("settings")}
               >
                 <FaCog className="w-4 h-4 mx-2" />
                 Settings

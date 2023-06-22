@@ -50,11 +50,17 @@ const AppHeader = () => {
               </div>
 
               <div className="lg:flex lg:gap-x-2">
-                <button className="bg-custom-blue hover:bg-blue-600 text-white font-poppins font-medium py-2 px-[25px] rounded lg:justify-end text-sm">
+                <button
+                  className="bg-custom-blue hover:bg-blue-600 text-white font-poppins font-medium py-2 px-[25px] rounded lg:justify-end text-sm"
+                  onClick={() => router.push("/dentist/login")}
+                >
                   LOGIN
                 </button>
 
-                <button className="bg-white border border-custom-blue text-blue-500 font-poppins font-medium py-2 px-4 rounded w-139 text-sm hidden lg:block">
+                <button
+                  onClick={() => router.push("/dentist/sign-up")}
+                  className="bg-white border border-custom-blue text-blue-500 font-poppins font-medium py-2 px-4 rounded w-139 text-sm hidden lg:block"
+                >
                   SIGN UP
                 </button>
               </div>
