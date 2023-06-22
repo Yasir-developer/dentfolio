@@ -27,7 +27,7 @@ const EditCasePage = () => {
 
         <p className="mt-2 text-[16px] font-light mb-5">Update Information</p>
       </div>
-      <div className="py-5 px-5 flex w-[90%] bg-white rounded-[7px] flex-col items-center justify-center mx-auto">
+      <div className="py-5 px-5 flex w-[90%] bg-white rounded-[7px] flex-col items-center justify-center mx-auto mb-8">
         {caseTypes.map((item, index) => (
           <EditCaseCard
             key={index}

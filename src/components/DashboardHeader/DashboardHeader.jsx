@@ -5,8 +5,8 @@ import { FaAngleDown } from "react-icons/fa";
 const DashboardHeader = () => {
   return (
     <div className="h-[100px] border-b border-[#c8bfc3] w-full flex ">
-      <div className="p-4 bg-gradient-radial from-[#0372E2] to-[#0B5FB4] w-[18%]">
-        <Image src={logoWhite} className="mx-auto" />
+      <div className="bg-gradient-radial from-[#0372E2] to-[#0B5FB4] w-[18%] flex items-center justify-center">
+        <Image src={logoWhite} className="mx-auto max-w-[173px]" />
 
         {/* <h1 className="text-lg font-bold">Dashboard</h1> */}
       </div>
