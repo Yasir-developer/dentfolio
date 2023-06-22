@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import doctor from "../../../public/images/doctor.png";
+import Router from "next/router";
 
 // import Become from "../../../public/images/member.png";
 
@@ -68,7 +69,10 @@ const BecomeMember = () => {
               congue, sapien non efficitur sollicitudin, ex risus semper diam,
               sed ornare.
             </h3>
-            <button className="bg-transparent border font-medium  flex items-center justify-center lg:text-left text-center border-white text-white mx-auto lg:ml-0 py-2 px-8 md:px-12 lg:px-16 lg:mt-10 mt-5 rounded text-sm">
+            <button
+              onClick={() => Router.push("/dentist/dentist-plan")}
+              className="bg-transparent border font-medium  flex items-center justify-center lg:text-left text-center border-white text-white mx-auto lg:ml-0 py-2 px-8 md:px-12 lg:px-16 lg:mt-10 mt-5 rounded text-sm"
+            >
               Find Out More
             </button>
           </div>
