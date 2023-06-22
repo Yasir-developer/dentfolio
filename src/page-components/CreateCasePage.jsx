@@ -27,7 +27,6 @@ const CreateCasePage = () => {
             <AuthInput placeholder={"User Name"} />
 
             {/* <div className="w-[45%] flex mb-[72px]  justify-start items-start">
-              <p className="text-[18px] font-semibold">Treatment Type:</p>
               <div className="flex flex-row flex-wrap gap-x-2 gap-y-2 lg:gap-x-5 mt-3">
                 {treatmentType.map((data, dataIndex) => (
                   <div
