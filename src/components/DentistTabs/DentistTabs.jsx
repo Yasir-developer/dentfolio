@@ -17,8 +17,12 @@ import SettingsPage from "@/page-components/SettingsPage";
 const DentistTabs = () => {
   const router = useRouter();
 
-  const [activeTab, setActiveTab] = useState("editP");
-
+  const [activeTab, setActiveTab] = useState("editCase");
+  const [toggleMenu, setToggleMenu] = useState(false);
+  let menuClasses = 'bg-gradient-radial from-[#0372E2] to-[#0B5FB4] hidden w-0 lg:block lg:w-[18%] relative'
+  const menuHandler = () => {
+    setToggleMenu(!toggleMenu)
+  }
   // const handleTabClick = (event, path) => {
   //   console.log(path, "path >>>>>>>>>>>>>>");
   //   event.preventDefault();
@@ -29,14 +33,14 @@ const DentistTabs = () => {
   return (
     <div className="flex flex-wrap h-full">
       {/* Menu Panel */}
-      <DashboardHeader />
+      <DashboardHeader menuToggler={menuHandler}/>
       <div
         className="bodyContainer flex w-full"
         style={{
           height: "calc(100% - 100px)",
         }}
       >
-        <div className=" bg-gradient-radial from-[#0372E2] to-[#0B5FB4] w-[18%] relative">
+        <div className={`${toggleMenu ? 'bg-gradient-radial from-[#0372E2] to-[#0B5FB4]  h-full w-[60%] lg:block lg:w-[18%] absolute' : 'bg-gradient-radial from-[#0372E2] to-[#0B5FB4] hidden w-0 lg:block lg:w-[18%] relative'}`}>
           <nav className="p-2 ">
             <ul>
               <li
@@ -126,7 +130,7 @@ const DentistTabs = () => {
             buttonText={"Sign Out"}
           />
         </div>
-        <div className="bg-gray-100 w-[85%] flex flex-col justify-between">
+        <div className="bg-gray-100 lg:w-[85%] w-full flex flex-col justify-between">
           <div className="contentContainer overflow-y-scroll h-full">
             {activeTab === "editCase" && (
               <EditCasePage />
