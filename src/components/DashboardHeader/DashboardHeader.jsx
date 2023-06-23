@@ -13,7 +13,7 @@ const DashboardHeader = ({ menuToggler }) => {
 
       <div className="w-full lg:w-[85%] flex px-5 lg:px-0 justify-between lg:justify-end blueGradient lg:bg-none">
         <div className="lg:hidden barsIcon flex items-center justify-center mr-3">
-          <FaBars onClick={menuToggler} />
+          <FaBars onClick={menuToggler} className="text-white" />
         </div>
         <div className="lg:hidden mobileLogo flex items-center">
           <Image src={logoWhite} className="mx-auto max-w-[173px]" />

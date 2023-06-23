@@ -16,7 +16,7 @@ const SettingsPage = () => {
         <h2 className="font-medium text-[18px]">Reset Password </h2>
         {/* <p className="font-medium text-[16px] my-3">New Password </p> */}
         <div className="mt-5">
-          <div className="relative flex items-center bg-white border border-custom-grey rounded-[7px] p-3 w-[20%] placeholder-slate-400 text-[16px] font-light mb-5">
+          <div className="relative flex items-center bg-white border border-custom-grey rounded-[7px] p-3 lg:w-[30%] w-[90%] placeholder-slate-400 text-[16px] font-light mb-5">
             <>
               <input
                 type="password"
@@ -25,17 +25,19 @@ const SettingsPage = () => {
                 className={`focus:outline-none text-[16px] w-[80%] lg:w-[100%] font-light`}
               />
               <FaEye
-                style={{
-                  color: "#9F9F9F",
-                  width: "17px",
-                  height: "17px",
-                }}
+                // style={{
+                //   color: "#9F9F9F",
+                //   width: "17px",
+                //   height: "17px",
+                // }}
+
+                className="w-4 h-4 text-[#9F9F9F] ml-8 lg:ml-0"
               />
             </>
           </div>
           {/* <p className="font-medium text-[16px] my-3">New Password </p> */}
 
-          <div className="relative flex items-center bg-white border border-custom-grey rounded-[7px] p-3 w-[20%] placeholder-slate-400 text-[16px] font-light mb-5">
+          <div className="relative flex items-center bg-white border border-custom-grey rounded-[7px] p-3 lg:w-[30%]  w-[90%] placeholder-slate-400 text-[16px] font-light mb-5">
             <>
               <input
                 type="password"
@@ -44,11 +46,12 @@ const SettingsPage = () => {
                 className={`focus:outline-none text-[16px] w-[80%] lg:w-[100%] font-light`}
               />
               <FaEye
-                style={{
-                  color: "#9F9F9F",
-                  width: "17px",
-                  height: "17px",
-                }}
+                // style={{
+                //   color: "#9F9F9F",
+                //   width: "17px",
+                //   height: "17px",
+                // }}
+                className="w-4 h-4 text-[#9F9F9F] ml-8 lg:ml-0"
               />
             </>
           </div>
