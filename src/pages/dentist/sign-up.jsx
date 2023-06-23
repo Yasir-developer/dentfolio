@@ -12,26 +12,26 @@ const Signup = () => {
   const [isChecked, setIsChecked] = useState(false);
   return (
     <div
-      className="lg:w-full h-full flex flex-col lg:flex-row bg-[#F9FBFC] lg:max-h-[100vh] "
+      className="lg:w-full h-full flex flex-col lg:flex-row bg-[#F9FBFC] max-h-[100vh] 4xl:min-h-[100vh] "
       // style={{ direction: "rtl", overflow: "auto" }}
     >
-      <div className="lg:w-full lg:py-[0px] py-[30px]  bg-gradient-radial from-[#0372E2] to-[#0B5FB4] justify-center flex items-center text-center">
+      <div className="lg:w-[40%] lg:py-[0px] py-[30px]  bg-gradient-radial from-[#0372E2] to-[#0B5FB4] justify-center flex items-center text-center">
         <Image src={logo} alt="logo" className="mx-auto hidden lg:block" />
 
         <Image src={logoWhite} className="mx-auto lg:hidden" />
         {/* <Image src={logo} alt="logo" className="hidden" /> */}
       </div>
       <div
-        className="lg:w-full flex flex-col justify-between bg-white my-[20px] mx-[5%] md:mx-[50px] rounded-[7px] overflow-y-scroll"
+        className="lg:w-[60%] flex flex-col justify-between rounded-[7px] overflow-y-scroll"
         // style={{ direction: "ltr" }}
       >
         <div
-          className="flex flex-col items-center bg-white justify-center w-full"
+          className="flex flex-col items-center bg-white justify-center m-5 4xl:h-full"
           // style={{
           //   transform: "scaleX(-1)", //Flips the child back to normal
           // }}
         >
-          <div className="w-[100%] m-auto bg-transparent">
+          <div className="w-[100%] m-auto bg-transparent flex flex-col justify-around">
             <Image
               className="mx-auto hidden lg:block lg:mt-[20px]"
               src={logotwo}

@@ -33,6 +33,10 @@ module.exports = {
         "custom-grey-medium": "#d6d3cc",
         "custom-grey-light": "#d5d3d8",
       },
+      screens:{
+        '3xl':'1600px',
+        '4xl':'1900px'
+      }
     },
   },
   plugins: [],

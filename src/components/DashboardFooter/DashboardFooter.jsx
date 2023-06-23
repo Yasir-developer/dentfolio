@@ -4,13 +4,13 @@ import Image from "next/image";
 import { FaAngleDown } from "react-icons/fa";
 const DashboardFooter = () => {
   return (
-    <div className="w-full flex">
-      <div className="w-full flex justify-between items-center py-[20px] bg-white border-t border-b border-[#70707038]">
-        <p className="px-[60px] text-[14px]">
+    <div className="w-full flex bg-white  border-t border-b border-[#70707038]">
+      <div className="gap-y-2 w-[90%] mx-auto lg:w-full flex flex-col-reverse lg:flex-row justify-between items-center py-[20px] bg-white">
+        <p className="lg:px-[60px] text-[14px]">
           © Copyright 2023 Dentfolio. All Rights Reserved.
         </p>
-        <div className="flex  mr-[50px]">
-          <p className="px-3 text-[14px]">Terms Of Services</p>
+        <div className="flex gap-x-10 lg:gap-x-3 lg:mr-[50px]">
+          <p className="text-[14px]">Terms Of Services</p>
           <p className="text-[14px]">Privacy Policy</p>
         </div>
 
