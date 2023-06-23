@@ -4,7 +4,7 @@ import React from "react";
 
 const PatientMonthlyPlan = () => {
   return (
-    <div className="flex w-full justify-center gap-x-[100px] my-10">
+    <div className="flex w-full lg:flex-row flex-col justify-center gap-x-[100px] my-10">
       <MonthlyPlan />
       <MembershipBenefits />
     </div>
