@@ -5,71 +5,9 @@ import logoWhite from "../../../public/images/logoWhite.png";
 
 import { FaEye } from "react-icons/fa";
 import BlueButtons from "@/components/Buttons/BlueButtons";
+import Router from "next/router";
 const login = () => {
   return (
-    // <div className="w-full flex h-[100vh] bg-[#F9FBFC]">
-    //   <div className="w-[40%] bg-gradient-radial from-[#0372E2] to-[#0B5FB4] justify-center flex items-center text-center">
-    //     <Image src={logo} alt="logo" />
-    //   </div>
-    //   <div className="w-[80%] flex flex-col justify-around h-[90%] bg-white align-middle my-auto mx-[100px] rounded-[7px]">
-    //     <div className="flex flex-col items-center  bg-white justify-center w-[100%] m-auto">
-    //       <div className="w-[50%] m-auto bg-transparent">
-    //         <img
-    //           className=" flex justify-center mx-auto"
-    //           src={"/images/logo.png"}
-    //           alt=""
-    //         />
-
-    //         <h2 className="my-8 text-center font-medium text-[32px] text-custom-black">
-    //           Sign In
-    //         </h2>
-    //         <div className="w-full flex flex-col items-center">
-    //           <input
-    //             type="text"
-    //             id="fullName"
-    //             placeholder="Email"
-    //             className="focus:outline-none border bg-[#F9FBFC]  border-custom-grey rounded-[7px]  w-[100%] p-3 text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight mb-5"
-    //           />
-
-    //           <div className=" relative flex items-center bg-[#F9FBFC] border border-custom-grey rounded-[7px] p-3  w-[100%] text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight mb-5">
-    //             <input
-    //               type="text"
-    //               id="fullName"
-    //               placeholder="Password"
-    //               className="w-full text-[16px] placeholder:text-slate-400 bg-[#F9FBFC]  placeholder-[#9F9F9F] font-extralight focus:outline-none"
-    //             />
-    //             <FaEye
-    //               style={{
-    //                 color: "#9F9F9F",
-    //                 width: "17px",
-    //                 height: "17px",
-    //                 // display:
-    //               }}
-    //             />
-    //           </div>
-    //           <div className="flex justify-end  w-full">
-    //             <p className="text-right text-[14px] fonts-medium">
-    //               Forgot Password
-    //             </p>
-    //           </div>
-    //           <div className="mt-5">
-    //             <BlueButtons buttonText={"Login"} className={"px-[50px]"} />
-    //           </div>
-    //         </div>
-    //       </div>
-    //     </div>
-
-    //     <div className="py-4 px-6 text-center">
-    //       <p className="text-sm text-[#858585]">
-    //         Don't have registration yet?{" "}
-    //         <a href="#" className="text-blue-600 underline">
-    //           Register now
-    //         </a>
-    //       </p>
-    //     </div>
-    //   </div>
-    // </div>
-
     <div className="lg:w-full flex flex-col lg:flex-row h-screen bg-[#F9FBFC]">
       <div className="lg:w-full lg:py-[0px] py-[30px] bg-gradient-radial from-[#0372E2] to-[#0B5FB4] justify-center flex items-center text-center">
         <Image src={logo} alt="logo" className="mx-auto hidden lg:block" />
@@ -127,7 +65,11 @@ const login = () => {
         <div className="py-4 px-6 text-center">
           <p className="text-sm text-[#858585]">
             Don't have an account?{" "}
-            <a href="#" className="text-blue-600 underline">
+            <a
+              href="#"
+              className="text-blue-600 underline"
+              onClick={() => Router.push("/dentist/sign-up")}
+            >
               Register now
             </a>
           </p>

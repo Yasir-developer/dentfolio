@@ -19,10 +19,11 @@ const DentistTabs = () => {
 
   const [activeTab, setActiveTab] = useState("editCase");
   const [toggleMenu, setToggleMenu] = useState(false);
-  let menuClasses = 'bg-gradient-radial from-[#0372E2] to-[#0B5FB4] hidden w-0 lg:block lg:w-[18%] relative'
+  let menuClasses =
+    "bg-gradient-radial from-[#0372E2] to-[#0B5FB4] hidden w-0 lg:block lg:w-[18%] relative";
   const menuHandler = () => {
-    setToggleMenu(!toggleMenu)
-  }
+    setToggleMenu(!toggleMenu);
+  };
   // const handleTabClick = (event, path) => {
   //   console.log(path, "path >>>>>>>>>>>>>>");
   //   event.preventDefault();
@@ -33,14 +34,20 @@ const DentistTabs = () => {
   return (
     <div className="flex flex-wrap h-full">
       {/* Menu Panel */}
-      <DashboardHeader menuToggler={menuHandler}/>
+      <DashboardHeader menuToggler={menuHandler} />
       <div
         className="bodyContainer flex w-full"
         style={{
-          height: "calc(100% - 100px)",
+          height: "calc(100% - 80px)",
         }}
       >
-        <div className={`${toggleMenu ? 'bg-gradient-radial from-[#0372E2] to-[#0B5FB4]  h-full w-[60%] lg:block lg:w-[18%] absolute' : 'bg-gradient-radial from-[#0372E2] to-[#0B5FB4] hidden w-0 lg:block lg:w-[18%] relative'}`}>
+        <div
+          className={`${
+            toggleMenu
+              ? "bg-gradient-radial from-[#0372E2] to-[#0B5FB4]  h-full w-[60%] lg:block lg:w-[18%] absolute"
+              : "bg-gradient-radial from-[#0372E2] to-[#0B5FB4] hidden w-0 lg:block lg:w-[18%] relative"
+          }`}
+        >
           <nav className="p-2 ">
             <ul>
               <li

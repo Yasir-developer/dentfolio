@@ -6,22 +6,34 @@ import logotwo from "../../../public/images/logo.png";
 import BlueButtons from "@/components/Buttons/BlueButtons";
 import AuthInput from "@/components/Inputs/AuthInput";
 import { FaCheck } from "react-icons/fa";
+import Router from "next/router";
 
 const Signup = () => {
   const [isChecked, setIsChecked] = useState(false);
   return (
-    <div className="lg:w-full flex flex-col lg:flex-row  bg-[#F9FBFC]">
+    <div
+      className="lg:w-full h-full flex flex-col lg:flex-row bg-[#F9FBFC] lg:max-h-[100vh] "
+      // style={{ direction: "rtl", overflow: "auto" }}
+    >
       <div className="lg:w-full lg:py-[0px] py-[30px]  bg-gradient-radial from-[#0372E2] to-[#0B5FB4] justify-center flex items-center text-center">
         <Image src={logo} alt="logo" className="mx-auto hidden lg:block" />
 
         <Image src={logoWhite} className="mx-auto lg:hidden" />
         {/* <Image src={logo} alt="logo" className="hidden" /> */}
       </div>
-      <div className="lg:w-full flex flex-col justify-between h-[90%] bg-white my-[20px]  mx-[5%] md:mx-[50px] rounded-[7px]">
-        <div className="flex flex-col items-center bg-white justify-center w-full">
+      <div
+        className="lg:w-full flex flex-col justify-between bg-white my-[20px] mx-[5%] md:mx-[50px] rounded-[7px] overflow-y-scroll"
+        // style={{ direction: "ltr" }}
+      >
+        <div
+          className="flex flex-col items-center bg-white justify-center w-full"
+          // style={{
+          //   transform: "scaleX(-1)", //Flips the child back to normal
+          // }}
+        >
           <div className="w-[100%] m-auto bg-transparent">
             <Image
-              className="mx-auto hidden  lg:block lg:mt-[20px]"
+              className="mx-auto hidden lg:block lg:mt-[20px]"
               src={logotwo}
             />
 
@@ -122,7 +134,11 @@ const Signup = () => {
                 <div className="py-4 px-6 text-center">
                   <p className="text-sm text-[#858585]">
                     Already have an account?{" "}
-                    <a href="#" className="text-custom-blue underline">
+                    <a
+                      href="#"
+                      className="text-custom-blue underline"
+                      onClick={() => Router.push("/dentist/login")}
+                    >
                       Sign in
                     </a>
                   </p>
