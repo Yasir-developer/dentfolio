@@ -57,7 +57,10 @@ const PrivatePatients = () => {
         <div className="flex lg:flex-row flex-col justify-center items-center my-10">
           {steps.map((item, index) => {
             return (
-              <div class="flex flex-col items-center lg:w-[20%] w-full min-h-[300px]  justify-start">
+              <div
+                class="flex flex-col items-center lg:w-[20%] w-full min-h-[300px]  justify-start"
+                key={index}
+              >
                 <img src={item.img_url} />
 
                 <div
