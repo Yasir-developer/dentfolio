@@ -8,7 +8,7 @@
   }
 
   .inputStyles {
-    @apply border border-custom-grey rounded-[7px] p-4 w-[70%] text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight
+    @apply border border-custom-grey rounded-[7px] p-4 mt-4 lg:mt-0 w-[90%] text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight
   }
   .dentistBodyStyles{
     @apply h-full bg-custom-dashboard-bg absolute top-0 bottom-0 w-full
@@ -71,10 +71,11 @@ h1{
 .circleRadius {
   width: 60px;
   height: 60px;
+  background-color: aqua;
   /* padding:10px;
   margin: 25px; */
   border-color: red;
-  border-width: 1;
+  border-width: 2;
   border-radius: 30px;
   /* background-color: #0372e2; */
   display: flex;

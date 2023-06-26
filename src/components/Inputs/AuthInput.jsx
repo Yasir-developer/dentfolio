@@ -10,6 +10,7 @@ const AuthInput = ({
   value,
   onChange,
   className,
+  containerClassName,
   ...rest
 }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -30,7 +31,7 @@ const AuthInput = ({
             value={value}
             onChange={onChange}
             {...rest}
-            className={`focus:outline-none border w-[45%] bg-white border-custom-grey rounded-[7px] p-3 placeholder-slate-400 text-[16px] font-light mb-5 ${className}`}
+            className={`focus:outline-none border w-[45%] bg-white border-custom-grey rounded-[7px] p-3 placeholder-slate-400 lg:text-[16px] text-[14px] font-light mb-5 ${className}`}
           />
 
           {/* <button
@@ -46,13 +47,15 @@ const AuthInput = ({
         </button> */}
         </>
       ) : (
-        <div className="relative flex items-center bg-white border border-custom-grey rounded-[7px] p-3 w-[45%] placeholder-slate-400 text-[16px] font-light mb-5">
+        <div
+          className={`relative flex items-center bg-white border border-custom-grey rounded-[7px] p-3 w-[100%] lg:w-full placeholder-slate-400  font-light mb-5 ${containerClassName}`}
+        >
           <>
             <input
               type="password"
               id="password"
               placeholder="Password"
-              className={`focus:outline-none text-[16px] w-[80%] lg:w-[100%] font-light ${className}`}
+              className={`focus:outline-none w-[100%] lg:w-[100%] lg:text-[16px] text-[14px] font-light ${className}`}
             />
             <FaEye
               style={{

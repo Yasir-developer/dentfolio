@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import logoWhite from "../../../public/images/logoWhite.png";
 import Image from "next/image";
 import { FaAngleDown, FaRegBell, FaBars } from "react-icons/fa";
+import { HiChevronDown } from "react-icons/hi";
+import Router from "next/router";
+// import Dropdown from "react-bootstrap/Dropdown";
+
 const DashboardHeader = ({ menuToggler }) => {
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!isDropdownOpen);
+  };
   return (
     <div className="h-[80px] border-b border-[#c8bfc3] w-full flex ">
       <div className="hidden bg-gradient-radial from-[#0372E2] to-[#0B5FB4] w-[18%] lg:flex items-center justify-center">
@@ -36,14 +45,57 @@ const DashboardHeader = ({ menuToggler }) => {
               <h2 className="hidden lg:block text-custom-blue text-[16px] font-semibold px-2">
                 Dylan Taylor
               </h2>
-              <FaAngleDown
-                style={{
-                  color: "#919191",
-                  width: "20px",
-                  height: "20px",
-                }}
-                className="hidden lg:block"
-              />
+              {/* className="hidden md:block" */}
+              <div className="flex hidden md:block" style={{ zIndex: 1 }}>
+                <div
+                  className="flex items-center justify-center px-2rounded-l-md cursor-pointer"
+                  onClick={toggleDropdown}
+                >
+                  <HiChevronDown
+                    className={`transform  h-5 w-5 text-[#919191] ${
+                      isDropdownOpen ? "rotate-180" : "rotate-0"
+                    }`}
+                  />
+                </div>
+                {isDropdownOpen && (
+                  <div className="bg-white border border-gray-300 rounded-r-md shadow-md mt-[80px]">
+                    {/* Dropdown items */}
+                    <ul className="py-2">
+                      <li
+                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                        onClick={() =>
+                          Router.push("/dentist/settings?tab=settings")
+                        }
+                      >
+                        Settings
+                      </li>
+                      <li
+                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                        onClick={() => Router.push("/dentist/dentist-plan")}
+                      >
+                        Sign Out
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </div>
+              {/* <Dropdown className="d-inline mx-2">
+                <Dropdown.Toggle>
+                  <FaAngleDown
+                    style={{
+                      color: "#919191",
+                      width: "20px",
+                      height: "20px",
+                    }}
+                    className="hidden lg:block"
+                  />
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#">Menu Item</Dropdown.Item>
+                  <Dropdown.Item href="#">Menu Item</Dropdown.Item>
+                  <Dropdown.Item href="#">Menu Item</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown> */}
             </div>
           </div>
         </div>

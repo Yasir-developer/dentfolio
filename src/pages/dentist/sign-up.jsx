@@ -10,6 +10,8 @@ import Router from "next/router";
 
 const Signup = () => {
   const [isChecked, setIsChecked] = useState(false);
+  const [termChecked, setTermChecked] = useState(false);
+
   return (
     <div
       className="lg:w-full h-full flex flex-col lg:flex-row bg-[#F9FBFC] max-h-[100vh] 4xl:min-h-[100vh] "
@@ -54,7 +56,12 @@ const Signup = () => {
                   placeholder={"Display Name"}
                   className={"w-[92.5%] lg:w-[45%]"}
                 />
-                <AuthInput placeholder={"Password"} type={"password"} />
+                <AuthInput
+                  placeholder={"Password"}
+                  type={"password"}
+                  // className={"!w-[45%]"}
+                  containerClassName={"!w-[45%]"}
+                />
                 <AuthInput placeholder={"GDC Number"} />
                 <AuthInput placeholder={"Practice Building number/ Name"} />
                 <AuthInput placeholder={"Practice Street Name"} />
@@ -91,7 +98,7 @@ const Signup = () => {
                     type="checkbox"
                     id="checkboxId"
                     checked={isChecked}
-                    onChange={(e) => setIsChecked(e.target.checked)}
+                    onChange={(e) => setTermChecked(e.target.checked)}
                     className="hidden"
                   />
                   <label

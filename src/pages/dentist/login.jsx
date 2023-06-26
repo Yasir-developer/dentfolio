@@ -6,6 +6,7 @@ import logoWhite from "../../../public/images/logoWhite.png";
 import { FaEye } from "react-icons/fa";
 import BlueButtons from "@/components/Buttons/BlueButtons";
 import Router from "next/router";
+import AuthInput from "@/components/Inputs/AuthInput";
 const login = () => {
   return (
     <div className="lg:w-full flex flex-col lg:flex-row h-screen bg-[#F9FBFC]">
@@ -28,14 +29,15 @@ const login = () => {
               Sign In
             </h2>
             <div className="w-full flex flex-col items-center">
-              <input
+              {/* <input
                 type="text"
                 id="fullName"
                 placeholder="Email Address"
                 className="focus:outline-none border bg-[#F9FBFC] border-custom-grey rounded-[7px] w-full p-3 text-lg placeholder-slate-400 text-[16px] font-light mb-5"
-              />
-
-              <div className="relative flex items-center bg-[#F9FBFC] border border-custom-grey rounded-[7px] p-3 w-full text-lg placeholder-slate-400 text-[16px] font-light mb-5">
+              /> */}
+              <AuthInput placeholder={"Email Address"} className={"w-full"} />
+              <AuthInput type={"password"} className={""} />
+              {/* <div className="relative flex items-center bg-[#F9FBFC] border border-custom-grey rounded-[7px] p-3 w-full text-lg placeholder-slate-400 text-[16px] font-light mb-5">
                 <input
                   type="password"
                   id="password"
@@ -49,14 +51,20 @@ const login = () => {
                     height: "17px",
                   }}
                 />
-              </div>
+              </div> */}
               <div className="flex justify-end w-full">
                 <p className="text-right text-sm font-medium">
                   Forgot Password
                 </p>
               </div>
               <div className="mt-5">
-                <BlueButtons buttonText="Login" className="px-[50px]" />
+                <BlueButtons
+                  buttonText="Login"
+                  className="px-[50px]"
+                  onClick={() =>
+                    Router.push("/dentist/edit-profile?tab=edit-profile")
+                  }
+                />
               </div>
             </div>
           </div>

@@ -2,7 +2,6 @@ import BlueButtons from "@/components/Buttons/BlueButtons";
 import AuthInput from "@/components/Inputs/AuthInput";
 import React from "react";
 import { FaEye } from "react-icons/fa";
-
 const SettingsPage = () => {
   return (
     <div className="items-center justify-center ">

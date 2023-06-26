@@ -25,14 +25,17 @@ const CreateCasePage = () => {
         <form>
           <div className="py-5 px-5 flex w-[100%] bg-white rounded-[7px] flex-col items-start justify-center mx-auto">
             <div className="w-full flex flex-wrap gap-x-2 lg:gap-x-7 gap-y-1 items-center justify-center">
-              <AuthInput placeholder={"Case Title"} className={"w-full lg:!w-[90%]"} />
+              <AuthInput
+                placeholder={"Case Title"}
+                className={"w-full lg:!w-[90%]"}
+              />
               <textarea
                 placeholder="Case Description"
                 className="w-full lg:w-[90%] border bg-white border-custom-grey rounded-[7px] p-3 focus:outline-none"
                 rows={4}
               ></textarea>
             </div>
-            <div className="flex flex-row lg;pl-16 pt-5 items-center">
+            <div className="flex flex-row lg:pl-16 pt-5 items-center">
               <p className="text-[18px] font-semibold">Case Visibility:</p>
               <div className="px-5">
                 <label className="text-[16px] font-normal">
@@ -61,7 +64,7 @@ const CreateCasePage = () => {
               </div>
             </div>
 
-            <div className="lg;ml-16 mt-10">
+            <div className="lg:ml-16 mt-10">
               <p className="text-[18px] font-semibold">Upload Photos:</p>
               <button className="py-2 px-8 bg-[#D4D4D4] rounded-[7px] h-12 mt-5">
                 <p className="text-left text-[16px] font-semibold">

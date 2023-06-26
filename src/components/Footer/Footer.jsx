@@ -75,7 +75,8 @@ const Footer = () => {
       router.pathname !== "/dentist/sign-up" &&
       router.pathname !== "/dentist/edit-case" &&
       router.pathname !== "/dentist/view-profile" &&
-      router.pathname !== "/dentist/create-case" ? (
+      router.pathname !== "/dentist/create-case" &&
+      router.pathname !== "/dentist/edit-profile" ? (
         <footer className="bg-footer-blue">
           <div className="max-w-[1140px] px-[20px] sm:px-[100px] mx-auto lg:pt-[0px] lg:pb-[20px] pt-[50px] pb-[50px] sm:pb-[70px]">
             <div className="flex flex-col items-center justify-center lg:pt-[50px] sm:pt-[70px]">
@@ -84,48 +85,32 @@ const Footer = () => {
               <hr className="w-full border-[#70707030] my-10" />
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-between">
-              <div className="flex gap-2 mb-4 sm:mb-0">
-                <p className="text-white">Follow us on:</p>
-                <div className="border border-white rounded-full p-[5px]">
-                  <FaFacebookF
-                    style={{
-                      color: "#fff",
-                      width: "12px",
-                      height: "12px",
-                    }}
-                  />
-                </div>
-                <div className="border border-white rounded-full p-[5px]">
-                  <FaTwitter
-                    style={{
-                      color: "#fff",
-                      width: "12px",
-                      height: "12px",
-                    }}
-                  />
-                </div>
-                <div className="border border-white rounded-full p-[5px]">
-                  <FaInstagram
-                    style={{
-                      color: "#fff",
-                      width: "12px",
-                      height: "12px",
-                    }}
-                  />
-                </div>
-                <div className="border border-white rounded-full p-[5px]">
-                  <FaLinkedin
-                    style={{
-                      color: "#fff",
-                      width: "12px",
-                      height: "12px",
-                    }}
-                  />
-                </div>
-              </div>
               <p className="text-white font-normal">
                 © 2023 Dentfolio. All Rights Reserved.
               </p>
+
+              <div className="flex gap-2 mb-4 sm:mb-0 items-center justify-center">
+                <p className="text-white m-[5px]">Follow us on:</p>
+                <div className="border border-white rounded-full p-[5px]">
+                  <FaFacebookF
+                    className="text-white w-[10px] h-[10px]"
+                    // style={{
+                    //   color: "#fff",
+                    //   width: "10px",
+                    //   height: "10px",
+                    // }}
+                  />
+                </div>
+                <div className="border border-white rounded-full p-[5px]">
+                  <FaTwitter className="text-white w-[10px] h-[10px]" />
+                </div>
+                <div className="border border-white rounded-full p-[5px]">
+                  <FaInstagram className="text-white w-[10px] h-[10px]" />
+                </div>
+                <div className="border border-white rounded-full p-[5px]">
+                  <FaLinkedin className="text-white w-[10px] h-[10px]" />
+                </div>
+              </div>
             </div>
           </div>
         </footer>

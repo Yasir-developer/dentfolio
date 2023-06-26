@@ -12,7 +12,7 @@ const DoctorBasicDetail = () => {
   const thankYouModal = () => {
     return (
       <div className="fixed inset-0 flex items-center justify-center z-50 bg-opacity-50 bg-gray-900 ">
-        <div className="bg-white p-6 rounded-[7px] shadow-lg w-[60%] relative max-w-[900px]">
+        <div className="bg-white p-6 rounded-[7px] shadow-lg lg:w-[60%] w-[90%] relative max-w-[900px]">
           <button
             className="absolute right-[20px] top-[20px]  "
             onClick={() => setShowThankYouModal(false)}
@@ -40,7 +40,7 @@ const DoctorBasicDetail = () => {
   const conversationModal = () => {
     return (
       <div className="fixed inset-0 flex items-center justify-center z-50 bg-opacity-50 bg-gray-900 ">
-        <div className="bg-white p-6 rounded-[7px] shadow-lg w-[60%] relative">
+        <div className="bg-white p-6 rounded-[7px] shadow-lg lg:w-[60%] w-[90%] relative">
           <div className="mx-5">
             <button
               className="absolute right-[20px] top-[20px]  "
@@ -64,7 +64,7 @@ const DoctorBasicDetail = () => {
               </div>
             </div>
             <form>
-              <div className="mb-4 gap-x-2 flex ">
+              <div className="mb-4 gap-x-2 flex lg:flex-row flex-col ">
                 <input
                   type="text"
                   id="fullName"

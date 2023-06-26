@@ -1,32 +1,21 @@
-import Image from "next/image";
-import { useState } from "react";
-import logoWhite from "../../../public/images/logoWhite.png";
-import { FaIdCard, FaUser, FaFileAlt, FaEdit, FaCog } from "react-icons/fa";
-import Router from "next/router";
-import Link from "next/link";
 import DentistTabs from "@/components/DentistTabs/DentistTabs";
-import EditCasePage from "@/page-components/EditCasePage";
+import DoctorBasicDetail from "@/components/DoctorBasicDetail/DoctorBasicDetail";
+import PreviousCases from "@/components/PreviousCases/PreviousCases";
+import TreatmentProvide from "@/components/TreatmentProvide/TreatmentProvide";
 import ViewProfilePage from "@/page-components/ViewProfilePage";
+import React from "react";
 
-const Dashboard = () => {
-  const [activeTab, setActiveTab] = useState("editCase");
-
-  const handleTabClick = (tab) => {
-    setActiveTab(tab);
-  };
-
+const viewprofile = () => {
   return (
-    <div className="dentistBodyStyles">
-      {/* Menu Panel */}
-
+    <div>
       <DentistTabs>
-        <ViewProfilePage />
+        {/* <EditCasePage /> */}
         {/* <h1>Edit case</h1> */}
-      </DentistTabs>
 
-      {/* <hr className="w-full border-[#70707030] my-20" /> */}
+        {/* <ViewProfilePage /> */}
+      </DentistTabs>
     </div>
   );
 };
 
-export default Dashboard;
+export default viewprofile;
