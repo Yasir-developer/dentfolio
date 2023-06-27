@@ -1,6 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import location from "../../../public/images/location.svg";
+import Router from "next/router";
+import BlueButtons from "../Buttons/BlueButtons";
 
 const DoctorProfileCard = () => {
   const doctorArray = [
@@ -48,101 +50,6 @@ const DoctorProfileCard = () => {
     },
   ];
   return (
-    // <div>
-    //   {doctorArray.map((item, index) => {
-    //     return (
-    //       <div
-    //         className="flex flex-row py-8 border-b border-[#70707030] "
-    //         key={doctorArray.id}
-    //       >
-    //         <div>
-    //           <Image
-    //             src={item.img_url}
-    //             width={173}
-    //             height={173}
-    //             className="rounded-[86.5px]"
-    //           />
-    //         </div>
-
-    //         <div className="mx-7">
-    //           <h2 className="text-custom-blue font-bold">{item.name}</h2>
-    //           <div className="flex flex-row py-2">
-    //             <Image src={location} alt="logo" />
-    //             <h2 className="px-1 text-[14px] font-extralight">
-    //               {item.country}
-    //             </h2>
-    //           </div>
-
-    //           <p className="px-1 text-[18px] font-normal w-[90%] ">
-    //             {item.description}
-    //           </p>
-
-    //           <button className="bg-custom-blue font-semibold  text-[16px] py-3 px-[60px] mt-10  w-139 text-sm text-white rounded-[7px]">
-    //             Contact Me
-    //           </button>
-
-    //           <button className="bg-transparent border border-[#252525] font-semibold  text-[16px] py-3 px-[60px] mt-10  w-139 text-sm text-[#252525] rounded-[7px] ml-8">
-    //             View Profile
-    //           </button>
-    //         </div>
-    //       </div>
-    //     );
-    //   })}
-    // </div>
-
-    // <div>
-    //   {doctorArray.map((item, index) => {
-    //     return (
-    //       <div
-    //         className="flex flex-col sm:flex-row py-8 border-b border-[#70707030] "
-    //         key={item.id}
-    //       >
-    //         <div className="mb-4 sm:mb-0 sm:mr-7 flex-shrink-0 flex flex-row items-center ">
-    //           <Image
-    //             src={item.img_url}
-    //             width={173}
-    //             height={173}
-    //             className="rounded-[86.5px]"
-    //           />
-    //           <div className="sm:ml-7">
-    //             <div className="flex flex-col sm:flex-row items-center">
-    //               <div className="flex items-center">
-    //                 <h2 className="text-custom-blue font-bold text-xl sm:text-2xl">
-    //                   {item.name}
-    //                 </h2>
-    //                 <div className="pl-2">
-    //                   <Image src={location} alt="logo" />
-    //                   <h2 className="px-1 text-xs sm:text-sm font-extralight">
-    //                     {item.country}
-    //                   </h2>
-    //                 </div>
-    //               </div>
-    //             </div>
-    //           </div>
-    //         </div>
-
-    //         <div className="flex flex-col sm:flex-row sm:items-center flex-grow">
-    //           <div className="mt-4 sm:mt-0">
-    //             <p className="px-1 text-base sm:text-lg font-normal">
-    //               {item.description}
-    //             </p>
-
-    //             <div className="flex flex-wrap mt-4">
-    //               <button className="bg-custom-blue font-semibold text-base sm:text-lg py-3 px-4 sm:px-[60px] mt-2 sm:mt-0 mr-2 sm:mr-4 text-white rounded-[7px]">
-    //                 Contact Me
-    //               </button>
-
-    //               <button className="bg-transparent border border-[#252525] font-semibold text-base sm:text-lg py-3 px-4 sm:px-[60px] mt-2 sm:mt-0 text-[#252525] rounded-[7px]">
-    //                 View Profile
-    //               </button>
-    //             </div>
-    //           </div>
-    //         </div>
-    //       </div>
-    //     );
-    //   })}
-    // </div>
-
     <div>
       {doctorArray.map((item, index) => {
         return (
@@ -187,11 +94,20 @@ const DoctorProfileCard = () => {
               <div className="mt-4 sm:mt-0"> */}
 
             <div className="flex  mt-4 lg:w-[85%] w-[100%] justify-between lg:justify-center">
-              <button className="bg-custom-blue lg:font-semibold font-medium text-base sm:text-lg w-[50%] lg:w-auto  text-[14px] py-3 px-[30px] sm:px-[60px] mt-2 sm:mt-0 mr-2 sm:mr-4 text-white rounded-[7px]">
+              <button className="bg-custom-blue lg:font-medium font-medium  sm:text-lg w-[50%] lg:w-auto text-[14px] py-2 px-[30px] sm:px-[60px] mt-2 sm:mt-0 mr-2 sm:mr-4 text-white rounded-[7px]">
                 Contact Me
               </button>
-
-              <button className="bg-transparent border border-[#252525] lg:font-semibold font-medium text-base w-[50%] lg:w-auto sm:text-lg py-3 px-[30px] sm:px-[60px] mt-2 sm:mt-0 text-[#252525] rounded-[7px]">
+              {/* <BlueButtons
+                className={
+                  "font-medium  lg:font-semibold text-base sm:text-lg w-[50%] lg:w-auto  text-[14px] py-3 px-[30px] sm:px-[60px] mt-2 sm:mt-0 mr-2 sm:mr-4 text-white rounded-[7px]"
+                }
+                buttonText={"Contact Me"}
+                onClick={() => setShowModal(true)}
+              /> */}
+              <button
+                onClick={() => Router.push("/patient/profile-page")}
+                className="bg-transparent border border-[#252525] lg:font-medium font-medium text-base w-[50%] lg:w-auto sm:text-lg py-3 px-[30px] sm:px-[60px] mt-2 sm:mt-0 text-[#252525] rounded-[7px]"
+              >
                 View Profile
               </button>
             </div>

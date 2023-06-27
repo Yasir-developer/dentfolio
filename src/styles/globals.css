@@ -8,7 +8,7 @@
   }
 
   .inputStyles {
-    @apply border border-custom-grey rounded-[7px] p-4 mt-4 lg:mt-0 w-[90%] text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight
+    @apply border border-custom-grey focus:outline-none rounded-[7px] p-4 mt-4 lg:mt-0 w-[90%] text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-normal
   }
   .dentistBodyStyles{
     @apply h-full bg-custom-dashboard-bg absolute top-0 bottom-0 w-full
@@ -17,7 +17,11 @@
     @apply bg-gradient-radial from-[#0372E2] to-[#0B5FB4]
   }
 }
-
+::placeholder {
+  color: deeppink;
+font-size: 16px;
+font-weight: 300;
+}
 
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap'); */
 :root {

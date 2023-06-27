@@ -1,6 +1,7 @@
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import BlueButtons from "../Buttons/BlueButtons";
+import Router from "next/router";
 
 const MonthlyPlan = () => {
   return (
@@ -32,6 +33,7 @@ const MonthlyPlan = () => {
         <BlueButtons
           buttonText={"Start my Free Month"}
           className={"my-5 text-[14px] lg:text-[18px] font-medium"}
+          onClick={() => Router.push("/dentist/login")}
         />
 
         <div className="flex flex-row justify-between items-center">

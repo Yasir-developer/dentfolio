@@ -4,7 +4,7 @@ import React from "react";
 
 const editProfile = () => {
   return (
-    <div>
+    <div className="dentistBodyStyles">
       <DentistTabs>
         <EditProfilePage />
       </DentistTabs>

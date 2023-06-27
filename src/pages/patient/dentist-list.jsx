@@ -71,7 +71,7 @@ const dentistlist = () => {
             <input
               type="text"
               placeholder="Location"
-              className="flex-grow py-2 px-4 focus:outline-none w-4/5 text-sm sm:text-base"
+              className="flex-grow py-3 px-4 focus:outline-none w-4/5 text-sm sm:text-base"
             />
             <FaFilter size={16} color="#000" />
           </div>
@@ -80,7 +80,7 @@ const dentistlist = () => {
 
       <DoctorProfileCard />
       <div className="flex justify-center my-[80px]">
-        <button className="bg-custom-blue lg:font-semibold font-medium text-[16px] py-3 px-[60px] lg:mt-5  w-139 text-sm text-white rounded-[7px] ">
+        <button className="bg-custom-blue lg:font-semibold font-medium text-[16px] py-2 px-[60px] lg:mt-5  w-139 text-sm text-white rounded-[7px] ">
           Load More{" "}
         </button>
       </div>

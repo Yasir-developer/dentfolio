@@ -5,6 +5,8 @@ import { FaTimes } from "react-icons/fa";
 import checkCircle from "../../../public/images/check-circle2.svg";
 
 import map from "../../../public/images/map.png";
+import AuthInput from "../Inputs/AuthInput";
+import BlueButtons from "../Buttons/BlueButtons";
 const DoctorBasicDetail = () => {
   const [showModal, setShowModal] = useState(false);
   const [showThankYouModal, setShowThankYouModal] = useState(false);
@@ -65,24 +67,39 @@ const DoctorBasicDetail = () => {
             </div>
             <form>
               <div className="mb-4 gap-x-2 flex lg:flex-row flex-col ">
-                <input
+                {/* <input
                   type="text"
                   id="fullName"
                   placeholder="Full Name"
                   className="inputStyles"
+                /> */}
+                <AuthInput
+                  placeholder={"Full Name"}
+                  className="border border-custom-grey rounded-[7px] p-4 mt-4 lg:mt-0 w-[90%] text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight"
                 />
-                <input
+
+                <AuthInput
+                  placeholder={"Phone Number"}
+                  className="border border-custom-grey rounded-[7px] p-4 mt-4 lg:mt-0 w-[90%] text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight"
+                  type={"tel"}
+                />
+                {/* <input
                   type="tel"
                   id="phone"
                   className="inputStyles"
                   placeholder="Phone Number"
+                /> */}
+                <AuthInput
+                  placeholder={"Email Address"}
+                  className="border border-custom-grey rounded-[7px] p-4 mt-4 lg:mt-0 w-[90%] text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight"
+                  type={"email"}
                 />
-                <input
+                {/* <input
                   type="email"
                   id="email"
                   className="inputStyles"
                   placeholder="Email Address"
-                />
+                /> */}
               </div>
 
               <textarea
@@ -148,11 +165,16 @@ const DoctorBasicDetail = () => {
           </p>
           <div className="lg:static fixed bottom-0 w-full left-0 lg:text-left text-center pb-5">
             <button
-              className="bg-custom-blue font-semibold text-[16px] py-3 px-[60px] mt-[35px] w-139 text-sm text-white rounded-[7px]"
+              className="bg-custom-blue font-semibold text-[16px] py-2 px-[60px] mt-[35px] w-139 text-white rounded-[7px]"
               onClick={() => setShowModal(true)}
             >
               Contact Me
             </button>
+            {/* <BlueButtons
+              className={"mt-[35px] font-semibold"}
+              buttonText={"Contact Me"}
+              onClick={() => setShowModal(true)}
+            /> */}
           </div>
         </div>
       </div>

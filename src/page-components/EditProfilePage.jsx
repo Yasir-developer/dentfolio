@@ -1,17 +1,39 @@
 import BlueButtons from "@/components/Buttons/BlueButtons";
 import AuthInput from "@/components/Inputs/AuthInput";
 import Router from "next/router";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FaTrashAlt, FaPlus } from "react-icons/fa";
 import { HiChevronDown } from "react-icons/hi";
 
 const EditProfilePage = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
+  useEffect(() => {
+    // Add event listener to handle clicks outside the dropdown
+    const handleOutsideClick = (event) => {
+      console.log(event, "event");
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    // Clean up the event listener on unmount
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
   const toggleDropdown = () => {
-    setDropdownOpen(!isDropdownOpen);
+    setIsOpen(!isOpen);
   };
 
+  const handleOptionSelect = () => {
+    setIsOpen(false);
+    // Perform any other actions when an option is selected
+  };
   const treatmentType = [
     {
       type: "Aligners",
@@ -45,38 +67,47 @@ const EditProfilePage = () => {
             />
           </div>
         </div>
-        <div className="py-5 px-5 flex w-[100%] bg-white rounded-[7px] flex-col items-start justify-center mx-auto">
+        <div className="py-5 px-5 flex w-[100%] rounded-[7px] flex-col items-start justify-center mx-auto">
           <div className="w-full flex flex-wrap gap-x-2 lg:gap-x-7 gap-y-1 items-center justify-center">
             {/* <AuthInput placeholder={"First Name"} className={"order-1"} /> */}
-            <div className="relative flex items-center bg-white border border-custom-grey rounded-[7px] p-3 w-[45%] placeholder-slate-400 text-[16px] font-light mb-5">
+            <div className="relative flex items-center border bg-custom-dashboard-bg border-custom-grey rounded-[7px] p-3 w-[45%] placeholder-slate-400 text-[16px] font-light mb-5">
               <input
                 type="text"
-                className="focus:outline-none w-[80%] lg:w-[100%] font-light lg:text-[16px] text-[14px]"
+                className="focus:outline-none w-[80%] lg:w-[100%] font-light lg:text-[16px] text-[14px] bg-custom-dashboard-bg"
                 placeholder="Dr"
               />
               <div className="absolute top-0 right-0 mt-3 mr-2">
-                <div className="flex">
+                <div className="flex" ref={dropdownRef}>
                   <div
                     className="flex items-center justify-center h-full px-2rounded-l-md cursor-pointer"
                     onClick={toggleDropdown}
                   >
                     <HiChevronDown
                       className={`transform  h-5 w-5 text-[#919191] ${
-                        isDropdownOpen ? "rotate-180" : "rotate-0"
+                        isOpen ? "rotate-180" : "rotate-0"
                       }`}
                     />
                   </div>
-                  {isDropdownOpen && (
-                    <div className="bg-white border border-gray-300 rounded-r-md shadow-md">
+                  {isOpen && (
+                    <div className="bg-custom-dashboard-bg border border-gray-300 rounded-r-md shadow-md">
                       {/* Dropdown items */}
                       <ul className="py-2">
-                        <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                        <li
+                          className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                          onClick={handleOptionSelect}
+                        >
                           Option 1
                         </li>
-                        <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                        <li
+                          className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                          onClick={handleOptionSelect}
+                        >
                           Option 2
                         </li>
-                        <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                        <li
+                          className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                          onClick={handleOptionSelect}
+                        >
                           Option 3
                         </li>
                       </ul>
@@ -127,7 +158,7 @@ const EditProfilePage = () => {
             {/* </div> */}
             <textarea
               placeholder="Bio"
-              className="w-[92.5%] lg:text-[16px] text-[14px] lg:w-[45%] border bg-white border-custom-grey rounded-[7px] p-3 focus:outline-none lg:order-[14] order-[13]"
+              className="w-[92.5%] lg:text-[16px] text-[14px] lg:w-[45%] border bg-custom-dashboard-bg border-custom-grey rounded-[7px] p-3 focus:outline-none lg:order-[14] order-[13]"
               rows={3}
             ></textarea>
             {/* <AuthInput
@@ -161,6 +192,7 @@ const EditProfilePage = () => {
             <BlueButtons
               buttonText={"Save"}
               className={"mt-6 lg:ml-[50px] lg:px-[50px]"}
+              //   onClick={() => Router.push("/dentist/create-case?tab=create")}
             />
           </div>
         </div>

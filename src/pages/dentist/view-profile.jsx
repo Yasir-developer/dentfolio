@@ -7,7 +7,7 @@ import React from "react";
 
 const viewprofile = () => {
   return (
-    <div>
+    <div className="dentistBodyStyles">
       <DentistTabs>
         {/* <EditCasePage /> */}
         {/* <h1>Edit case</h1> */}

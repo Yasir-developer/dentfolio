@@ -66,7 +66,7 @@ const DentistTabs = (props) => {
           className={`${
             toggleMenu
               ? "bg-gradient-radial from-[#0372E2] to-[#0B5FB4]  h-full w-[60%] lg:block lg:w-[18%] absolute z-[999]"
-              : "bg-gradient-radial from-[#0372E2] to-[#0B5FB4] hidden w-0 lg:block lg:w-[18%] relative z-[999]"
+              : "bg-gradient-radial from-[#0372E2] to-[#0B5FB4] hidden w-0 lg:block lg:w-[18%] z-[999]"
           }`}
         >
           <nav className="p-2 ">
@@ -104,7 +104,7 @@ const DentistTabs = (props) => {
                 passHref
               >
                 <li
-                  className={`py-3 cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold my-3 w-[70%] ${
+                  className={`py-3 cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold my-3 w-[80%] ${
                     router?.query?.tab !== "view" && "text-white"
                   } ${
                     router?.query?.tab === "view" &&
@@ -199,25 +199,25 @@ const DentistTabs = (props) => {
           </nav>
           <BlueButtons
             className={
-              "bg-white absolute bottom-[100px] left-[40px] !text-custom-blue px-[50px] text-[16px] font-medium"
+              "bg-white absolute bottom-[200px] left-[40px] !text-custom-blue px-[50px] text-[16px] font-medium"
             }
             buttonText={"Sign Out"}
             onClick={() => router.push("/dentist/dentist-plan")}
           />
         </div>
         <div className="bg-gray-100 lg:w-[85%] w-full flex flex-col justify-between">
-          {/* {/* <div className="contentContainer overflow-y-scroll h-full"> */}
-          {router?.query?.tab === "edit-profile" && <EditProfilePage />}
+          <div className="contentContainer overflow-y-scroll h-full">
+            {router?.query?.tab === "edit-profile" && <EditProfilePage />}
 
-          {router?.query?.tab === "view" && <ViewProfilePage />}
-          {router?.query?.tab === "create" && <CreateCasePage />}
-          {router?.query?.tab === "edit" && <EditCasePage />}
-          {/* {router?.query?.tab === "edit-profile" && <EditProfilePage />} */}
+            {router?.query?.tab === "view" && <ViewProfilePage />}
+            {router?.query?.tab === "create" && <CreateCasePage />}
+            {router?.query?.tab === "edit" && <EditCasePage />}
+            {/* {router?.query?.tab === "edit-profile" && <EditProfilePage />} */}
 
-          {/* {activeTab === "editProfile" && <ViewProfilePage />} */}
-          {/* {router?.query?.tab === "view" && <ViewProfilePage />} */}
-          {router?.query?.tab === "settings" && <SettingsPage />}
-          {/* </div>  */}
+            {/* {activeTab === "editProfile" && <ViewProfilePage />} */}
+            {/* {router?.query?.tab === "view" && <ViewProfilePage />} */}
+            {router?.query?.tab === "settings" && <SettingsPage />}
+          </div>
           <div className="footerContainer">
             <DashboardFooter />
           </div>

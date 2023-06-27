@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import logoWhite from "../../../public/images/logoWhite.png";
 import Image from "next/image";
 import { FaAngleDown, FaRegBell, FaBars } from "react-icons/fa";
@@ -8,14 +8,38 @@ import Router from "next/router";
 
 const DashboardHeader = ({ menuToggler }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  useEffect(() => {
+    // Add event listener to handle clicks outside the dropdown
+    const handleOutsideClick = (event) => {
+      console.log(event, "event");
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    };
 
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    // Clean up the event listener on unmount
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
   };
+  const handleOptionSelect = () => {
+    setDropdownOpen(false);
+    // Perform any other actions when an option is selected
+  };
   return (
-    <div className="h-[80px] border-b border-[#c8bfc3] w-full flex ">
+    <div className="h-[80px] border-b border-[#c8bfc3] w-full flex">
       <div className="hidden bg-gradient-radial from-[#0372E2] to-[#0B5FB4] w-[18%] lg:flex items-center justify-center">
-        <Image src={logoWhite} className="mx-auto max-w-[173px]" />
+        <Image
+          src={logoWhite}
+          className="mx-auto max-w-[173px] cursor-pointer"
+          onClick={() => Router.push("/dentist/dentist-plan")}
+        />
 
         {/* <h1 className="text-lg font-bold">Dashboard</h1> */}
       </div>
@@ -46,7 +70,7 @@ const DashboardHeader = ({ menuToggler }) => {
                 Dylan Taylor
               </h2>
               {/* className="hidden md:block" */}
-              <div className="flex hidden md:block" style={{ zIndex: 1 }}>
+              <div className="flex" style={{ zIndex: 1 }} ref={dropdownRef}>
                 <div
                   className="flex items-center justify-center px-2rounded-l-md cursor-pointer"
                   onClick={toggleDropdown}
@@ -63,15 +87,19 @@ const DashboardHeader = ({ menuToggler }) => {
                     <ul className="py-2">
                       <li
                         className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                        onClick={() =>
-                          Router.push("/dentist/settings?tab=settings")
-                        }
+                        onClick={() => {
+                          handleOptionSelect;
+                          Router.push("/dentist/settings?tab=settings");
+                        }}
                       >
                         Settings
                       </li>
                       <li
                         className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                        onClick={() => Router.push("/dentist/dentist-plan")}
+                        onClick={() => {
+                          handleOptionSelect;
+                          Router.push("/dentist/dentist-plan");
+                        }}
                       >
                         Sign Out
                       </li>

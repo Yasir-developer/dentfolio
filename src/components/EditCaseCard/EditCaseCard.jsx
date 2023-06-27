@@ -25,18 +25,13 @@ const EditCaseCard = ({ img_url, name, description, id }) => {
             <h2 className="lg;text-center lg:text-left text-[21px] text-custom-blue font-semibold my-2 lg:w-full w-[90%]">
               {name}
             </h2>
-            <FaEllipsisV
-            className="static w-[5%] lg:absolute lg:right-0 lg:top-0 lg:w-[18px] lg:h-[18px] font-black lg:mx-[3px] lg:mb-[3px] lg:mt-[5px]"
-          />
+            <FaEllipsisV className="static w-[5%] lg:absolute lg:right-0 lg:top-0 lg:w-[18px] lg:h-[18px] font-black lg:mx-[3px] lg:mb-[3px] lg:mt-[5px]" />
 
             <p className="text-left text-[12px] lg:text-[16px] font-light w-full">
               {description}
             </p>
             <div className="justify-start w-full">
-              <BlueButtons
-                buttonText={"Edit"}
-                className={"mx-auto my-2 !px-10"}
-              />
+              <BlueButtons buttonText={"Edit"} className={"mx-auto my-2 "} />
             </div>
           </div>
           {/* <FaEllipsisV

@@ -5,6 +5,7 @@ import doctor from "../../../public/images/female-dentist.png";
 import PrivatePatients from "@/page-components/PrivatePatients";
 import { FaLongArrowAltDown, FaStethoscope } from "react-icons/fa";
 import MonthlyPlan from "../MonthlyPlan/MonthlyPlan";
+import Router from "next/router";
 const DentistMemberBanner = () => {
   const stepImages = [
     "/image/doctor.png",
@@ -61,6 +62,7 @@ const DentistMemberBanner = () => {
             <BlueButtons
               buttonText="Start my Free Month"
               className={"text-[12px] mb-[30px] lg:mb-0"}
+              onClick={() => Router.push("/dentist/login")}
               // className="lg:!px-8  mx-auto"
               // btnStyle={ margin: "20px" }
             />

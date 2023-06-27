@@ -31,7 +31,8 @@ const AuthInput = ({
             value={value}
             onChange={onChange}
             {...rest}
-            className={`focus:outline-none border w-[45%] bg-white border-custom-grey rounded-[7px] p-3 placeholder-slate-400 lg:text-[16px] text-[14px] font-light mb-5 ${className}`}
+            // place
+            className={`focus:outline-none border w-[45%] border-custom-grey rounded-[7px] p-3 bg-custom-dashboard-bg placeholder-slate-400 lg:text-[16px] text-[14px] font-normal mb-5 ${className}`}
           />
 
           {/* <button
@@ -48,14 +49,14 @@ const AuthInput = ({
         </>
       ) : (
         <div
-          className={`relative flex items-center bg-white border border-custom-grey rounded-[7px] p-3 w-[100%] lg:w-full placeholder-slate-400  font-light mb-5 ${containerClassName}`}
+          className={`relative flex items-center border border-custom-grey rounded-[7px] p-3 w-[100%] lg:w-full placeholder-slate-400 bg-custom-dashboard-bg font-light mb-5 ${containerClassName}`}
         >
           <>
             <input
               type="password"
               id="password"
               placeholder="Password"
-              className={`focus:outline-none w-[100%] lg:w-[100%] lg:text-[16px] text-[14px] font-light ${className}`}
+              className={`focus:outline-none w-[100%] lg:w-[100%] lg:text-[16px] text-[14px] font-light bg-custom-dashboard-bg ${className}`}
             />
             <FaEye
               style={{

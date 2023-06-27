@@ -7,10 +7,33 @@ import BlueButtons from "@/components/Buttons/BlueButtons";
 import AuthInput from "@/components/Inputs/AuthInput";
 import { FaCheck } from "react-icons/fa";
 import Router from "next/router";
+import Checkbox from "@/components/Checkbox/Checkbox";
 
 const Signup = () => {
   const [isChecked, setIsChecked] = useState(false);
+  const [termsAccepted, setTermsAccepted] = useState(false);
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [termChecked, setTermChecked] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("terms");
+  const handleRadioBtn = (option) => {
+    setSelectedOption(option);
+  };
+
+  const handleTermCheck = (option) => {
+    setTermChecked(!termChecked);
+  };
+
+  const handleConsentCheck = (option) => {
+    setIsChecked(!isChecked);
+  };
+
+  const handleTermsChange = () => {
+    setTermsAccepted(!termsAccepted);
+  };
+
+  const handlePrivacyChange = () => {
+    setPrivacyAccepted(!privacyAccepted);
+  };
 
   return (
     <div
@@ -28,7 +51,7 @@ const Signup = () => {
         // style={{ direction: "ltr" }}
       >
         <div
-          className="flex flex-col items-center bg-white justify-center m-5 4xl:h-full"
+          className="flex flex-col items-center justify-center m-5 4xl:h-full"
           // style={{
           //   transform: "scaleX(-1)", //Flips the child back to normal
           // }}
@@ -93,31 +116,42 @@ const Signup = () => {
               </div>
 
               <div className="flex flex-col mx-[20px] my-[40px]">
-                <div className="flex flex-row pb-[30px]">
+                {/* <div className="flex flex-row pb-[30px]">
                   <input
                     type="checkbox"
-                    id="checkboxId"
-                    checked={isChecked}
-                    onChange={(e) => setTermChecked(e.target.checked)}
+                    id="termsCheckbox"
+                    checked={termChecked}
+                    onChange={handleTermCheck}
                     className="hidden"
                   />
                   <label
                     htmlFor="checkboxId"
                     className="flex items-center cursor-pointer rounded-full bg-custom-blue text-white w-6 h-6 p-1"
                   >
-                    {isChecked && <FaCheck className="w-4 h-4" />}
+                    {termChecked && <FaCheck className="w-4 h-4" />}
                   </label>
                   <span className="ml-2  text-[14px] lg:text-[16px] font-light">
                     I agree to the website terms & conditions
                   </span>
-                </div>
+                </div> */}
+                <Checkbox
+                  label=" I agree to the website terms & conditions
+                  "
+                  checked={termsAccepted}
+                  onChange={handleTermsChange}
+                />
+                <Checkbox
+                  label="I have valid consent from my patients to republish/use/share photographs uploaded to Dentfolio"
+                  checked={privacyAccepted}
+                  onChange={handlePrivacyChange}
+                />
 
-                <div className="flex flex-row">
+                {/* <div className="flex flex-row">
                   <input
                     type="checkbox"
                     id="checkboxId"
                     checked={isChecked}
-                    onChange={(e) => setIsChecked(e.target.checked)}
+                    onChange={handleConsentCheck}
                     className="hidden"
                   />
                   <label
@@ -132,11 +166,15 @@ const Signup = () => {
                     I have valid consent from my patients to republish/use/share
                     photographs uploaded to Dentfolio{" "}
                   </span>
-                </div>
+                </div> */}
               </div>
 
               <div className="mt-5 flex flex-col items-center justify-center">
-                <BlueButtons buttonText="Submit" className="px-[50px]" />
+                <BlueButtons
+                  buttonText="Submit"
+                  className="px-[50px] cursor-pointer"
+                  onClick={() => Router.push("/dentist/dentist-plan")}
+                />
 
                 <div className="py-4 px-6 text-center">
                   <p className="text-sm text-[#858585]">

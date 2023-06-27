@@ -1,8 +1,30 @@
 import BlueButtons from "@/components/Buttons/BlueButtons";
 import AuthInput from "@/components/Inputs/AuthInput";
-import React from "react";
+import Router from "next/router";
+import React, { useState } from "react";
+import { FaPlus, FaTrashAlt } from "react-icons/fa";
 
 const CreateCasePage = () => {
+  const [selectedOption, setSelectedOption] = useState("public");
+
+  const treatmentType = [
+    {
+      type: "Aligners",
+    },
+    {
+      type: "Aligners",
+    },
+    {
+      type: "Aligners",
+    },
+  ];
+
+  const handleRadioBtn = (option) => {
+    setSelectedOption(option);
+  };
+  // const handlePrivateRadioBtn = () => {
+  //   setPrivateRadio(!privateRadio);
+  // };
   return (
     <div className="items-center justify-center ">
       <div className=" my-8 mx-auto w-[90%]">
@@ -23,7 +45,7 @@ const CreateCasePage = () => {
           </div> */}
         </div>
         <form>
-          <div className="py-5 px-5 flex w-[100%] bg-white rounded-[7px] flex-col items-start justify-center mx-auto">
+          <div className="py-5 px-5 flex w-[100%] rounded-[7px] flex-col items-start justify-center mx-auto">
             <div className="w-full flex flex-wrap gap-x-2 lg:gap-x-7 gap-y-1 items-center justify-center">
               <AuthInput
                 placeholder={"Case Title"}
@@ -31,7 +53,7 @@ const CreateCasePage = () => {
               />
               <textarea
                 placeholder="Case Description"
-                className="w-full lg:w-[90%] border bg-white border-custom-grey rounded-[7px] p-3 focus:outline-none"
+                className="w-full lg:w-[90%] border bg-custom-dashboard-bg border-custom-grey rounded-[7px] p-3 focus:outline-none"
                 rows={4}
               ></textarea>
             </div>
@@ -41,10 +63,10 @@ const CreateCasePage = () => {
                 <label className="text-[16px] font-normal">
                   <input
                     type="radio"
-                    value="Male"
+                    value="public"
                     className="ml-[15px] mr-[5px]"
-                    // checked={this.state.selectedOption === "Male"}
-                    // onChange={this.onValueChange}
+                    checked={selectedOption === "public"}
+                    onChange={() => handleRadioBtn("public")}
                   />
                   Public
                 </label>
@@ -53,14 +75,36 @@ const CreateCasePage = () => {
                 <label className="text-[16px] font-normal">
                   <input
                     type="radio"
-                    value="Female"
+                    value="private"
                     className="ml-[15px] mr-[5px]"
-
-                    // checked={this.state.selectedOption === "Female"}
-                    // onChange={this.onValueChange}
+                    checked={selectedOption === "private"}
+                    onChange={() => handleRadioBtn("private")}
                   />
                   Private
                 </label>
+              </div>
+            </div>
+
+            <div className="lg:w-[45%] flex flex-col lg:mx-[50px] lg:pl-3 pt-5">
+              <p className="text-[18px] font-semibold">Case Type:</p>
+              <div className="flex flex-row flex-wrap gap-x-2 gap-y-2 lg:gap-x-5 mt-3">
+                {treatmentType.map((data, dataIndex) => (
+                  <div
+                    className="bg-custom-blue-light flex items-center justify-center h-10 px-5 rounded-[7px] grid-cols-2"
+                    key={dataIndex}
+                  >
+                    <p className="text-center text-custom-black text-[14px] font-semibold">
+                      {data.type}
+                    </p>
+                    <FaTrashAlt className="w-5 h-5 pl-[10px]" />
+                  </div>
+                ))}
+                <div className="flex items-center justify-center h-10 px-3 py-3 rounded-[7px] bg-[#EBFAF8]">
+                  <p className="text-center text-custom-black text-[14px] font-semibold">
+                    Add More
+                  </p>
+                  <FaPlus className="w-5 h-5 pl-[10px] " />
+                </div>
               </div>
             </div>
 
@@ -75,9 +119,8 @@ const CreateCasePage = () => {
 
             <BlueButtons
               buttonText={"Save"}
-              className={
-                "py-2 px-[60px] bg-[#D4D4D4] rounded-[7px] h-12 mt-10 lg:ml-16 "
-              }
+              className={"bg-[#D4D4D4] rounded-[7px] mt-10 lg:ml-16 "}
+              onClick={() => Router.push("/dentist/create-case?tab=create")}
             />
           </div>
         </form>
