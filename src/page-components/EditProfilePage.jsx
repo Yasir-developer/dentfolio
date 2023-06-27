@@ -2,7 +2,7 @@ import BlueButtons from "@/components/Buttons/BlueButtons";
 import AuthInput from "@/components/Inputs/AuthInput";
 import Router from "next/router";
 import React, { useState, useRef, useEffect } from "react";
-import { FaTrashAlt, FaPlus } from "react-icons/fa";
+import { FaTrash, FaPlus } from "react-icons/fa";
 import { HiChevronDown } from "react-icons/hi";
 
 const EditProfilePage = () => {
@@ -73,7 +73,7 @@ const EditProfilePage = () => {
             <div className="relative flex items-center border bg-custom-dashboard-bg border-custom-grey rounded-[7px] p-3 w-[45%] placeholder-slate-400 text-[16px] font-light mb-5">
               <input
                 type="text"
-                className="focus:outline-none w-[80%] lg:w-[100%] font-light lg:text-[16px] text-[14px] bg-custom-dashboard-bg"
+                className="focus:outline-none w-[80%] lg:w-[100%] font-normal lg:text-[16px] text-[14px] bg-custom-dashboard-bg"
                 placeholder="Dr"
               />
               <div className="absolute top-0 right-0 mt-3 mr-2">
@@ -177,7 +177,7 @@ const EditProfilePage = () => {
                   <p className="text-center text-custom-black text-[14px] font-semibold">
                     {data.type}
                   </p>
-                  <FaTrashAlt className="w-5 h-5 pl-[10px]" />
+                  <FaTrash className="w-5 h-5 pl-[10px]" />
                 </div>
               ))}
               <div className="flex items-center justify-center h-10 px-3 py-3 rounded-[7px] bg-[#EBFAF8]">

@@ -93,7 +93,7 @@ const Footer = () => {
                 <p className="text-white m-[5px]">Follow us on:</p>
                 <div className="border border-white rounded-full p-[5px]">
                   <FaFacebookF
-                    className="text-white w-[10px] h-[10px]"
+                    className="text-white"
                     // style={{
                     //   color: "#fff",
                     //   width: "10px",
@@ -102,13 +102,17 @@ const Footer = () => {
                   />
                 </div>
                 <div className="border border-white rounded-full p-[5px]">
-                  <FaTwitter className="text-white w-[10px] h-[10px]" />
+                  <FaTwitter
+                    className="text-white
+                  
+                "
+                  />
                 </div>
                 <div className="border border-white rounded-full p-[5px]">
-                  <FaInstagram className="text-white w-[10px] h-[10px]" />
+                  <FaInstagram className="text-white" />
                 </div>
                 <div className="border border-white rounded-full p-[5px]">
-                  <FaLinkedin className="text-white w-[10px] h-[10px]" />
+                  <FaLinkedin className="text-white" />
                 </div>
               </div>
             </div>

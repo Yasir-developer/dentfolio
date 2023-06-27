@@ -9,29 +9,37 @@ const TreatmentProvide = () => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-        }
+          autoplay: true,
+          autoplaySpeed: 5000,
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-        }
+          autoplay: true,
+          autoplaySpeed: 5000,
+        },
       },
       {
         breakpoint: 0,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 5000,
+        },
+      },
+    ],
   };
   const treatmentArray = [
     {
@@ -46,6 +54,15 @@ const TreatmentProvide = () => {
     {
       type: "Root Canal",
     },
+    {
+      type: "Root Canal",
+    },
+    {
+      type: "Root Canal",
+    },
+    {
+      type: "Root Canal",
+    },
   ];
   return (
     <div className="my-5 sizingStyles">
@@ -54,20 +71,20 @@ const TreatmentProvide = () => {
       </h2>
       <div className="mt-7 gap-x-5">
         <Slider {...settings}>
-            {treatmentArray.map((item, index) => {
-              return (
-                <div
-                  className="min-h-[180px] lg:min-h-full !w-[90%] bg-custom-blue-light items-center justify-center py-7 text-center rounded-[7px]"
-                  key={index}
-                >
-                  <Image src={checkCircle} alt="logo" className="mx-auto"/>
+          {treatmentArray.map((item, index) => {
+            return (
+              <div
+                className="min-h-[180px] lg:min-h-full !w-[90%] bg-custom-blue-light items-center justify-center py-7 text-center rounded-[7px]"
+                key={index}
+              >
+                <Image src={checkCircle} alt="logo" className="mx-auto" />
 
-                  <p className="text-custom-black text-[18px] font-semibold mt-3">
-                    {item.type}
-                  </p>
-                </div>
-              );
-            })}
+                <p className="text-custom-black text-[18px] font-semibold mt-3">
+                  {item.type}
+                </p>
+              </div>
+            );
+          })}
         </Slider>
       </div>
     </div>

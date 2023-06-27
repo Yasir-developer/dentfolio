@@ -28,7 +28,7 @@ const DoctorBasicDetail = () => {
             THANK YOU
           </h1>
 
-          <p className="text-custom-black text-center text-[16px] font-semibold mt-2 mb-[50px]">
+          <p className="text-custom-black text-center text-[16px] font-normal mt-2 mb-[50px]">
             Your message has been successfully sent to the dentist. They will
             contact you shortly via email or phone.
           </p>
@@ -66,7 +66,7 @@ const DoctorBasicDetail = () => {
               </div>
             </div>
             <form>
-              <div className="mb-4 gap-x-2 flex lg:flex-row flex-col ">
+              <div className="mb-4 gap-x-2 flex lg:flex-row flex-col justify-center items-center">
                 {/* <input
                   type="text"
                   id="fullName"
@@ -75,12 +75,13 @@ const DoctorBasicDetail = () => {
                 /> */}
                 <AuthInput
                   placeholder={"Full Name"}
-                  className="border border-custom-grey rounded-[7px] p-4 mt-4 lg:mt-0 w-[90%] text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight"
+                  className="border border-custom-grey rounded-[7px] mt-4 lg:mt-0 w-[90%] text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight"
+                  // btnStyle={ma}
                 />
 
                 <AuthInput
                   placeholder={"Phone Number"}
-                  className="border border-custom-grey rounded-[7px] p-4 mt-4 lg:mt-0 w-[90%] text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight"
+                  className="border border-custom-grey rounded-[7px] mt-4 lg:mt-0 w-[90%] text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight"
                   type={"tel"}
                 />
                 {/* <input
@@ -91,7 +92,7 @@ const DoctorBasicDetail = () => {
                 /> */}
                 <AuthInput
                   placeholder={"Email Address"}
-                  className="border border-custom-grey rounded-[7px] p-4 mt-4 lg:mt-0 w-[90%] text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight"
+                  className="border border-custom-grey rounded-[7px] mt-4 lg:mt-0 w-[90%] text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight"
                   type={"email"}
                 />
                 {/* <input

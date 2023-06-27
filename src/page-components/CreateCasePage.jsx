@@ -2,7 +2,7 @@ import BlueButtons from "@/components/Buttons/BlueButtons";
 import AuthInput from "@/components/Inputs/AuthInput";
 import Router from "next/router";
 import React, { useState } from "react";
-import { FaPlus, FaTrashAlt } from "react-icons/fa";
+import { FaPlus, FaTrash } from "react-icons/fa";
 
 const CreateCasePage = () => {
   const [selectedOption, setSelectedOption] = useState("public");
@@ -26,24 +26,24 @@ const CreateCasePage = () => {
   //   setPrivateRadio(!privateRadio);
   // };
   return (
-    <div className="items-center justify-center ">
+    <div className="flex items-center justify-center ">
       <div className=" my-8 mx-auto w-[90%]">
-        <div
+        {/* <div
           className="flex flex-row justify-between"
           //   style={{ margin: "10px" }}
-        >
-          <div className="flex flex-col">
-            <h1 className="text-[32px] font-semibold">Add Case</h1>
+        > */}
+        <div className="flex flex-col lg:mx-[90px] mx-0">
+          <h1 className="text-[32px] font-semibold">Add Case</h1>
 
-            <p className="mt-2 text-[16px] font-light mb-5">
-              Upload a treatment case that you've done to show off your skills
-              to potential patients.
-            </p>
-          </div>
-          {/* <div>
+          <p className="mt-2 text-[16px] font-light mb-5">
+            Upload a treatment case that you've done to show off your skills to
+            potential patients.
+          </p>
+        </div>
+        {/* <div>
             <BlueButtons buttonText={"Add Case"} className={"px-[50px]"} />
           </div> */}
-        </div>
+        {/* </div> */}
         <form>
           <div className="py-5 px-5 flex w-[100%] rounded-[7px] flex-col items-start justify-center mx-auto">
             <div className="w-full flex flex-wrap gap-x-2 lg:gap-x-7 gap-y-1 items-center justify-center">
@@ -57,31 +57,35 @@ const CreateCasePage = () => {
                 rows={4}
               ></textarea>
             </div>
-            <div className="flex flex-row lg:pl-16 pt-5 items-center">
-              <p className="text-[18px] font-semibold">Case Visibility:</p>
-              <div className="px-5">
+            <div className="flex lg:flex-row flex-col lg:pl-16 pt-5 lg:items-center justify-start items-start">
+              <p className="lg:text-[18px] text-[16px] font-semibold">
+                Case Visibility:
+              </p>
+              <div className="flex flex-row">
+                {/* <div className="px-5"> */}
                 <label className="text-[16px] font-normal">
                   <input
                     type="radio"
                     value="public"
-                    className="ml-[15px] mr-[5px]"
+                    className="ml-0 lg:ml-[15px] mr-[5px]"
                     checked={selectedOption === "public"}
                     onChange={() => handleRadioBtn("public")}
                   />
                   Public
                 </label>
-              </div>
-              <div className="radio">
-                <label className="text-[16px] font-normal">
-                  <input
-                    type="radio"
-                    value="private"
-                    className="ml-[15px] mr-[5px]"
-                    checked={selectedOption === "private"}
-                    onChange={() => handleRadioBtn("private")}
-                  />
-                  Private
-                </label>
+                {/* </div> */}
+                <div className="radio">
+                  <label className="text-[16px] font-normal">
+                    <input
+                      type="radio"
+                      value="private"
+                      className="ml-[15px] mr-[5px]"
+                      checked={selectedOption === "private"}
+                      onChange={() => handleRadioBtn("private")}
+                    />
+                    Private
+                  </label>
+                </div>
               </div>
             </div>
 
@@ -96,7 +100,7 @@ const CreateCasePage = () => {
                     <p className="text-center text-custom-black text-[14px] font-semibold">
                       {data.type}
                     </p>
-                    <FaTrashAlt className="w-5 h-5 pl-[10px]" />
+                    <FaTrash className="w-5 h-5 pl-[10px]" />
                   </div>
                 ))}
                 <div className="flex items-center justify-center h-10 px-3 py-3 rounded-[7px] bg-[#EBFAF8]">

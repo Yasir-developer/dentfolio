@@ -11,6 +11,7 @@ const AuthInput = ({
   onChange,
   className,
   containerClassName,
+  btnStyle,
   ...rest
 }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -31,6 +32,7 @@ const AuthInput = ({
             value={value}
             onChange={onChange}
             {...rest}
+            style={btnStyle}
             // place
             className={`focus:outline-none border w-[45%] border-custom-grey rounded-[7px] p-3 bg-custom-dashboard-bg placeholder-slate-400 lg:text-[16px] text-[14px] font-normal mb-5 ${className}`}
           />

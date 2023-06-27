@@ -5,7 +5,7 @@ import { FaEye } from "react-icons/fa";
 const SettingsPage = () => {
   return (
     <div className="items-center justify-center ">
-      <div className=" my-8 mx-auto w-[90%]">
+      <div className=" my-8 mx-auto w-[90%] lg:mx-[90px]">
         <h1 className="text-[32px] font-semibold">Settings</h1>
 
         <p className="mt-2 text-[16px] font-light mb-5">Update Information</p>

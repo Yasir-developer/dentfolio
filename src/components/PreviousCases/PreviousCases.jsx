@@ -37,16 +37,16 @@ const PreviousCases = () => {
                 alt="logo"
                 width={0}
                 height={0}
-                sizes='100vw'
+                sizes="100vw"
                 className="w-full h-full max-w-[300px] lg:w-auto lg:h-[170px] my-3"
               />
 
               <div className="flex flex-col lg:px-5 pt-5 pb-5 justify-center">
-                <h2 className="text-center lg:text-left text-[21px] text-custom-blue font-semibold">
+                <h2 className="text-left text-[21px] text-custom-blue font-semibold">
                   Composite Bonding
                 </h2>
                 <div className="flex flex-col">
-                  <p className="text-center lg:text-left text-[12px] lg:text-[16px] font-light">
+                  <p className="lg:text-left text-[12px] lg:text-[16px] font-normal">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Curabitur congue, sapien non efficitur sollicitudin, ex
                     risus semper diam, sed ornare libero urna ac leo sit amet

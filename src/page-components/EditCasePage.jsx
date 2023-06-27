@@ -22,7 +22,7 @@ const EditCasePage = () => {
 
   return (
     <div className="items-center justify-center ">
-      <div className=" my-8 mx-auto w-[90%]">
+      <div className=" my-8 mx-auto w-[90%] mx-[100px]">
         <h1 className="text-[32px] font-semibold">Edit Case</h1>
 
         <p className="mt-2 text-[16px] font-light mb-5">Update Information</p>
