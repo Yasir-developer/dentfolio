@@ -32,7 +32,7 @@ const CreateCasePage = () => {
           className="flex flex-row justify-between"
           //   style={{ margin: "10px" }}
         > */}
-        <div className="flex flex-col lg:mx-[90px] mx-0">
+        <div className="flex flex-col lg:mx-[83px] mx-[15px]">
           <h1 className="text-[32px] font-semibold">Add Case</h1>
 
           <p className="mt-2 text-[16px] font-light mb-5">

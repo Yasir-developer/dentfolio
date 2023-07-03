@@ -55,6 +55,7 @@ const DashboardHeader = ({ menuToggler }) => {
           {/* <div className="flex items-center justify-center mr-3">
             <FaRegBell className="lg:w-[36px] lg:h-[36px]" />
           </div> */}
+
           <div className="lg:border-l border-l-[#c8bfc3] flex">
             <div className="flex flex-row items-center justify-center lg:pr-[80px] lg:pl-[30px] ">
               <Image
@@ -72,7 +73,7 @@ const DashboardHeader = ({ menuToggler }) => {
               {/* className="hidden md:block" */}
               <div className="flex" style={{ zIndex: 1 }} ref={dropdownRef}>
                 <div
-                  className="flex items-center justify-center px-2rounded-l-md cursor-pointer"
+                  className="flex items-center justify-center px-2 rounded-l-md cursor-pointer"
                   onClick={toggleDropdown}
                 >
                   <HiChevronDown
@@ -80,32 +81,61 @@ const DashboardHeader = ({ menuToggler }) => {
                       isDropdownOpen ? "rotate-180" : "rotate-0"
                     }`}
                   />
-                </div>
-                {isDropdownOpen && (
-                  <div className="bg-white border border-gray-300 rounded-r-md shadow-md mt-[80px]">
-                    {/* Dropdown items */}
-                    <ul className="py-2">
-                      <li
-                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+
+                  {isDropdownOpen && (
+                    // <div className="bg-white border border-gray-300 rounded-r-md shadow-md mt-[80px]">
+                    //   {/* Dropdown items */}
+                    //   <ul className="py-2">
+                    //     <li
+                    //       className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                    //       onClick={() => {
+                    //         handleOptionSelect;
+                    //         Router.push("/dentist/settings?tab=settings");
+                    //       }}
+                    //     >
+                    //       Settings
+                    //     </li>
+                    //     <li
+                    //       className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                    //       onClick={() => {
+                    //         handleOptionSelect;
+                    //         Router.push("/dentist/dentist-plan");
+                    //       }}
+                    //     >
+                    //       Sign Out
+                    //     </li>
+                    //   </ul>
+                    // </div>
+
+                    <div class="absolute top-[40px] right-[5px] mt-2 py-2 w-48 bg-white rounded-lg shadow-xl">
+                      <p
+                        class="block px-4 py-2 text-gray-800 hover:bg-custom-blue hover:text-white"
                         onClick={() => {
-                          handleOptionSelect;
+                          // handleOptionSelect;
                           Router.push("/dentist/settings?tab=settings");
                         }}
                       >
                         Settings
-                      </li>
-                      <li
-                        className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                      </p>
+                      {/* <a
+                        href="#"
+                        class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white"
+                      >
+                        Support
+                      </a> */}
+                      <a
+                        // href="#"
                         onClick={() => {
-                          handleOptionSelect;
+                          // handleOptionSelect;
                           Router.push("/dentist/dentist-plan");
                         }}
+                        class="block px-4 py-2 text-gray-800 hover:bg-custom-blue hover:text-white"
                       >
-                        Sign Out
-                      </li>
-                    </ul>
-                  </div>
-                )}
+                        Sign out
+                      </a>
+                    </div>
+                  )}
+                </div>
               </div>
               {/* <Dropdown className="d-inline mx-2">
                 <Dropdown.Toggle>

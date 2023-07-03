@@ -105,9 +105,12 @@ const HowItWorks = () => {
               Discover local dentists in your area and choose the perfect one
               for your dental needs.
             </p>
-            <p className="text-[14px] underline decoration-solid text-custom-blue font-poppins font-semibold">
+            <a
+              className="text-[14px] underline decoration-solid text-custom-blue font-poppins font-semibold"
+              href="#"
+            >
               Find Dentist
-            </p>
+            </a>
           </div>
           <div className="absolute bottom-0 right-0">
             <Image
@@ -129,9 +132,12 @@ const HowItWorks = () => {
               Discover impressive dental work through a collection of photos
               showcasing exceptional treatments.
             </p>
-            <p className="text-[14px] underline decoration-solid text-custom-blue font-poppins font-semibold">
+            <a
+              className="text-[14px] underline decoration-solid text-custom-blue font-poppins font-semibold"
+              href="#"
+            >
               Find Dentist
-            </p>
+            </a>
           </div>
           <div className="absolute bottom-0 right-0">
             <Image src={dental} alt="logo" className="max-h-[160px] w-auto" />
@@ -149,9 +155,12 @@ const HowItWorks = () => {
               Contact Your Dental: Find a local dentist and schedule
               appointments easily with our convenient online platform.
             </p>
-            <p className="text-[14px] underline decoration-solid text-custom-blue font-poppins font-semibold">
+            <a
+              className="text-[14px] underline decoration-solid text-custom-blue font-poppins font-semibold"
+              href="#"
+            >
               Find Dentist
-            </p>
+            </a>
           </div>
           <div className="absolute bottom-0 right-0">
             <Image src={cellular} alt="logo" className="max-h-[160px] w-auto" />

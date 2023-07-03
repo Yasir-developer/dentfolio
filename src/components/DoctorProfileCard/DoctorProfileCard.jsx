@@ -93,23 +93,31 @@ const DoctorProfileCard = () => {
             {/* <div className="flex flex-col sm:flex-row sm:items-center flex-grow">
               <div className="mt-4 sm:mt-0"> */}
 
-            <div className="flex  mt-4 lg:w-[85%] w-[100%] justify-between lg:justify-center">
-              <button className="bg-custom-blue lg:font-medium font-medium  sm:text-lg w-[50%] lg:w-auto text-[14px] py-2 px-[30px] sm:px-[60px] mt-2 sm:mt-0 mr-2 sm:mr-4 text-white rounded-[7px]">
+            <div className="flex mt-4 lg:w-[85%] w-[100%] justify-between lg:justify-center">
+              {/* <button className="bg-custom-blue lg:font-medium font-medium  sm:text-lg w-[50%] lg:w-auto text-[14px] py-2 px-[30px] sm:px-[60px] mt-2 sm:mt-0 mr-2 sm:mr-4 text-white rounded-[7px]">
                 Contact Me
-              </button>
-              {/* <BlueButtons
+              </button> */}
+              <BlueButtons
                 className={
-                  "font-medium  lg:font-semibold text-base sm:text-lg w-[50%] lg:w-auto  text-[14px] py-3 px-[30px] sm:px-[60px] mt-2 sm:mt-0 mr-2 sm:mr-4 text-white rounded-[7px]"
+                  "lg:font-medium font-medium sm:text-lg w-[50%] lg:w-[20%] text-[14px] py-[0] !px-[0px] sm:px-[60px] text-white rounded-[7px] mt-2 sm:mt-0 mr-2 sm:mr-4"
                 }
                 buttonText={"Contact Me"}
                 onClick={() => setShowModal(true)}
-              /> */}
-              <button
+              />
+
+              <BlueButtons
+                className={
+                  "lg:font-medium font-medium sm:text-lg w-[50%] lg:w-[20%] text-[14px] py-[2] !px-[0px] sm:px-[60px] !text-black rounded-[7px] mt-2 sm:mt-0 mr-2 sm:mr-4 bg-transparent border border-black "
+                }
+                buttonText={"View Profile"}
+                onClick={() => setShowModal(true)}
+              />
+              {/* <button
                 onClick={() => Router.push("/patient/profile-page")}
                 className="bg-transparent border border-[#252525] lg:font-medium font-medium text-base w-[50%] lg:w-auto sm:text-lg py-3 px-[30px] sm:px-[60px] mt-2 sm:mt-0 text-[#252525] rounded-[7px]"
               >
                 View Profile
-              </button>
+              </button> */}
             </div>
             {/* </div>
             </div> */}

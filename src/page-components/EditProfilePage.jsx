@@ -49,7 +49,7 @@ const EditProfilePage = () => {
     <div className="items-center justify-center ">
       <div className=" my-8 mx-auto w-[90%]">
         <div
-          className="flex flex-row justify-between items-center"
+          className="flex flex-row justify-between items-center mx-[25px] lg:mx-[70px]"
           //   style={{ margin: "10px" }}
         >
           <div className="flex flex-col">

@@ -73,31 +73,6 @@ const DentistTabs = (props) => {
             <ul>
               <Link
                 href={{
-                  pathname: "/dentist/edit-profile",
-                  query: { tab: "edit-profile" },
-                }}
-                passHref
-              >
-                <li
-                  className={`py-2 cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold my-3 w-[70%] ${
-                    router?.query?.tab !== "edit-profile" && "text-white"
-                  } ${
-                    router?.query?.tab === "edit-profile" &&
-                    "bg-white text-custom-blue rounded-[5px] w-[150px]"
-                  }`}
-                  onClick={(e) => {
-                    // e.preventDefault();
-                    setActiveTab("editProfile");
-                    // router.push("/dentist/dashboard/view-profile");
-                    // handleTabClick(e, "/dentist/view-profile");
-                  }}
-                >
-                  <FaIdCard className="w-4 h-4 mx-2" />
-                  Edit My Profile
-                </li>
-              </Link>
-              <Link
-                href={{
                   pathname: "/dentist/view-profile",
                   query: { tab: "view" },
                 }}
@@ -121,6 +96,32 @@ const DentistTabs = (props) => {
                 >
                   <FaUser className="w-4 h-4 mx-2" />
                   View My Profile
+                </li>
+              </Link>
+
+              <Link
+                href={{
+                  pathname: "/dentist/edit-profile",
+                  query: { tab: "edit-profile" },
+                }}
+                passHref
+              >
+                <li
+                  className={`py-2 cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold my-3 w-[70%] ${
+                    router?.query?.tab !== "edit-profile" && "text-white"
+                  } ${
+                    router?.query?.tab === "edit-profile" &&
+                    "bg-white text-custom-blue rounded-[5px] w-[150px]"
+                  }`}
+                  onClick={(e) => {
+                    // e.preventDefault();
+                    setActiveTab("editProfile");
+                    // router.push("/dentist/dashboard/view-profile");
+                    // handleTabClick(e, "/dentist/view-profile");
+                  }}
+                >
+                  <FaIdCard className="w-4 h-4 mx-2" />
+                  Edit My Profile
                 </li>
               </Link>
 
@@ -199,7 +200,7 @@ const DentistTabs = (props) => {
           </nav>
           <BlueButtons
             className={
-              "bg-white absolute bottom-[200px] left-[40px] !text-custom-blue px-[50px] text-[16px] font-medium"
+              "bg-white fixed my-[40px] mx-[20px] !text-custom-blue px-[50px] text-[16px] font-medium"
             }
             buttonText={"Sign Out"}
             onClick={() => router.push("/dentist/dentist-plan")}

@@ -57,6 +57,8 @@ const AuthInput = ({
             <input
               type="password"
               id="password"
+              value={value}
+              onChange={onChange}
               placeholder="Password"
               className={`focus:outline-none w-[100%] lg:w-[100%] lg:text-[16px] text-[14px] font-light bg-custom-dashboard-bg ${className}`}
             />
