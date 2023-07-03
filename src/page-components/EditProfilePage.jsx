@@ -69,7 +69,6 @@ const EditProfilePage = () => {
         </div>
         <div className="py-5 px-5 flex w-[100%] rounded-[7px] flex-col items-start justify-center mx-auto">
           <div className="w-full flex flex-wrap gap-x-2 lg:gap-x-7 gap-y-1 items-center justify-center">
-            {/* <AuthInput placeholder={"First Name"} className={"order-1"} /> */}
             <div className="relative flex items-center border bg-custom-dashboard-bg border-custom-grey rounded-[7px] p-3 w-[45%] placeholder-slate-400 text-[16px] font-light mb-5">
               <input
                 type="text"
