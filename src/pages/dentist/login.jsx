@@ -104,7 +104,13 @@ const login = () => {
                 />
               </div> */}
                 <div className="flex justify-end w-full">
-                  <p className="text-right text-sm font-medium">
+                  <p
+                    className="text-right text-sm font-medium cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      Router.push("/dentist/forgot-password");
+                    }}
+                  >
                     Forgot Password
                   </p>
                 </div>
