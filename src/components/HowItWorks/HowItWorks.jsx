@@ -106,7 +106,7 @@ const HowItWorks = () => {
               for your dental needs.
             </p>
             <a
-              className="text-[14px] underline decoration-solid text-custom-blue font-poppins font-semibold"
+              className="text-[14px] hover:underline decoration-solid text-custom-blue font-poppins font-semibold"
               href="#"
             >
               Find Dentist
@@ -133,7 +133,7 @@ const HowItWorks = () => {
               showcasing exceptional treatments.
             </p>
             <a
-              className="text-[14px] underline decoration-solid text-custom-blue font-poppins font-semibold"
+              className="text-[14px] hover:underline decoration-solid text-custom-blue font-poppins font-semibold"
               href="#"
             >
               Find Dentist
@@ -156,7 +156,7 @@ const HowItWorks = () => {
               appointments easily with our convenient online platform.
             </p>
             <a
-              className="text-[14px] underline decoration-solid text-custom-blue font-poppins font-semibold"
+              className="text-[14px] hover:underline decoration-solid text-custom-blue font-poppins font-semibold"
               href="#"
             >
               Find Dentist
