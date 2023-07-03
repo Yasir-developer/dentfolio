@@ -7,7 +7,7 @@ import { FaEye } from "react-icons/fa";
 import BlueButtons from "@/components/Buttons/BlueButtons";
 import Router from "next/router";
 import AuthInput from "@/components/Inputs/AuthInput";
-const forgotpassword = () => {
+const Forgotpassword = () => {
   const [email, setEmail] = useState("");
 
   return (
@@ -63,4 +63,4 @@ const forgotpassword = () => {
   );
 };
 
-export default forgotpassword;
+export default Forgotpassword;

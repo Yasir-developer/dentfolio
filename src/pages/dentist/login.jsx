@@ -7,7 +7,7 @@ import { FaEye } from "react-icons/fa";
 import BlueButtons from "@/components/Buttons/BlueButtons";
 import Router from "next/router";
 import AuthInput from "@/components/Inputs/AuthInput";
-const login = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -150,4 +150,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;
