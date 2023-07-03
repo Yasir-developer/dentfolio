@@ -44,7 +44,12 @@ const CreateCasePage = () => {
             <BlueButtons buttonText={"Add Case"} className={"px-[50px]"} />
           </div> */}
         {/* </div> */}
-        <form>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            Router.push("/dentist/create-case?tab=create");
+          }}
+        >
           <div className="py-5 px-5 flex w-[100%] rounded-[7px] flex-col items-start justify-center mx-auto">
             <div className="w-full flex flex-wrap gap-x-2 lg:gap-x-7 gap-y-1 items-center justify-center">
               <AuthInput
@@ -124,7 +129,7 @@ const CreateCasePage = () => {
             <BlueButtons
               buttonText={"Save"}
               className={"bg-[#D4D4D4] rounded-[7px] mt-10 lg:ml-16 "}
-              onClick={() => Router.push("/dentist/create-case?tab=create")}
+              // onClick={() => Router.push("/dentist/create-case?tab=create")}
             />
           </div>
         </form>
