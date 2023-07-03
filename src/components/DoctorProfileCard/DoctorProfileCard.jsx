@@ -194,7 +194,7 @@ const DoctorProfileCard = () => {
               </button> */}
               <BlueButtons
                 className={
-                  "lg:font-medium font-medium sm:text-lg w-[50%] lg:w-[20%] text-[14px] py-[0] !px-[0px] sm:px-[60px] text-white rounded-[7px] mt-2 sm:mt-0 mr-2 sm:mr-4"
+                  "lg:font-medium font-medium sm:text-[16px] w-[50%] lg:w-[20%] text-[14px] py-[0] !px-[0px] sm:px-[60px] text-white rounded-[7px] mt-2 sm:mt-0 mr-2 sm:mr-4"
                 }
                 buttonText={"Contact Me"}
                 onClick={() => setShowModal(true)}
@@ -202,7 +202,7 @@ const DoctorProfileCard = () => {
 
               <BlueButtons
                 className={
-                  "lg:font-medium font-medium sm:text-lg w-[50%] lg:w-[20%] text-[14px] py-[2] !px-[0px] sm:px-[60px] !text-black rounded-[7px] mt-2 sm:mt-0 mr-2 sm:mr-4 bg-transparent border border-black "
+                  "lg:font-medium font-medium sm:text-[16px] w-[50%] lg:w-[20%] text-[14px] py-[2] !px-[0px] sm:px-[60px] !text-black rounded-[7px] mt-2 sm:mt-0 mr-2 sm:mr-4 bg-transparent border border-black "
                 }
                 buttonText={"View Profile"}
                 onClick={() => Router.push("/patient/profile-page")}
