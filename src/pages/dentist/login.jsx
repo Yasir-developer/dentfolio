@@ -61,7 +61,12 @@ const login = () => {
                 Router.push("/dentist/edit-profile?tab=edit-profile")
               }
             > */}
-            <form onSubmit={handleSubmit}>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                Router.replace("/dentist/view-profile?tab=view");
+              }}
+            >
               <div className="w-full flex flex-col items-center">
                 {/* <input
                 type="text"
@@ -111,9 +116,9 @@ const login = () => {
                     // onSubmit={() =>
                     //   Router.push("/dentist/edit-profile?tab=edit-profile")
                     // }
-                    // onClick={() =>
-                    //   Router.replace("/dentist/edit-profile?tab=edit-profile")
-                    // }
+                    onClick={() =>
+                      Router.replace("/dentist/view-profile?tab=view")
+                    }
                   />
                 </div>
               </div>

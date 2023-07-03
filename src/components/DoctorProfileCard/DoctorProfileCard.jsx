@@ -1,10 +1,103 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import location from "../../../public/images/location.svg";
 import Router from "next/router";
 import BlueButtons from "../Buttons/BlueButtons";
+import { FaTimes } from "react-icons/fa";
+import profile from "../../../public/images/profile1.png";
+import AuthInput from "../Inputs/AuthInput";
 
 const DoctorProfileCard = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const conversationModal = () => {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center z-50 bg-opacity-50 bg-gray-900 ">
+        <div className="bg-white p-6 rounded-[7px] shadow-lg lg:w-[60%] w-[90%] relative">
+          <div className="mx-5">
+            <button
+              className="absolute right-[20px] top-[20px]  "
+              onClick={() => setShowModal(false)}
+            >
+              <FaTimes className="text-[#616161] w-[18px] h-[18px]" />
+            </button>
+            <div className="py-5 flex flex-row items-center ">
+              <div className="items-center pb-2">
+                <Image src={profile} width={67} height={66} />
+              </div>
+              <div className="mx-5">
+                <h2 className="text-custom-blue font-semibold text-[21px]">
+                  Dylan Taylor
+                </h2>
+                <div className="flex flex-col">
+                  <h3 className="text-custom-black text-[15px]">
+                    Orthodontist
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <form>
+              <div className="mb-4 gap-x-2 flex lg:flex-row flex-col justify-center items-center">
+                {/* <input
+                  type="text"
+                  id="fullName"
+                  placeholder="Full Name"
+                  className="inputStyles"
+                /> */}
+                <AuthInput
+                  placeholder={"Full Name"}
+                  className="border border-custom-grey rounded-[7px] mt-4 lg:mt-0 w-[90%] text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight"
+                  // btnStyle={ma}
+                />
+
+                <AuthInput
+                  placeholder={"Phone Number"}
+                  className="border border-custom-grey rounded-[7px] mt-4 lg:mt-0 w-[90%] text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight"
+                  type={"tel"}
+                />
+                {/* <input
+                  type="tel"
+                  id="phone"
+                  className="inputStyles"
+                  placeholder="Phone Number"
+                /> */}
+                <AuthInput
+                  placeholder={"Email Address"}
+                  className="border border-custom-grey rounded-[7px] mt-4 lg:mt-0 w-[90%] text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight"
+                  type={"email"}
+                />
+                {/* <input
+                  type="email"
+                  id="email"
+                  className="inputStyles"
+                  placeholder="Email Address"
+                /> */}
+              </div>
+
+              <textarea
+                id="conversation"
+                placeholder="Start a conversation"
+                className="inputStyles w-full"
+                rows="5"
+              ></textarea>
+
+              <button
+                type="submit"
+                className="bg-custom-blue hover:bg-blue-600 text-white font-poppins font-medium py-2 mt-5 mb-7 px-[45px] rounded lg:justify-end text-sm"
+                onClick={() => {
+                  setShowModal(false);
+                  setShowThankYouModal(true);
+                }}
+              >
+                Send
+              </button>
+            </form>
+          </div>
+          {/* Form fields and buttons */}
+        </div>
+      </div>
+    );
+  };
   const doctorArray = [
     {
       id: 1,
@@ -51,6 +144,8 @@ const DoctorProfileCard = () => {
   ];
   return (
     <div>
+      {showModal && conversationModal()}
+      {/* {showThankYouModal && thankYouModal()} */}
       {doctorArray.map((item, index) => {
         return (
           <div
@@ -76,7 +171,7 @@ const DoctorProfileCard = () => {
                   </h2>
                   <div className="flex mt-3">
                     <Image src={location} alt="logo" />
-                    <h2 className="px-1 text-xs sm:text-sm font-extralight">
+                    <h2 className="px-1 text-xs sm:text-sm font-medium">
                       {item.country}
                     </h2>
                   </div>
@@ -93,7 +188,7 @@ const DoctorProfileCard = () => {
             {/* <div className="flex flex-col sm:flex-row sm:items-center flex-grow">
               <div className="mt-4 sm:mt-0"> */}
 
-            <div className="flex mt-4 lg:w-[85%] w-[100%] justify-between lg:justify-center">
+            <div className="flex mt-4 lg:w-[75%] w-[100%] justify-between lg:justify-center">
               {/* <button className="bg-custom-blue lg:font-medium font-medium  sm:text-lg w-[50%] lg:w-auto text-[14px] py-2 px-[30px] sm:px-[60px] mt-2 sm:mt-0 mr-2 sm:mr-4 text-white rounded-[7px]">
                 Contact Me
               </button> */}
@@ -110,7 +205,7 @@ const DoctorProfileCard = () => {
                   "lg:font-medium font-medium sm:text-lg w-[50%] lg:w-[20%] text-[14px] py-[2] !px-[0px] sm:px-[60px] !text-black rounded-[7px] mt-2 sm:mt-0 mr-2 sm:mr-4 bg-transparent border border-black "
                 }
                 buttonText={"View Profile"}
-                onClick={() => setShowModal(true)}
+                onClick={() => Router.push("/patient/profile-page")}
               />
               {/* <button
                 onClick={() => Router.push("/patient/profile-page")}
