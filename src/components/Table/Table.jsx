@@ -18,16 +18,16 @@ const Table = ({ columns, data }) => {
       className="mx-auto border-b-1 bordert-t-1 border-b-[#70707038] w-[90%] items-center justify-center"
     >
       <thead className="">
-        {headerGroups.map((index, headerGroup) => (
+        {headerGroups.map((headerGroup) => (
           <tr
+            key={headerGroup}
             {...headerGroup.getHeaderGroupProps()}
             className="border border-b-[#70707038]"
-            key={index}
           >
-            {headerGroup.headers.map((index, column) => (
+            {headerGroup.headers.map((column) => (
               <th
-                key={index}
                 {...column.getHeaderProps()}
+                key={column}
                 className="p-2 font-semibold text-left"
               >
                 {column.render("Header")}
@@ -40,14 +40,14 @@ const Table = ({ columns, data }) => {
         {rows.map((row, i) => {
           prepareRow(row);
           return (
-            <tr {...row.getRowProps()} className="p-3" key={i}>
-              {row.cells.map((index, cell) => {
+            <tr {...row.getRowProps()} className="p-3" key={row}>
+              {row.cells.map((cell) => {
                 return (
                   <td
+                    key={cell}
                     {...cell.getCellProps()}
                     className="border border-b-[#70707038] text-left p-2"
                     style={{}}
-                    key={index}
                     // style={{
                     //   // padding: "10px",
                     //   borderBottom: "1px solid",
