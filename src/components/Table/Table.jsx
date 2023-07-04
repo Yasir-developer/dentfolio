@@ -18,10 +18,11 @@ const Table = ({ columns, data }) => {
       className="mx-auto border-b-1 bordert-t-1 border-b-[#70707038] w-[90%] items-center justify-center"
     >
       <thead className="">
-        {headerGroups.map((headerGroup) => (
+        {headerGroups.map((index, headerGroup) => (
           <tr
             {...headerGroup.getHeaderGroupProps()}
             className="border border-b-[#70707038]"
+            key={index}
           >
             {headerGroup.headers.map((column) => (
               <th
