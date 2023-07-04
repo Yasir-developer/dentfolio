@@ -33,7 +33,7 @@ const DashboardHeader = ({ menuToggler }) => {
     // Perform any other actions when an option is selected
   };
   return (
-    <div className="h-[80px] border-b border-[#c8bfc3] w-full flex">
+    <div className="h-[80px] border-b border-[#70707038] w-full flex">
       <div className="hidden bg-gradient-radial from-[#0372E2] to-[#0B5FB4] w-[18%] lg:flex items-center justify-center">
         <Image
           src={logoWhite}

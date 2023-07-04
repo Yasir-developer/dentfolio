@@ -45,8 +45,15 @@ const AppHeader = () => {
               aria-label="Global"
             >
               <div className="flex lg:flex-1">
-                <a href="#" className="-m-1.5 p-1.5">
-                  <span className="sr-only">Your Company</span>
+                <a
+                  href="#"
+                  className="-m-1.5 p-1.5"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    router.push("/");
+                  }}
+                >
+                  {/* <span className="sr-only">Your Company</span> */}
                   <img className="h-8 w-auto" src={"/images/logo.png"} alt="" />
                 </a>
               </div>
@@ -60,7 +67,14 @@ const AppHeader = () => {
                 </button>
 
                 <button
-                  onClick={() => router.push("/dentist/sign-up")}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    router.push(
+                      router.pathname == "/"
+                        ? "/dentist/dentist-plan"
+                        : "/dentist/sign-up"
+                    );
+                  }}
                   className="bg-white border border-custom-blue text-blue-500 font-poppins font-medium py-2 px-4 rounded w-139 text-sm hidden lg:block"
                 >
                   SIGN UP

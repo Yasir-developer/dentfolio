@@ -65,7 +65,11 @@ const DentistMemberBanner = () => {
               className={
                 "lg:text-[16px] text-[14px] lg:font-semibold font-normal  mb-[30px] lg:mb-0"
               }
-              onClick={() => Router.push("/dentist/login")}
+              onClick={(e) => {
+                e.preventDefault();
+
+                Router.push("/dentist/sign-up");
+              }}
               // className="lg:!px-8  mx-auto"
               // btnStyle={ margin: "20px" }
             />

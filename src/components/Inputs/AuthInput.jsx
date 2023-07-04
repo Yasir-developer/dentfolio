@@ -12,6 +12,7 @@ const AuthInput = ({
   className,
   containerClassName,
   btnStyle,
+  maxLength,
   ...rest
 }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -33,6 +34,7 @@ const AuthInput = ({
             onChange={onChange}
             {...rest}
             style={btnStyle}
+            maxLength={maxLength}
             // place
             className={`focus:outline-none border w-[45%] border-custom-grey rounded-[7px] p-3 bg-custom-dashboard-bg placeholder-slate-400 lg:text-[16px] text-[14px] font-normal mb-5 ${className}`}
           />

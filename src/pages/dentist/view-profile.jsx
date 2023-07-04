@@ -12,7 +12,7 @@ const viewprofile = () => {
         {/* <EditCasePage /> */}
         {/* <h1>Edit case</h1> */}
 
-        {/* <ViewProfilePage /> */}
+        <ViewProfilePage />
       </DentistTabs>
     </div>
   );

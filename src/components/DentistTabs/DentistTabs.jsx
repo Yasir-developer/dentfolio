@@ -1,7 +1,14 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { FaIdCard, FaUser, FaFileAlt, FaEdit, FaCog } from "react-icons/fa";
+import {
+  FaIdCard,
+  FaUser,
+  FaFileAlt,
+  FaEdit,
+  FaCog,
+  FaFileInvoiceDollar,
+} from "react-icons/fa";
 // import Router, { useRouter } from "next/router";
 // import { useRouter } from "next/";
 
@@ -15,6 +22,8 @@ import SettingsPage from "@/page-components/SettingsPage";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import EditProfilePage from "@/page-components/EditProfilePage";
+import Billing from "@/page-components/BillingPage";
+import BillingHistory from "@/page-components/BillingHistory";
 // import EditProfilePage from "@/page-components/editProfilePage";
 const DentistTabs = (props) => {
   console.log(props, "props");
@@ -179,6 +188,26 @@ const DentistTabs = (props) => {
 
               <Link
                 href={{
+                  pathname: "/dentist/billing",
+                  query: { tab: "billing" },
+                }}
+              >
+                <li
+                  className={`py-3 cursor-pointer flex flex-row items-center ml-2 text-[16px] my-3 font-semibold w-[70%] ${
+                    router?.query?.tab !== "billing" && "text-white"
+                  } ${
+                    router?.query?.tab === "billing" &&
+                    "bg-white text-custom-blue rounded-[5px] w-[150px] py-3"
+                  }`}
+                  onClick={(e) => setActiveTab("billing")}
+                >
+                  <FaFileInvoiceDollar className="w-4 h-4 mx-2" />
+                  Billing
+                </li>
+              </Link>
+
+              <Link
+                href={{
                   pathname: "/dentist/settings",
                   query: { tab: "settings" },
                 }}
@@ -217,6 +246,10 @@ const DentistTabs = (props) => {
 
             {/* {activeTab === "editProfile" && <ViewProfilePage />} */}
             {/* {router?.query?.tab === "view" && <ViewProfilePage />} */}
+
+            {router?.query?.tab === "billing" && <Billing />}
+            {router?.query?.tab === "bill" && <BillingHistory />}
+
             {router?.query?.tab === "settings" && <SettingsPage />}
           </div>
           <div className="footerContainer">
