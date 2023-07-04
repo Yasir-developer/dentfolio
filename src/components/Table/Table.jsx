@@ -24,8 +24,9 @@ const Table = ({ columns, data }) => {
             className="border border-b-[#70707038]"
             key={index}
           >
-            {headerGroup.headers.map((column) => (
+            {headerGroup.headers.map((index, column) => (
               <th
+                key={index}
                 {...column.getHeaderProps()}
                 className="p-2 font-semibold text-left"
               >
@@ -39,7 +40,7 @@ const Table = ({ columns, data }) => {
         {rows.map((row, i) => {
           prepareRow(row);
           return (
-            <tr {...row.getRowProps()} className="p-3">
+            <tr {...row.getRowProps()} className="p-3" key={i}>
               {row.cells.map((index, cell) => {
                 return (
                   <td
