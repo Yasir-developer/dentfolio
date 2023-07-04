@@ -33,7 +33,9 @@ const CreateCasePage = () => {
           //   style={{ margin: "10px" }}
         > */}
         <div className="flex flex-col lg:mx-[83px] mx-[15px]">
-          <h1 className="text-[32px] font-semibold">Add Case</h1>
+          <h1 className="lg:text-[32px] text-[28px] lg:font-semibold font-medium">
+            Add Case
+          </h1>
 
           <p className="mt-2 text-[16px] font-light mb-5">
             Upload a treatment case that you've done to show off your skills to

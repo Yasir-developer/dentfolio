@@ -53,7 +53,9 @@ const EditProfilePage = () => {
           //   style={{ margin: "10px" }}
         >
           <div className="flex flex-col">
-            <h1 className="text-[32px] font-semibold">Profile</h1>
+            <h1 className="lg:text-[32px] text-[28px] lg:font-semibold font-medium">
+              Profile
+            </h1>
 
             <p className="mt-2 text-[16px] font-light mb-5">
               Personal Information

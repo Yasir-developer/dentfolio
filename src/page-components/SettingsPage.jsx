@@ -6,7 +6,9 @@ const SettingsPage = () => {
   return (
     <div className="items-center justify-center ">
       <div className=" my-8 mx-auto w-[90%] lg:mx-[90px]">
-        <h1 className="text-[32px] font-semibold">Settings</h1>
+        <h1 className="lg:text-[32px] text-[28px] lg:font-semibold font-medium">
+          Settings
+        </h1>
 
         <p className="mt-2 text-[16px] font-light mb-5">Update Information</p>
       </div>

@@ -9,9 +9,11 @@ const BillingPage = () => {
 
   return (
     <div className="items-center justify-center ">
-      <div className="flex justify-between my-8 mx-auto w-[90%] lg:mx-[90px]">
+      <div className="flex justify-between items-center my-8 mx-auto w-[90%] lg:mx-[90px]">
         <div className="flex flex-col">
-          <h1 className="text-[32px] font-semibold">Billing Method</h1>
+          <h1 className="lg:text-[32px] text-[28px] lg:font-semibold font-medium">
+            Billing Method
+          </h1>
 
           <p className="mt-2 text-[16px] font-light mb-5">
             Update your billing details and address
@@ -21,7 +23,7 @@ const BillingPage = () => {
         <div>
           <BlueButtons
             buttonText={"Billing History"}
-            className={"lg:px-[50px]"}
+            className={"lg:px-[70px] px-[30px] text-[14px]"}
             onClick={(e) => {
               // e.preventDefault();
               Router.push({

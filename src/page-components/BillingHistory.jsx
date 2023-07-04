@@ -91,7 +91,9 @@ const BillingHistory = () => {
   return (
     <>
       <div className="flex flex-col w-[90%] mx-auto mt-5">
-        <h1 className="text-[32px] font-semibold">Billing History</h1>
+        <h1 className="lg:text-[32px] text-[28px] lg:font-semibold font-medium">
+          Billing History
+        </h1>
 
         <p className="mt-2 text-[16px] font-light mb-5">
           See history of your payment plan
