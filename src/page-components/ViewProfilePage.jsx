@@ -1,3 +1,4 @@
+import DashboardTreatment from "@/components/DashboardTreatment/DashboardTreatment";
 import DentistTabs from "@/components/DentistTabs/DentistTabs";
 import DoctorBasicDetail from "@/components/DoctorBasicDetail/DoctorBasicDetail";
 import PreviousCases from "@/components/PreviousCases/PreviousCases";
@@ -6,14 +7,18 @@ import React from "react";
 
 const ViewProfilePage = () => {
   return (
-    <div>
+    <div className="w-[80%] mx-auto">
       {/* <DentistTabs> */}
       {/* <EditCasePage /> */}
       {/* <h1>Edit case</h1> */}
 
       <DoctorBasicDetail />
-      <TreatmentProvide />
+      <DashboardTreatment />
+      {/* <TreatmentProvide /> */}
       <PreviousCases />
+      {/* <TreatmentProvide /> */}
+      {/* <TreatmentProvide />
+      <PreviousCases /> */}
       {/* </DentistTabs> */}
     </div>
   );
