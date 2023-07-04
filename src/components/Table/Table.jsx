@@ -40,12 +40,13 @@ const Table = ({ columns, data }) => {
           prepareRow(row);
           return (
             <tr {...row.getRowProps()} className="p-3">
-              {row.cells.map((cell) => {
+              {row.cells.map((index, cell) => {
                 return (
                   <td
                     {...cell.getCellProps()}
                     className="border border-b-[#70707038] text-left p-2"
                     style={{}}
+                    key={index}
                     // style={{
                     //   // padding: "10px",
                     //   borderBottom: "1px solid",
