@@ -27,12 +27,12 @@ const CreateCasePage = () => {
   // };
   return (
     <div className="flex items-center justify-center ">
-      <div className=" my-8 mx-auto w-[90%]">
+      <div className="my-8 mx-auto w-[90%]">
         {/* <div
           className="flex flex-row justify-between"
           //   style={{ margin: "10px" }}
         > */}
-        <div className="flex flex-col lg:mx-[83px] mx-[15px]">
+        <div className="flex flex-col">
           <h1 className="lg:text-[32px] text-[28px] lg:font-semibold font-medium">
             Add Case
           </h1>
@@ -52,8 +52,8 @@ const CreateCasePage = () => {
             Router.push("/dentist/create-case?tab=create");
           }}
         >
-          <div className="py-5 px-5 flex w-[100%] rounded-[7px] flex-col items-start justify-center mx-auto">
-            <div className="w-full flex flex-wrap gap-x-2 lg:gap-x-7 gap-y-1 items-center justify-center">
+          <div className="py-5 flex w-[100%] rounded-[7px] flex-col items-start justify-start ">
+            <div className="w-[90%] flex flex-wrap gap-x-2 lg:gap-x-7 gap-y-1 items-center justify-start">
               <AuthInput
                 placeholder={"Case Title"}
                 className={"w-full lg:!w-[90%]"}
@@ -64,7 +64,7 @@ const CreateCasePage = () => {
                 rows={4}
               ></textarea>
             </div>
-            <div className="flex lg:flex-row flex-col lg:pl-16 pt-5 lg:items-center justify-start items-start">
+            <div className="flex lg:flex-row flex-col pt-5 lg:items-center justify-start items-start">
               <p className="lg:text-[18px] text-[16px] font-semibold">
                 Case Visibility:
               </p>
@@ -96,7 +96,7 @@ const CreateCasePage = () => {
               </div>
             </div>
 
-            <div className="lg:w-[45%] flex flex-col lg:mx-[50px] lg:pl-3 pt-5">
+            <div className="lg:w-[45%] flex flex-col pt-5">
               <p className="text-[18px] font-semibold">Case Type:</p>
               <div className="flex flex-row flex-wrap gap-x-2 gap-y-2 lg:gap-x-5 mt-3">
                 {treatmentType.map((data, dataIndex) => (
@@ -119,7 +119,7 @@ const CreateCasePage = () => {
               </div>
             </div>
 
-            <div className="lg:ml-16 mt-10">
+            <div className="mt-10">
               <p className="text-[18px] font-semibold">Upload Photos:</p>
               <button className="py-2 px-8 bg-[#D4D4D4] rounded-[7px] h-12 mt-5">
                 <p className="text-left text-[16px] font-semibold">
@@ -130,7 +130,7 @@ const CreateCasePage = () => {
 
             <BlueButtons
               buttonText={"Save"}
-              className={"bg-[#D4D4D4] rounded-[7px] mt-10 lg:ml-16 "}
+              className={"bg-[#D4D4D4] rounded-[7px] mt-10"}
               // onClick={() => Router.push("/dentist/create-case?tab=create")}
             />
           </div>

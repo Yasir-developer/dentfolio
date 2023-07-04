@@ -22,14 +22,14 @@ const EditCasePage = () => {
 
   return (
     <div className="items-center justify-center ">
-      <div className="my-8 w-[90%] mx-[45px] lg:mx-[100px]">
+      <div className="lg:my-8 my-5 mx-auto w-[90%]">
         <h1 className="lg:text-[32px] text-[28px] lg:font-semibold font-medium">
           Edit Case
         </h1>
 
         <p className="mt-2 text-[16px] font-light mb-5">Update Information</p>
       </div>
-      <div className="py-5 px-5 flex w-[90%] border-custom-grey rounded-[7px] flex-col items-center justify-center mx-auto mb-8">
+      <div className="lg:py-5 py-2 flex w-[90%] border-custom-grey rounded-[7px] flex-col items-center justify-start mx-auto mb-8">
         {caseTypes.map((item, index) => (
           <EditCaseCard
             key={index}

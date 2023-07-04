@@ -5,7 +5,7 @@ import { FaEye } from "react-icons/fa";
 const SettingsPage = () => {
   return (
     <div className="items-center justify-center ">
-      <div className=" my-8 mx-auto w-[90%] lg:mx-[90px]">
+      <div className=" my-8 mx-auto w-[90%]">
         <h1 className="lg:text-[32px] text-[28px] lg:font-semibold font-medium">
           Settings
         </h1>
@@ -13,7 +13,7 @@ const SettingsPage = () => {
         <p className="mt-2 text-[16px] font-light mb-5">Update Information</p>
       </div>
 
-      <div className="py-5 px-5 flex w-[90%] rounded-[7px] flex-col justify-center mx-auto mb-8">
+      <div className="py-5 flex w-[90%] rounded-[7px] flex-col justify-start mx-auto mb-8">
         <h2 className="font-medium text-[18px]">Reset Password </h2>
         {/* <p className="font-medium text-[16px] my-3">New Password </p> */}
         <div className="mt-5">

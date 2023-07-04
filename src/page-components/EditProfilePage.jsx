@@ -47,9 +47,9 @@ const EditProfilePage = () => {
   ];
   return (
     <div className="items-center justify-center ">
-      <div className=" my-8 mx-auto w-[90%]">
+      <div className="my-8 w-[90%]">
         <div
-          className="flex flex-row justify-between items-center mx-[25px] lg:mx-[70px]"
+          className="flex flex-row justify-between items-center w-[90%] mx-auto"
           //   style={{ margin: "10px" }}
         >
           <div className="flex flex-col">
@@ -69,8 +69,8 @@ const EditProfilePage = () => {
             />
           </div>
         </div>
-        <div className="py-5 px-5 flex w-[100%] rounded-[7px] flex-col items-start justify-center mx-auto">
-          <div className="w-full flex flex-wrap gap-x-2 lg:gap-x-7 gap-y-1 items-center justify-center">
+        <div className="py-5 flex w-[90%] rounded-[7px] flex-col items-start justify-center mx-auto">
+          <div className="w-full flex flex-wrap gap-x-2 lg:gap-x-7 gap-y-1 items-center">
             <div className="relative flex items-center border bg-custom-dashboard-bg border-custom-grey rounded-[7px] p-3 w-[45%] placeholder-slate-400 text-[16px] font-light mb-5">
               <input
                 type="text"
@@ -167,7 +167,7 @@ const EditProfilePage = () => {
               className={"h-[100px] align-text-top"}
             /> */}
           </div>
-          <div className="lg:w-[45%] flex flex-col lg:mx-[50px] mt-[-33px] justify-start items-start">
+          <div className="lg:w-[45%] flex flex-col mt-[-33px] justify-start items-start">
             <p className="text-[18px] font-semibold">Treatment Type:</p>
             <div className="flex flex-row flex-wrap gap-x-2 gap-y-2 lg:gap-x-5 mt-3">
               {treatmentType.map((data, dataIndex) => (
