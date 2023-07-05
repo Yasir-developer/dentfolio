@@ -1,6 +1,6 @@
 import { useTable } from "react-table";
 
-const Table = ({ columns, data }) => {
+const AdminDentistTable = ({ columns, data }) => {
   const {
     getTableProps, // table props from react-table
     getTableBodyProps, // table body props from react-table
@@ -15,20 +15,20 @@ const Table = ({ columns, data }) => {
   return (
     <table
       {...getTableProps()}
-      className="mx-auto border-b-1 bordert-t-1 border-b-[#70707038] w-[90%] items-center justify-center "
+      className="mx-auto border-b-1 bordert-t-1 border-b-[#EFF2F7] w-[100%] items-center justify-center "
     >
       <thead className="">
         {headerGroups.map((headerGroup) => (
           <tr
             key={headerGroup}
             {...headerGroup.getHeaderGroupProps()}
-            className="border-b border-t border-t-[#70707038] border-b-[#70707038]"
+            className="border-b border-t border-t-[#EFF2F7] border-b-[#EFF2F7]"
           >
             {headerGroup.headers.map((column) => (
               <th
                 {...column.getHeaderProps()}
                 key={column}
-                className="p-2 font-semibold text-left"
+                className="p-3 font-semibold text-[13px] text-left"
               >
                 {column.render("Header")}
               </th>
@@ -40,30 +40,40 @@ const Table = ({ columns, data }) => {
         {rows.map((row, i) => {
           prepareRow(row);
           return (
-            <tr {...row.getRowProps()} className="p-3" key={row}>
+            <tr
+              {...row.getRowProps()}
+              // className="p-3"
+              key={row}
+            >
               {row.cells.map((cell) => {
                 return (
                   <td
                     key={cell}
                     {...cell.getCellProps()}
-                    className="border-b border-b-[#70707038] text-left p-2"
-                    style={{}}
-                    // style={{
-                    //   // padding: "10px",
-                    //   borderBottom: "1px solid",
-                    //   textAlign: "center",
-                    // }}
+                    className={`border-b border-b-[#EFF2F7] text-[13px] p-3 font-normal 
+                    ${cell.column.id === "action" ? "px-5" : "px-3"}
+                    `}
                   >
-                    {cell.column.id === "status" ? (
-                      <span
+                    {cell.column.id === "id" ? (
+                      <span className="font-medium">{cell.render("Cell")}</span>
+                    ) : cell.column.id === "subscription" ? (
+                      <p
                         style={{
                           backgroundColor: getStatusColor(cell.value),
+                          //   paddingRight: "35px",
+                          //   paddingLeft: "35px",
+
+                          color: getStatusTextColor(cell.value),
+                          fontWeight: "500",
                           padding: "5px",
+                          textAlign: "center",
+                          width: "40%",
+                          //   padding: "15px",
                           borderRadius: "7px",
                         }}
                       >
                         {cell.render("Cell")}
-                      </span>
+                      </p>
                     ) : (
                       cell.render("Cell")
                     )}
@@ -81,14 +91,19 @@ const Table = ({ columns, data }) => {
 
 const getStatusColor = (status) => {
   switch (status) {
-    case "Paid":
-      return "#bdeee8";
-    case "Pending":
-      return "#F7CB73";
-    case "Cancelled":
-      return "red";
-    default:
-      return "black";
+    case "Trial":
+      return "#0682FF2E";
+    case "Premium":
+      return "#34C38F2E";
   }
 };
-export default Table;
+
+const getStatusTextColor = (status) => {
+  switch (status) {
+    case "Trial":
+      return "#0372E2";
+    case "Premium":
+      return "#34C38F";
+  }
+};
+export default AdminDentistTable;

@@ -7,7 +7,10 @@ import {
   FaEdit,
   FaCog,
   FaFileInvoiceDollar,
+  FaUserMd,
+  FaMoneyBillWaveAlt,
 } from "react-icons/fa";
+import { BsGridFill } from "react-icons/bs";
 
 import DashboardHeader from "../DashboardHeader/DashboardHeader";
 import EditCasePage from "@/page-components/EditCasePage";
@@ -21,7 +24,11 @@ import { useRouter } from "next/router";
 import EditProfilePage from "@/page-components/EditProfilePage";
 import Billing from "@/page-components/BillingPage";
 import BillingHistory from "@/page-components/BillingHistory";
-const DentistTabs = (props) => {
+import OverviewPage from "@/page-components/OverviewPage";
+import AdminDentistPage from "@/page-components/AdminDentistPage";
+import RevenuePage from "@/page-components/RevenuePage";
+
+const AdminTabs = (props) => {
   console.log(props, "props");
   const router = useRouter();
   console.log(router, "routrer.quey");
@@ -53,114 +60,75 @@ const DentistTabs = (props) => {
             <ul>
               <Link
                 href={{
-                  pathname: "/dentist/view-profile",
-                  query: { tab: "view" },
+                  pathname: "/admin/overview",
+                  query: { tab: "overview" },
                 }}
                 passHref
               >
                 <li
                   className={`py-3 cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold my-3 w-[80%] ${
-                    router?.query?.tab !== "view" && "text-white"
+                    router?.query?.tab !== "overview" && "text-white"
                   } ${
-                    router?.query?.tab === "view" &&
+                    router?.query?.tab === "overview" &&
                     "bg-white text-custom-blue rounded-[5px] w-[150px]"
                   }`}
                   onClick={(e) => {
                     setActiveTab("viewProfile");
                   }}
                 >
-                  <FaUser className="w-4 h-4 mx-2" />
-                  View My Profile
+                  <BsGridFill
+                    className={`w-4 h-4 mx-2 ${
+                      router?.query?.tab === "overview" && "text-custom-blue "
+                    }`}
+                  />
+                  Overview
                 </li>
               </Link>
 
               <Link
                 href={{
-                  pathname: "/dentist/edit-profile",
-                  query: { tab: "edit-profile" },
+                  pathname: "/admin/dentist",
+                  query: { tab: "dentist" },
                 }}
                 passHref
               >
                 <li
                   className={`py-2 cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold my-3 w-[70%] ${
-                    router?.query?.tab !== "edit-profile" && "text-white"
+                    router?.query?.tab !== "dentist" && "text-white"
                   } ${
-                    router?.query?.tab === "edit-profile" &&
+                    router?.query?.tab === "dentist" &&
                     "bg-white text-custom-blue rounded-[5px] w-[150px]"
                   }`}
                   onClick={(e) => {
                     setActiveTab("editProfile");
                   }}
                 >
-                  <FaIdCard className="w-4 h-4 mx-2" />
-                  Edit My Profile
+                  <FaUserMd className="w-4 h-4 mx-2" />
+                  Dentist
                 </li>
               </Link>
 
               <Link
                 href={{
-                  pathname: "/dentist/create-case",
-                  query: { tab: "create" },
+                  pathname: "/admin/revenue",
+                  query: { tab: "revenue" },
                 }}
                 passHref
               >
                 <li
                   className={` cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold my-3 w-[70%]  ${
-                    router?.query?.tab !== "create" &&
+                    router?.query?.tab !== "revenue" &&
                     "text-white text-[16px] font-semibold py-3"
                   } ${
-                    router?.query?.tab === "create" &&
+                    router?.query?.tab === "revenue" &&
                     "bg-white text-custom-blue rounded-[5px]  py-3"
                   }`}
                   onClick={(e) => {
                     setActiveTab("createCase");
                   }}
                 >
-                  <FaFileAlt className="w-4 h-4 mx-2" />
-                  Create Case
-                </li>
-              </Link>
-
-              <Link
-                href={{
-                  pathname: "/dentist/edit-case",
-                  query: { tab: "edit" },
-                }}
-              >
-                <li
-                  className={`cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold my-3 w-[70%] ${
-                    router?.query?.tab !== "edit" &&
-                    "text-white text-[16px] font-semibold w-[60%] py-3"
-                  } ${
-                    router?.query?.tab === "edit" &&
-                    "bg-white text-custom-blue rounded-[5px] py-3"
-                  }`}
-                  onClick={(e) => {
-                    setActiveTab("editCase");
-                  }}
-                >
-                  <FaEdit className="w-4 h-4 mx-2" />
-                  Edit Case
-                </li>
-              </Link>
-
-              <Link
-                href={{
-                  pathname: "/dentist/billing",
-                  query: { tab: "billing" },
-                }}
-              >
-                <li
-                  className={`py-3 cursor-pointer flex flex-row items-center ml-2 text-[16px] my-3 font-semibold w-[70%] ${
-                    router?.query?.tab !== "billing" && "text-white"
-                  } ${
-                    router?.query?.tab === "billing" &&
-                    "bg-white text-custom-blue rounded-[5px] w-[150px] py-3"
-                  }`}
-                  onClick={(e) => setActiveTab("billing")}
-                >
-                  <FaFileInvoiceDollar className="w-4 h-4 mx-2" />
-                  Billing
+                  <FaMoneyBillWaveAlt className="w-4 h-4 mx-2" />
+                  Revenue
                 </li>
               </Link>
 
@@ -195,10 +163,10 @@ const DentistTabs = (props) => {
         </div>
         <div className="bg-gray-100 lg:w-[85%] w-full flex flex-col justify-between">
           <div className="contentContainer overflow-y-scroll h-full">
-            {router?.query?.tab === "edit-profile" && <EditProfilePage />}
+            {router?.query?.tab === "overview" && <OverviewPage />}
 
-            {router?.query?.tab === "view" && <ViewProfilePage />}
-            {router?.query?.tab === "create" && <CreateCasePage />}
+            {router?.query?.tab === "dentist" && <AdminDentistPage />}
+            {router?.query?.tab === "revenue" && <RevenuePage />}
             {router?.query?.tab === "edit" && <EditCasePage />}
 
             {router?.query?.tab === "billing" && <Billing />}
@@ -215,4 +183,4 @@ const DentistTabs = (props) => {
   );
 };
 
-export default DentistTabs;
+export default AdminTabs;
