@@ -12,7 +12,7 @@ const DashboardHeader = ({ menuToggler }) => {
   useEffect(() => {
     // Add event listener to handle clicks outside the dropdown
     const handleOutsideClick = (event) => {
-      console.log(event, "event");
+      // console.log(event, "event");
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setDropdownOpen(false);
       }

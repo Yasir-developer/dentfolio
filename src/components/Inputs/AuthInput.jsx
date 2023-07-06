@@ -57,7 +57,7 @@ const AuthInput = ({
         >
           <>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               id="password"
               value={value}
               onChange={onChange}
@@ -69,7 +69,9 @@ const AuthInput = ({
                 color: "#9F9F9F",
                 width: "17px",
                 height: "17px",
+                cursor:'pointer'
               }}
+              onClick={() => togglePasswordVisibility() }
             />
           </>
         </div>

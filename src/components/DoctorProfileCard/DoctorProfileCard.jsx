@@ -6,9 +6,39 @@ import BlueButtons from "../Buttons/BlueButtons";
 import { FaTimes } from "react-icons/fa";
 import profile from "../../../public/images/profile1.png";
 import AuthInput from "../Inputs/AuthInput";
+import checkCircle from "../../../public/images/check-circle2.svg";
 
 const DoctorProfileCard = () => {
   const [showModal, setShowModal] = useState(false);
+  const [showThankYouModal, setShowThankYouModal] = useState(false);
+
+  const thankYouModal = () => {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center z-50 bg-opacity-50 bg-gray-900 ">
+        <div className="bg-white p-6 rounded-[7px] shadow-lg lg:w-[60%] w-[90%] relative max-w-[900px]">
+          <button
+            className="absolute right-[20px] top-[20px]  "
+            onClick={() => setShowThankYouModal(false)}
+          >
+            <FaTimes className="text-[#616161] w-[18px] h-[18px]" />
+          </button>
+          <div className="flex items-center justify-center mt-[50px] ">
+            <Image src={checkCircle} alt="logo" />
+          </div>
+          <h1 className="text-custom-black text-center text-[34px] font-semibold mt-2">
+            THANK YOU
+          </h1>
+
+          <p className="text-custom-black text-center text-[16px] font-normal mt-2 mb-[50px]">
+            Your message has been successfully sent to the dentist. They will
+            contact you shortly via email or phone.
+          </p>
+
+          {/* Form fields and buttons */}
+        </div>
+      </div>
+    );
+  };
 
   const conversationModal = () => {
     return (
@@ -145,7 +175,7 @@ const DoctorProfileCard = () => {
   return (
     <div>
       {showModal && conversationModal()}
-      {/* {showThankYouModal && thankYouModal()} */}
+      {showThankYouModal && thankYouModal()}
       {doctorArray.map((item, index) => {
         return (
           <div
