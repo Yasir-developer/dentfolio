@@ -29,8 +29,8 @@ const EditProfilePage = () => {
   }, []);
 
   const uploadFileHandler = () => {
-    uploadFileref.current.click()
-  }
+    uploadFileref.current.click();
+  };
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -78,7 +78,9 @@ const EditProfilePage = () => {
           <div className="w-full flex flex-wrap gap-x-2 lg:gap-x-7 gap-y-1 items-center">
             <div className="relative flex items-center border bg-custom-dashboard-bg border-custom-grey rounded-[7px] p-3 w-[45%] placeholder-slate-400 text-[16px] font-light mb-5">
               <select className="focus:outline-none w-[80%] lg:w-[100%] font-normal lg:text-[16px] text-[14px] bg-custom-dashboard-bg">
-                <option value="Dr" selected>Dr</option>
+                <option value="Dr" selected>
+                  Dr
+                </option>
                 <option value="Mr">Mr</option>
                 <option value="Mrs">Mrs</option>
                 <option value="Miss">Miss</option>
@@ -167,7 +169,10 @@ const EditProfilePage = () => {
                 className="focus:outline-none w-[80%] lg:w-[100%] font-normal lg:text-[16px] text-[14px] bg-custom-dashboard-bg hidden"
                 placeholder="Upload Profile Photo"
               />
-              <button className="py-2 px-8 bg-[#D4D4D4] rounded-[7px] h-12" onClick={() => uploadFileHandler()}>
+              <button
+                className="py-2 px-8 bg-[#D4D4D4] rounded-[7px] h-12"
+                onClick={() => uploadFileHandler()}
+              >
                 <p className="text-left text-[16px] font-semibold">
                   Upload Profile Photo
                 </p>
@@ -209,7 +214,7 @@ const EditProfilePage = () => {
           <div>
             <BlueButtons
               buttonText={"Save"}
-              className={"mt-6 lg:ml-[50px] lg:px-[50px]"}
+              className={"mt-6 lg:px-[50px]"}
               //   onClick={() => Router.push("/dentist/create-case?tab=create")}
             />
           </div>

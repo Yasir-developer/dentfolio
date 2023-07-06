@@ -126,6 +126,7 @@ const AdminDentistTable = ({ columns, data }) => {
                         </p>
                       ) : cell.column.id === "action" ? (
                         <div
+                          className="cursor-pointer"
                           onClick={() => {
                             setShowThankYouModal(true);
                           }}
