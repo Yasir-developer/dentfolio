@@ -5,7 +5,7 @@ import React from "react";
 
 const DentistSearch = () => {
   return (
-    <div>
+    <div className="h-[100vh]">
       <SearchBanner />
       <HowItWorks />
       <BecomeMember />
