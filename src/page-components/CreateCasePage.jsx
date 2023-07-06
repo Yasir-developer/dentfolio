@@ -1,11 +1,12 @@
 import BlueButtons from "@/components/Buttons/BlueButtons";
 import AuthInput from "@/components/Inputs/AuthInput";
 import Router from "next/router";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { FaPlus, FaTrash } from "react-icons/fa";
 
 const CreateCasePage = () => {
   const [selectedOption, setSelectedOption] = useState("public");
+  const uploadFileref = useRef(null);
 
   const treatmentType = [
     {
@@ -18,6 +19,10 @@ const CreateCasePage = () => {
       type: "Aligners",
     },
   ];
+
+  const uploadFileHandler = () => {
+    uploadFileref.current.click()
+  }
 
   const handleRadioBtn = (option) => {
     setSelectedOption(option);
@@ -121,7 +126,13 @@ const CreateCasePage = () => {
 
             <div className="mt-10">
               <p className="text-[18px] font-semibold">Upload Photos:</p>
-              <button className="py-2 px-8 bg-[#D4D4D4] rounded-[7px] h-12 mt-5">
+              <input
+                ref={uploadFileref}
+                type="file"
+                className="focus:outline-none w-[80%] lg:w-[100%] font-normal lg:text-[16px] text-[14px] bg-custom-dashboard-bg hidden"
+                placeholder="Upload Photos"
+              />
+              <button className="py-2 px-8 bg-[#D4D4D4] rounded-[7px] h-12 mt-5" onClick={() => uploadFileHandler()}>
                 <p className="text-left text-[16px] font-semibold">
                   Select Images
                 </p>

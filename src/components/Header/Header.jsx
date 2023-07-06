@@ -47,12 +47,12 @@ const AppHeader = () => {
             >
               <div className="flex lg:flex-1">
                 <a
-                  href="#"
+                  href="/"
                   className="-m-1.5 p-1.5"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    router.push("/");
-                  }}
+                  // onClick={(e) => {
+                  //   e.preventDefault();
+                  //   router.push("/");
+                  // }}
                 >
                   {/* <span className="sr-only">Your Company</span> */}
                   <img className="h-8 w-auto" src={"/images/logo.png"} alt="" />

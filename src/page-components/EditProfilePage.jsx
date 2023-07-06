@@ -9,6 +9,7 @@ const EditProfilePage = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const uploadFileref = useRef(null);
 
   useEffect(() => {
     // Add event listener to handle clicks outside the dropdown
@@ -26,6 +27,10 @@ const EditProfilePage = () => {
       document.removeEventListener("mousedown", handleOutsideClick);
     };
   }, []);
+
+  const uploadFileHandler = () => {
+    uploadFileref.current.click()
+  }
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -72,7 +77,14 @@ const EditProfilePage = () => {
         <div className="py-5 flex w-[90%] rounded-[7px] flex-col items-start justify-center mx-auto">
           <div className="w-full flex flex-wrap gap-x-2 lg:gap-x-7 gap-y-1 items-center">
             <div className="relative flex items-center border bg-custom-dashboard-bg border-custom-grey rounded-[7px] p-3 w-[45%] placeholder-slate-400 text-[16px] font-light mb-5">
-              <input
+              <select className="focus:outline-none w-[80%] lg:w-[100%] font-normal lg:text-[16px] text-[14px] bg-custom-dashboard-bg">
+                <option value="Dr" selected>Dr</option>
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Miss">Miss</option>
+                <option value="Ms">Ms</option>
+              </select>
+              {/* <input
                 type="text"
                 className="focus:outline-none w-[80%] lg:w-[100%] font-normal lg:text-[16px] text-[14px] bg-custom-dashboard-bg"
                 placeholder="Dr"
@@ -91,7 +103,6 @@ const EditProfilePage = () => {
                   </div>
                   {isOpen && (
                     <div className="bg-custom-dashboard-bg border border-gray-300 rounded-r-md shadow-md">
-                      {/* Dropdown items */}
                       <ul className="py-2">
                         <li
                           className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
@@ -115,7 +126,7 @@ const EditProfilePage = () => {
                     </div>
                   )}
                 </div>
-              </div>
+              </div> */}
             </div>
             <AuthInput placeholder={"User Name"} className={"order-2"} />
 
@@ -150,7 +161,13 @@ const EditProfilePage = () => {
             {/* <div className="flex w-[90%] justify-between"> */}
             {/* <div className="flex "> */}
             <div className="lg:w-[45%] flex mt-5 lg:mt-0 mb-[72px]  justify-start items-start lg:order-[13] order-[14]">
-              <button className="py-2 px-8 bg-[#D4D4D4] rounded-[7px] h-12">
+              <input
+                ref={uploadFileref}
+                type="file"
+                className="focus:outline-none w-[80%] lg:w-[100%] font-normal lg:text-[16px] text-[14px] bg-custom-dashboard-bg hidden"
+                placeholder="Upload Profile Photo"
+              />
+              <button className="py-2 px-8 bg-[#D4D4D4] rounded-[7px] h-12" onClick={() => uploadFileHandler()}>
                 <p className="text-left text-[16px] font-semibold">
                   Upload Profile Photo
                 </p>
