@@ -12,6 +12,8 @@ export default function Document() {
           // href='https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap'
           rel="stylesheet"
         />
+
+        <script> </script>
       </body>
     </Html>
   );
