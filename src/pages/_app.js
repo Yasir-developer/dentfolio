@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "react-datepicker/dist/react-datepicker.css";
 import NProgress from "nprogress";
 import "../styles/nprogress.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import "../styles/nprogress.css";
 
@@ -13,6 +13,7 @@ import "../styles/nprogress.css";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
+  const [pageLoading, setPageLoading] = useState(false);
 
   NProgress.configure({
     minimum: 0.3,
@@ -22,13 +23,21 @@ export default function App({ Component, pageProps }) {
   });
 
   useEffect(() => {
+    const handleStart = () => {
+      setPageLoading(true);
+    };
+    const handleComplete = () => {
+      setPageLoading(false);
+    };
     router.events.on("routeChangeStart", () => NProgress.start());
     router.events.on("routeChangeComplete", () => NProgress.done());
     router.events.on("routeChangeError", () => NProgress.done());
   }, []);
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      <Layout>
+        {pageLoading ? <div>Loading</div> : <Component {...pageProps} />}
+      </Layout>
+    </>
   );
 }
