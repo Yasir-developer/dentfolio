@@ -66,16 +66,16 @@ const AdminDentistTable = ({ columns, data }) => {
         className="mx-auto border-b-1 bordert-t-1 border-b-[#EFF2F7] w-[100%] items-center justify-center "
       >
         <thead className="">
-          {headerGroups.map((headerGroup) => (
+          {headerGroups.map((headerGroup, i) => (
             <tr
-              key={headerGroup}
+              key={i}
               {...headerGroup.getHeaderGroupProps()}
               className="border-b border-t border-t-[#EFF2F7] border-b-[#EFF2F7]"
             >
               {headerGroup.headers.map((column) => (
                 <th
                   {...column.getHeaderProps()}
-                  key={column}
+                  key={column.id}
                   className="p-3 font-semibold text-[13px] text-left"
                 >
                   {column.render("Header")}
@@ -91,12 +91,12 @@ const AdminDentistTable = ({ columns, data }) => {
               <tr
                 {...row.getRowProps()}
                 // className="p-3"
-                key={row}
+                key={i}
               >
-                {row.cells.map((cell) => {
+                {row.cells.map((cell, i) => {
                   return (
                     <td
-                      key={cell}
+                      key={i}
                       {...cell.getCellProps()}
                       className={`border-b border-b-[#EFF2F7] text-[13px] p-3 font-normal
                     ${cell.column.id === "action" ? "px-5" : "px-3"}
