@@ -5,6 +5,7 @@ import DashboardDentistList from "./DashboardDentistList";
 
 const AdminDentistPage = () => {
   const [selectedOption, setSelectedOption] = useState("last24");
+  const [selectedTab, setSelectedTab] = useState("dentist");
 
   const handleSelectOption = (option) => {
     setSelectedOption(option);
@@ -19,7 +20,10 @@ const AdminDentistPage = () => {
       />
 
       {/* <DashboardCard /> */}
-      <DashboardDentistList />
+      <DashboardDentistList
+        // onSelectedTab={handleSelectTab}
+        selectedTabOpt={selectedTab}
+      />
       {/* Rest of the page */}
     </div>
   );

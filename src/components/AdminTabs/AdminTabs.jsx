@@ -134,9 +134,10 @@ const AdminTabs = (props) => {
 
               <Link
                 href={{
-                  pathname: "/dentist/settings",
+                  pathname: "/admin/settings",
                   query: { tab: "settings" },
                 }}
+                passHref
               >
                 <li
                   className={`py-3 cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold w-[70%] ${

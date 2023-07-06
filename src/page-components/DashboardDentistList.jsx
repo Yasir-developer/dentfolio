@@ -3,7 +3,12 @@ import React from "react";
 import AdminDentistTable from "./AdminDentistTable";
 import { FaTrashAlt } from "react-icons/fa";
 
-const DashboardDentistList = () => {
+const DashboardDentistList = ({
+  selectedTime,
+  selectedTabOpt,
+  onSelectedTab,
+}) => {
+  console.log(selectedTabOpt, "selectedTabOpt");
   const columns = React.useMemo(
     () => [
       {
@@ -34,7 +39,36 @@ const DashboardDentistList = () => {
     []
   );
 
-  //   const [data, setData] = useState([]);
+  const RevenueColumns = React.useMemo(
+    () => [
+      {
+        Header: "Id",
+        accessor: "id",
+      },
+      {
+        Header: "Dentist Name",
+        accessor: "dentist",
+      },
+      {
+        Header: "Email Address",
+        accessor: "email",
+      },
+      {
+        Header: "Amount",
+        accessor: "amount",
+      },
+      {
+        Header: "Next Due Date",
+        accessor: "due",
+      },
+      {
+        Header: "Status",
+        accessor: "status",
+      },
+    ],
+    []
+  );
+
   const data = [
     {
       id: "645",
@@ -119,6 +153,91 @@ const DashboardDentistList = () => {
       action: <FaTrashAlt className="w-4 h-4 text-[#F46A6A]" />,
     },
   ];
+
+  //   const [data, setData] = useState([]);
+  const revenueData = [
+    {
+      id: "645",
+      dentist: selectedTime == "last24" ? "Dr. Kathy" : "Dr. Jane",
+      email: "kathy.hill@mail.com",
+      amount: "£99",
+
+      due: "6/16/2023",
+      status: "Non Active",
+    },
+    {
+      id: "645",
+      dentist: selectedTime == "last24" ? "Dr. Kathy" : "Dr. Jane",
+      email: "kathy.hill@mail.com",
+      amount: "£99",
+
+      due: "6/16/2023",
+      status: "Active",
+    },
+    {
+      id: "645",
+      dentist: selectedTime == "last24" ? "Dr. Kathy" : "Dr. Jane",
+      email: "kathy.hill@mail.com",
+      amount: "£99",
+
+      due: "6/16/2023",
+      status: "Active",
+    },
+    {
+      id: "645",
+      dentist: selectedTime == "last24" ? "Dr. Kathy" : "Dr. Jane",
+      email: "kathy.hill@mail.com",
+      amount: "£99",
+
+      due: "6/16/2023",
+      status: "Active",
+    },
+    {
+      id: "645",
+      dentist: selectedTime == "last24" ? "Dr. Kathy" : "Dr. Jane",
+      email: "kathy.hill@mail.com",
+      amount: "£99",
+
+      due: "6/16/2023",
+      status: "Active",
+    },
+    {
+      id: "645",
+      dentist: selectedTime == "last24" ? "Dr. Kathy" : "Dr. Jane",
+      email: "kathy.hill@mail.com",
+      amount: "£99",
+
+      due: "6/16/2023",
+      status: "Non Active",
+    },
+    {
+      id: "645",
+      dentist: selectedTime == "last24" ? "Dr. Kathy" : "Dr. Jane",
+      email: "kathy.hill@mail.com",
+      amount: "£99",
+
+      due: "6/16/2023",
+      status: "Active",
+    },
+    {
+      id: "645",
+      dentist: selectedTime == "last24" ? "Dr. Kathy" : "Dr. Jane",
+      email: "kathy.hill@mail.com",
+      amount: "£99",
+
+      due: "6/16/2023",
+      status: "Active",
+    },
+    {
+      id: "645",
+      dentist: selectedTime == "last24" ? "Dr. Kathy" : "Dr. Jane",
+      email: "kathy.hill@mail.com",
+      amount: "£99",
+
+      due: "6/16/2023",
+      status: "Non Active",
+    },
+  ];
   return (
     <div className="bg-white p-3 rounded-[7px] my-3 ">
       <div className="my-3">
@@ -127,7 +246,10 @@ const DashboardDentistList = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
       </div>
-      <AdminDentistTable columns={columns} data={data} />
+      <AdminDentistTable
+        columns={selectedTabOpt === "revenue" ? RevenueColumns : columns}
+        data={selectedTabOpt === "revenue" ? revenueData : data}
+      />
     </div>
   );
 };

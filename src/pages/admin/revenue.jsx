@@ -4,7 +4,7 @@ import OverviewPage from "@/page-components/OverviewPage";
 import RevenuePage from "@/page-components/RevenuePage";
 import React from "react";
 
-const overview = () => {
+const revenue = () => {
   return (
     <div>
       <div className="dentistBodyStyles">
@@ -16,4 +16,4 @@ const overview = () => {
   );
 };
 
-export default overview;
+export default revenue;

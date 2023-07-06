@@ -6,9 +6,15 @@ import { FaMobileAlt, FaMoneyBillWave, FaUserMd } from "react-icons/fa";
 
 const RevenuePage = () => {
   const [selectedOption, setSelectedOption] = useState("last24");
+  const [selectedTab, setSelectedTab] = useState("revenue");
 
   const handleSelectOption = (option) => {
     setSelectedOption(option);
+    // Perform any additional logic based on the selected option
+  };
+
+  const handleSelectTab = (option) => {
+    setSelectedTab(option);
     // Perform any additional logic based on the selected option
   };
 
@@ -57,7 +63,10 @@ const RevenuePage = () => {
           );
         })}
       </div>
-      <DashboardDentistList />
+      <DashboardDentistList
+        // onSelectedTab={handleSelectTab}
+        selectedTabOpt={selectedTab}
+      />
       {/* Rest of the page */}
     </div>
   );

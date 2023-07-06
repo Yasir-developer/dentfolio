@@ -6,6 +6,7 @@ import { FaMobileAlt, FaMoneyBillWave, FaUserMd } from "react-icons/fa";
 
 const OverviewPage = () => {
   const [selectedOption, setSelectedOption] = useState("last24");
+  const [selectedTab, setSelectedTab] = useState("overview");
 
   const handleSelectOption = (option) => {
     setSelectedOption(option);
@@ -58,7 +59,11 @@ const OverviewPage = () => {
           );
         })}
       </div>
-      <DashboardDentistList />
+      <DashboardDentistList
+        selectedTime={selectedOption}
+        // onSelectedTab={handleSelectTab}
+        selectedTabOpt={selectedTab}
+      />
       {/* Rest of the page */}
     </div>
   );
