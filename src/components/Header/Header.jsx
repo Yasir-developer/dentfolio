@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
@@ -46,9 +47,10 @@ const AppHeader = () => {
               aria-label="Global"
             >
               <div className="flex lg:flex-1">
-                <a
+                <Link
                   href="/"
                   className="-m-1.5 p-1.5"
+                  passHref
                   // onClick={(e) => {
                   //   e.preventDefault();
                   //   router.push("/");
@@ -56,7 +58,7 @@ const AppHeader = () => {
                 >
                   {/* <span className="sr-only">Your Company</span> */}
                   <img className="h-8 w-auto" src={"/images/logo.png"} alt="" />
-                </a>
+                </Link>
               </div>
 
               <div className="lg:flex lg:gap-x-2">
