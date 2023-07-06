@@ -29,9 +29,9 @@ export default function App({ Component, pageProps }) {
     const handleComplete = () => {
       setPageLoading(false);
     };
-    router.events.on("routeChangeStart", () => NProgress.start());
-    router.events.on("routeChangeComplete", () => NProgress.done());
-    router.events.on("routeChangeError", () => NProgress.done());
+    router.events.on("routeChangeStart", () => handleStart);
+    router.events.on("routeChangeComplete", () => handleComplete);
+    router.events.on("routeChangeError", () => handleComplete);
   }, []);
   return (
     <>
