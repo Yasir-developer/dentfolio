@@ -9,7 +9,7 @@ const BillingPage = () => {
 
   return (
     <div className="items-center justify-center ">
-      <div className="flex justify-between items-center my-8 mx-auto w-[90%]">
+      <div className="flex lg:flex-row flex-col  justify-between lg:items-center my-8 mx-auto w-[90%]">
         <div className="flex flex-col">
           <h1 className="lg:text-[32px] text-[28px] lg:font-semibold font-medium">
             Billing Method

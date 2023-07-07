@@ -61,110 +61,116 @@ const AdminDentistTable = ({ columns, data }) => {
   return (
     <>
       {showThankYouModal && thankYouModal()}
-      <table
-        {...getTableProps()}
-        className="mx-auto border-b-1 bordert-t-1 border-b-[#EFF2F7] w-[100%] items-center justify-center "
-      >
-        <thead className="">
-          {headerGroups.map((headerGroup, i) => (
-            <tr
-              key={i}
-              {...headerGroup.getHeaderGroupProps()}
-              className="border-b border-t border-t-[#EFF2F7] border-b-[#EFF2F7]"
-            >
-              {headerGroup.headers.map((column) => (
-                <th
-                  {...column.getHeaderProps()}
-                  key={column.id}
-                  className="p-3 font-semibold text-[13px] text-left"
-                >
-                  {column.render("Header")}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody {...getTableBodyProps()}>
-          {rows.map((row, i) => {
-            prepareRow(row);
-            return (
+      <div className="lg:max-w-full max-w-[375px] overflow-x-scroll">
+        <table
+          {...getTableProps()}
+          className="mx-auto border-b-1 bordert-t-1 border-b-[#EFF2F7] w-[100%] items-center justify-center "
+        >
+          <thead className="">
+            {headerGroups.map((headerGroup, i) => (
               <tr
-                {...row.getRowProps()}
-                // className="p-3"
                 key={i}
+                {...headerGroup.getHeaderGroupProps()}
+                className="border-b border-t border-t-[#EFF2F7] border-b-[#EFF2F7]"
               >
-                {row.cells.map((cell, i) => {
-                  return (
-                    <td
-                      key={i}
-                      {...cell.getCellProps()}
-                      className={`border-b border-b-[#EFF2F7] text-[13px] p-3 font-normal
+                {headerGroup.headers.map((column) => (
+                  <th
+                    {...column.getHeaderProps()}
+                    key={column.id}
+                    className="p-3 font-semibold text-[13px] text-left"
+                  >
+                    {column.render("Header")}
+                  </th>
+                ))}
+              </tr>
+            ))}
+          </thead>
+          <tbody {...getTableBodyProps()}>
+            {rows.map((row, i) => {
+              prepareRow(row);
+              return (
+                <tr
+                  {...row.getRowProps()}
+                  // className="p-3"
+                  key={i}
+                >
+                  {row.cells.map((cell, i) => {
+                    return (
+                      <td
+                        key={i}
+                        {...cell.getCellProps()}
+                        className={`border-b border-b-[#EFF2F7] text-[13px] p-3 font-normal
                     ${cell.column.id === "action" ? "px-5" : "px-3"}
                     `}
-                    >
-                      {cell.column.id === "id" ? (
-                        <span className="font-medium">
-                          {cell.render("Cell")}
-                        </span>
-                      ) : cell.column.id === "subscription" ? (
-                        <p
-                          style={{
-                            backgroundColor: getStatusColor(cell.value),
-                            //   paddingRight: "35px",
-                            //   paddingLeft: "35px",
+                      >
+                        {cell.column.id === "id" ? (
+                          <span className="font-medium">
+                            {cell.render("Cell")}
+                          </span>
+                        ) : cell.column.id === "subscription" ? (
+                          <p
+                            style={{
+                              backgroundColor: getStatusColor(cell.value),
+                              //   paddingRight: "35px",
+                              //   paddingLeft: "35px",
 
-                            color: getStatusTextColor(cell.value),
-                            fontWeight: "500",
-                            padding: "5px",
-                            textAlign: "center",
-                            width: "40%",
-                            //   padding: "15px",
-                            borderRadius: "7px",
-                          }}
-                        >
-                          {cell.render("Cell")}
-                        </p>
-                      ) : cell.column.id === "action" ? (
-                        <div
-                          className="cursor-pointer"
-                          onClick={() => {
-                            setShowThankYouModal(true);
-                          }}
-                        >
-                          {cell.render("Cell")}
-                        </div>
-                      ) : cell.column.id === "status" ? (
-                        <p
-                          style={{
-                            backgroundColor: getRevenueStatusColor(cell.value),
-                            //   paddingRight: "35px",
-                            //   paddingLeft: "35px",
+                              color: getStatusTextColor(cell.value),
+                              fontWeight: "500",
+                              padding: "5px",
+                              textAlign: "center",
+                              // width: "40%",
+                              //   padding: "15px",
+                              borderRadius: "7px",
+                            }}
+                            className="lg:w-[40%] w-[90%]"
+                          >
+                            {cell.render("Cell")}
+                          </p>
+                        ) : cell.column.id === "action" ? (
+                          <div
+                            className="cursor-pointer"
+                            onClick={() => {
+                              setShowThankYouModal(true);
+                            }}
+                          >
+                            {cell.render("Cell")}
+                          </div>
+                        ) : cell.column.id === "status" ? (
+                          <p
+                            style={{
+                              backgroundColor: getRevenueStatusColor(
+                                cell.value
+                              ),
+                              //   paddingRight: "35px",
+                              //   paddingLeft: "35px",
 
-                            color: getRevenueStatusTextColor(cell.value),
-                            fontWeight: "500",
-                            // paddingLeft: "10px",
-                            // paddingRight: "10px",
+                              color: getRevenueStatusTextColor(cell.value),
+                              fontWeight: "500",
+                              // paddingLeft: "10px",
+                              // paddingRight: "10px",
 
-                            padding: "5px",
-                            textAlign: "center",
-                            width: "60%",
-                            //   padding: "15px",
-                            borderRadius: "7px",
-                          }}
-                        >
-                          {cell.render("Cell")}
-                        </p>
-                      ) : (
-                        cell.render("Cell")
-                      )}
-                    </td>
-                  );
-                })}
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+                              padding: "5px",
+                              textAlign: "center",
+                              // width: "60%",
+                              //   padding: "15px",
+                              borderRadius: "7px",
+                            }}
+                            className="lg:w-[60%] w-[100%]"
+                          >
+                            {cell.render("Cell")}
+                          </p>
+                        ) : (
+                          cell.render("Cell")
+                        )}
+                      </td>
+                    );
+                  })}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </>
   );
   // Table component logic and UI come here

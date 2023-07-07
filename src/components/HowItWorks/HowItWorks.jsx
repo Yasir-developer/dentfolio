@@ -101,7 +101,7 @@ const HowItWorks = () => {
             <h1 className="font-semibold text-[18px] mt-5 mb-2 text-custom-blue">
               FIND DENTISTS NEAR YOU
             </h1>
-            <p className="text-[14px] font-extralight">
+            <p className="text-[14px] font-normal">
               Discover local dentists in your area and choose the perfect one
               for your dental needs.
             </p>
@@ -128,7 +128,7 @@ const HowItWorks = () => {
             <h1 className="font-semibold text-[18px] mt-5 mb-2 text-custom-blue">
               EXPLORE DENTAL WORK
             </h1>
-            <p className="text-[14px] font-extralight">
+            <p className="text-[14px] font-normal">
               Discover impressive dental work through a collection of photos
               showcasing exceptional treatments.
             </p>
@@ -151,7 +151,7 @@ const HowItWorks = () => {
             <h1 className="font-semibold text-[18px] mt-5 mb-2 text-custom-blue">
               CONTACT YOUR DENTAL
             </h1>
-            <p className="text-[14px] font-extralight">
+            <p className="text-[14px] font-normal">
               Contact Your Dental: Find a local dentist and schedule
               appointments easily with our convenient online platform.
             </p>

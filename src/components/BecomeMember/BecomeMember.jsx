@@ -64,7 +64,7 @@ const BecomeMember = () => {
             <h1 className=" text-white lg:text-left text-center font-poppins font-bold lg:text-[41px] text-[21px]">
               BECOME A MEMBER NOW
             </h1>
-            <h3 className="text-[14px] lg:text-left text-center font-light text-white mt-3">
+            <h3 className="text-[14px] lg:text-left text-center font-normal text-white mt-3">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
               congue, sapien non efficitur sollicitudin, ex risus semper diam,
               sed ornare.

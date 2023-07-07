@@ -51,7 +51,8 @@ const RevenuePage = () => {
         selectedOption={selectedOption}
         onSelectOption={handleSelectOption}
       />
-      <div className="flex flex-row gap-x-20 py-6">
+      <div className="flex lg:flex-row flex-col gap-x-20 py-6">
+        {" "}
         {cardData.map((item, index) => {
           return (
             <DashboardCard

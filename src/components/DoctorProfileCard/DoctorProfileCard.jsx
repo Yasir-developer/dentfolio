@@ -67,7 +67,7 @@ const DoctorProfileCard = () => {
               </div>
             </div>
             <form>
-              <div className="mb-4 gap-x-2 flex lg:flex-row flex-col justify-center items-center">
+              <div className="lg:mb-4 mb-0 gap-x-2 flex lg:flex-row flex-col justify-center lg:items-center">
                 {/* <input
                   type="text"
                   id="fullName"
@@ -76,13 +76,13 @@ const DoctorProfileCard = () => {
                 /> */}
                 <AuthInput
                   placeholder={"Full Name"}
-                  className="border border-custom-grey rounded-[7px] mt-4 lg:mt-0 w-[90%] text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight"
+                  className="border border-custom-grey rounded-[7px] lg:mt-0 lg:w-[90%] w-full py-3 text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight"
                   // btnStyle={ma}
                 />
 
                 <AuthInput
                   placeholder={"Phone Number"}
-                  className="border border-custom-grey rounded-[7px] mt-4 lg:mt-0 w-[90%] text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight"
+                  className="border border-custom-grey rounded-[7px] lg:mt-0 lg:w-[90%] w-full py-3  text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight"
                   type={"tel"}
                 />
                 {/* <input
@@ -93,7 +93,7 @@ const DoctorProfileCard = () => {
                 /> */}
                 <AuthInput
                   placeholder={"Email Address"}
-                  className="border border-custom-grey rounded-[7px] mt-4 lg:mt-0 w-[90%] text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight"
+                  className="border border-custom-grey rounded-[7px]  lg:mt-0 w-full py-3 text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-extralight"
                   type={"email"}
                 />
                 {/* <input
@@ -107,8 +107,8 @@ const DoctorProfileCard = () => {
               <textarea
                 id="conversation"
                 placeholder="Start a conversation"
-                className="inputStyles w-full"
-                rows="5"
+                className="inputStyles w-full mt-0"
+                rows="4"
               ></textarea>
 
               <button

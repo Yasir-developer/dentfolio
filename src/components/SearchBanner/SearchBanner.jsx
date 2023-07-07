@@ -5,7 +5,7 @@ import locationCross from "../../../public/images/location-crosshairs-solid.svg"
 import Router from "next/router";
 const SearchBanner = () => {
   return (
-    <div className="bg-gradient-to-r from-custom-grey-dark to-custom-grey-light">
+    <div className="bg-gradient-to-r from-[#ccd6e5] to-[#dce8fa]">
       <div className="flex flex-col-reverse lg:flex-row items-center justify-center max-w-[1140px] mx-auto px-4 lg:px-8">
         <div className="w-full lg:w-[70%]">
           <div className="lg:p-4">
