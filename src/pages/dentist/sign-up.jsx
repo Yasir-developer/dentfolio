@@ -65,7 +65,12 @@ const Signup = () => {
             <h2 className="my-8 text-center font-semibold text-[32px] md:text-4xl text-custom-black">
               Sign Up
             </h2>
-            <form>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                Router.replace("/dentist/view-profile?tab=view");
+              }}
+            >
               <div className="w-full flex flex-wrap gap-x-2 lg:gap-x-7 gap-y-2 items-center justify-center">
                 <AuthInput placeholder={"First Name"} />
                 <AuthInput placeholder={"Last Name"} />
@@ -173,7 +178,7 @@ const Signup = () => {
                 <BlueButtons
                   buttonText="Submit"
                   className="px-[50px] cursor-pointer"
-                  onClick={() => Router.push("/dentist/dentist-plan")}
+                  // onClick={() => Router.push("/dentist/dentist-plan")}
                 />
 
                 <div className="py-4 px-6 text-center">
