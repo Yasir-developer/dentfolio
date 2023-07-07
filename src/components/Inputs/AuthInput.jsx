@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import from 'react';
-import { FaEye } from "react-icons/fa";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 import { HiEye, HiEyeOff } from "react-icons/hi";
 const AuthInput = ({
@@ -64,15 +64,27 @@ const AuthInput = ({
               placeholder={placeholder ? placeholder : "Password"}
               className={`focus:outline-none w-[100%] lg:w-[100%] lg:text-[16px] text-[14px] font-light bg-custom-dashboard-bg ${className}`}
             />
-            <FaEye
-              style={{
-                color: "#9F9F9F",
-                width: "17px",
-                height: "17px",
-                cursor:'pointer'
-              }}
-              onClick={() => togglePasswordVisibility() }
-            />
+            {showPassword ? (
+              <FaEye
+                style={{
+                  color: "#9F9F9F",
+                  width: "17px",
+                  height: "17px",
+                  cursor: "pointer",
+                }}
+                onClick={() => togglePasswordVisibility()}
+              />
+            ) : (
+              <FaEyeSlash
+                style={{
+                  color: "#9F9F9F",
+                  width: "17px",
+                  height: "17px",
+                  cursor: "pointer",
+                }}
+                onClick={() => togglePasswordVisibility()}
+              />
+            )}
           </>
         </div>
       )}
