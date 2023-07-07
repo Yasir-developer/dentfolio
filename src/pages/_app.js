@@ -13,7 +13,6 @@ import "../styles/nprogress.css";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
-  const [pageLoading, setPageLoading] = useState(false);
 
   NProgress.configure({
     minimum: 0.3,
@@ -23,20 +22,15 @@ export default function App({ Component, pageProps }) {
   });
 
   useEffect(() => {
-    const handleStart = () => {
-      setPageLoading(true);
-    };
-    const handleComplete = () => {
-      setPageLoading(false);
-    };
-    router.events.on("routeChangeStart", () => handleStart);
-    router.events.on("routeChangeComplete", () => handleComplete);
-    router.events.on("routeChangeError", () => handleComplete);
+    router.events.on("routeChangeStart", () => NProgress.start());
+    router.events.on("routeChangeComplete", () => NProgress.done());
+    router.events.on("routeChangeError", () => NProgress.done());
   }, []);
+
   return (
     <>
       <Layout>
-        {pageLoading ? <div>Loading</div> : <Component {...pageProps} />}
+        <Component {...pageProps} />
       </Layout>
     </>
   );
