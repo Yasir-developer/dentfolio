@@ -155,9 +155,10 @@ const BillingPage = () => {
             endingNumber={"1234"}
             isPrimary={true}
           /> */}
-          {CardsData.map((item) => {
+          {CardsData.map((item, index) => {
             return (
               <StripeCard
+                key={index}
                 cardType={item.cardType}
                 endingNumber={item.endingNumber}
                 cardIcon={item.cardIcon}
