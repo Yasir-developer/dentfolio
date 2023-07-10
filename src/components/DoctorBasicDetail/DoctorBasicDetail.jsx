@@ -13,8 +13,8 @@ const DoctorBasicDetail = () => {
 
   const thankYouModal = () => {
     return (
-      <div className="fixed inset-0 flex items-center justify-center z-50 bg-opacity-50 bg-gray-900 ">
-        <div className="bg-white p-6 rounded-[7px] shadow-lg lg:w-[60%] w-[90%] relative max-w-[900px]">
+      <div className="fixed inset-0 flex items-center justify-center z-50 bg-opacity-50 bg-gray-900 z-[999]">
+        <div className="bg-white p-6 rounded-[7px] shadow-lg lg:w-[60%] w-[90%] relative max-w-[900px] translate-x-[11%]">
           <button
             className="absolute right-[20px] top-[20px]  "
             onClick={() => setShowThankYouModal(false)}
@@ -41,8 +41,8 @@ const DoctorBasicDetail = () => {
 
   const conversationModal = () => {
     return (
-      <div className="fixed inset-0 flex items-center justify-center z-50 bg-opacity-50 bg-gray-900 ">
-        <div className="bg-white p-6 rounded-[7px] shadow-lg lg:w-[60%] w-[90%] relative">
+      <div className="fixed inset-0 flex items-center justify-center z-50 bg-opacity-50 bg-gray-900 z-[999]">
+        <div className="bg-white p-6 rounded-[7px] shadow-lg lg:w-[60%] w-[90%] relative translate-x-[11%]">
           <div className="mx-5">
             <button
               className="absolute right-[20px] top-[20px]  "
