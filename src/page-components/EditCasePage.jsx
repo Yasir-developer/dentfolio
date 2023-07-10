@@ -21,7 +21,7 @@ const EditCasePage = () => {
   ];
 
   return (
-    <div className="items-center justify-center ">
+    <div className="items-center justify-center">
       <div className="lg:my-8 my-5 mx-auto w-[90%]">
         <h1 className="lg:text-[32px] text-[28px] lg:font-semibold font-medium">
           Edit Case

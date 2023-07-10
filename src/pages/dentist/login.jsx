@@ -27,7 +27,7 @@ const Login = () => {
       // Login successful, handle the response
       const data = await response.json();
 
-      Router.push("/dentist/view-profile?tab=view");
+      Router.push("/dentist/view-profile");
       // Do something with the token or session data
       console.log(data);
     } else {
@@ -64,7 +64,7 @@ const Login = () => {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                Router.replace("/dentist/view-profile?tab=view");
+                Router.replace("/dentist/view-profile");
               }}
             >
               <div className="w-full flex flex-col items-center">
@@ -122,9 +122,7 @@ const Login = () => {
                     // onSubmit={() =>
                     //   Router.push("/dentist/edit-profile?tab=edit-profile")
                     // }
-                    onClick={() =>
-                      Router.replace("/dentist/view-profile?tab=view")
-                    }
+                    // onClick={() => Router.replace("/dentist/view-profile")}
                   />
                 </div>
               </div>

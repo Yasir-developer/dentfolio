@@ -6,7 +6,7 @@ import React from "react";
 const overview = () => {
   return (
     <div>
-      <div className="dentistBodyStyles">
+      <div className="dentistBodyStyles bg-gray-100">
         <AdminTabs>
           <AdminDentistPage />
         </AdminTabs>

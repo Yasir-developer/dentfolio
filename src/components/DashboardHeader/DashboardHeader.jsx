@@ -112,7 +112,7 @@ const DashboardHeader = ({ menuToggler }) => {
                         class="block px-4 py-2 text-gray-800 hover:bg-custom-blue hover:text-white"
                         onClick={() => {
                           // handleOptionSelect;
-                          Router.push("/dentist/settings?tab=settings");
+                          Router.push("/dentist/settings");
                         }}
                       >
                         Settings

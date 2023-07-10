@@ -15,7 +15,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="dentistBodyStyles">
+    <div className="dentistBodyStyles bg-white">
       {/* Menu Panel */}
 
       <DentistTabs>

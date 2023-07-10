@@ -30,6 +30,13 @@ const DentistTabs = (props) => {
 
   const menuHandler = () => {
     setToggleMenu(!toggleMenu);
+    console.log(toggleMenu, "toggleMenu");
+
+    if (!toggleMenu) {
+      document.querySelector("body").classList.toggle("bodyStyle");
+    } else {
+      document.querySelector("body").classList.remove("bodyStyle");
+    }
   };
 
   return (
@@ -45,7 +52,7 @@ const DentistTabs = (props) => {
         <div
           className={`${
             toggleMenu
-              ? "bg-gradient-radial from-[#0372E2] to-[#0B5FB4]  h-full w-[60%] lg:block lg:w-[18%] absolute z-[999]"
+              ? "bg-gradient-radial from-[#0372E2] to-[#0B5FB4]  h-full w-[60%] lg:block lg:w-[18%] lg:absolute  lg:z-[999] z-[9999] fixed lg:top-0 bottom-0 top-[80px]"
               : "bg-gradient-radial from-[#0372E2] to-[#0B5FB4] hidden w-0 lg:block lg:w-[18%] z-[999]"
           }`}
         >
@@ -54,20 +61,19 @@ const DentistTabs = (props) => {
               <Link
                 href={{
                   pathname: "/dentist/view-profile",
-                  query: { tab: "view" },
+                }}
+                onClick={() => {
+                  document.querySelector("body").classList.remove("bodyStyle");
                 }}
                 passHref
               >
                 <li
                   className={`py-3 cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold my-3 w-[80%] ${
-                    router?.query?.tab !== "view" && "text-white"
+                    router?.pathname !== "/dentist/view-profile" && "text-white"
                   } ${
-                    router?.query?.tab === "view" &&
+                    router?.pathname === "/dentist/view-profile" &&
                     "bg-white text-custom-blue rounded-[5px] w-[150px]"
                   }`}
-                  onClick={(e) => {
-                    setActiveTab("viewProfile");
-                  }}
                 >
                   <FaUser className="w-4 h-4 mx-2" />
                   View My Profile
@@ -77,20 +83,20 @@ const DentistTabs = (props) => {
               <Link
                 href={{
                   pathname: "/dentist/edit-profile",
-                  query: { tab: "edit-profile" },
+                }}
+                onClick={() => {
+                  document.querySelector("body").classList.remove("bodyStyle");
+                  setToggleMenu(false);
                 }}
                 passHref
               >
                 <li
                   className={`py-2 cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold my-3 w-[70%] ${
-                    router?.query?.tab !== "edit-profile" && "text-white"
+                    router?.pathname !== "/dentist/edit-profile" && "text-white"
                   } ${
-                    router?.query?.tab === "edit-profile" &&
+                    router?.pathname === "/dentist/edit-profile" &&
                     "bg-white text-custom-blue rounded-[5px] w-[150px]"
                   }`}
-                  onClick={(e) => {
-                    setActiveTab("editProfile");
-                  }}
                 >
                   <FaIdCard className="w-4 h-4 mx-2" />
                   Edit My Profile
@@ -100,21 +106,22 @@ const DentistTabs = (props) => {
               <Link
                 href={{
                   pathname: "/dentist/create-case",
-                  query: { tab: "create" },
+                }}
+                onClick={() => {
+                  document.querySelector("body").classList.remove("bodyStyle");
+
+                  setToggleMenu(false);
                 }}
                 passHref
               >
                 <li
                   className={` cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold my-3 w-[70%]  ${
-                    router?.query?.tab !== "create" &&
+                    router?.pathname !== "/dentist/create-case" &&
                     "text-white text-[16px] font-semibold py-3"
                   } ${
-                    router?.query?.tab === "create" &&
+                    router?.pathname === "/dentist/create-case" &&
                     "bg-white text-custom-blue rounded-[5px]  py-3"
                   }`}
-                  onClick={(e) => {
-                    setActiveTab("createCase");
-                  }}
                 >
                   <FaFileAlt className="w-4 h-4 mx-2" />
                   Create Case
@@ -124,20 +131,21 @@ const DentistTabs = (props) => {
               <Link
                 href={{
                   pathname: "/dentist/edit-case",
-                  query: { tab: "edit" },
+                }}
+                onClick={() => {
+                  document.querySelector("body").classList.remove("bodyStyle");
+
+                  setToggleMenu(false);
                 }}
               >
                 <li
                   className={`cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold my-3 w-[70%] ${
-                    router?.query?.tab !== "edit" &&
+                    router?.pathname !== "/dentist/edit-case" &&
                     "text-white text-[16px] font-semibold w-[60%] py-3"
                   } ${
-                    router?.query?.tab === "edit" &&
+                    router?.pathname === "/dentist/edit-case" &&
                     "bg-white text-custom-blue rounded-[5px] py-3"
                   }`}
-                  onClick={(e) => {
-                    setActiveTab("editCase");
-                  }}
                 >
                   <FaEdit className="w-4 h-4 mx-2" />
                   Edit Case
@@ -147,17 +155,20 @@ const DentistTabs = (props) => {
               <Link
                 href={{
                   pathname: "/dentist/billing",
-                  query: { tab: "billing" },
+                }}
+                onClick={() => {
+                  document.querySelector("body").classList.remove("bodyStyle");
+
+                  setToggleMenu(false);
                 }}
               >
                 <li
                   className={`py-3 cursor-pointer flex flex-row items-center ml-2 text-[16px] my-3 font-semibold w-[70%] ${
-                    router?.query?.tab !== "billing" && "text-white"
+                    router?.pathname !== "/dentist/billing" && "text-white"
                   } ${
-                    router?.query?.tab === "billing" &&
+                    router?.pathname === "/dentist/billing" &&
                     "bg-white text-custom-blue rounded-[5px] w-[150px] py-3"
                   }`}
-                  onClick={(e) => setActiveTab("billing")}
                 >
                   <FaFileInvoiceDollar className="w-4 h-4 mx-2" />
                   Billing
@@ -167,17 +178,20 @@ const DentistTabs = (props) => {
               <Link
                 href={{
                   pathname: "/dentist/settings",
-                  query: { tab: "settings" },
+                }}
+                onClick={() => {
+                  document.querySelector("body").classList.remove("bodyStyle");
+
+                  setToggleMenu(false);
                 }}
               >
                 <li
                   className={`py-3 cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold w-[70%] ${
-                    router?.query?.tab !== "settings" && "text-white"
+                    router?.pathname !== "/dentist/settings" && "text-white"
                   } ${
-                    router?.query?.tab === "settings" &&
+                    router?.pathname === "/dentist/settings" &&
                     "bg-white text-custom-blue rounded-[5px] w-[150px] py-3"
                   }`}
-                  onClick={(e) => setActiveTab("settings")}
                 >
                   <FaCog className="w-4 h-4 mx-2" />
                   Settings
@@ -193,20 +207,26 @@ const DentistTabs = (props) => {
             onClick={() => router.push("/dentist/dentist-plan")}
           />
         </div>
-        <div className="bg-gray-100 lg:w-[85%] w-full flex flex-col justify-between">
-          <div className="contentContainer overflow-y-scroll h-full">
-            {router?.query?.tab === "edit-profile" && <EditProfilePage />}
+        <div className=" lg:w-[85%] w-full flex flex-col justify-between">
+          <div className="lg:contentContainer pb-[72px] lg:overflow-y-scroll lg:h-full">
+            {router?.pathname === "/dentist/edit-profile" && (
+              <EditProfilePage />
+            )}
 
-            {router?.query?.tab === "view" && <ViewProfilePage />}
-            {router?.query?.tab === "create" && <CreateCasePage />}
-            {router?.query?.tab === "edit" && <EditCasePage />}
+            {router?.pathname === "/dentist/view-profile" && (
+              <ViewProfilePage />
+            )}
+            {router?.pathname === "/dentist/create-case" && <CreateCasePage />}
+            {router?.pathname === "/dentist/edit-case" && <EditCasePage />}
 
-            {router?.query?.tab === "billing" && <Billing />}
-            {router?.query?.tab === "bill" && <BillingHistory />}
+            {router?.pathname === "/dentist/billing" && <Billing />}
+            {router?.pathname === "/dentist/billing-history" && (
+              <BillingHistory />
+            )}
 
-            {router?.query?.tab === "settings" && <SettingsPage />}
+            {router?.pathname === "/dentist/settings" && <SettingsPage />}
           </div>
-          <div className="footerContainer">
+          <div className="footerContainer static lg:bottom-0 lg:w-full lg:left-0 z-[999]">
             <DashboardFooter />
           </div>
         </div>

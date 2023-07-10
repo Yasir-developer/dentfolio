@@ -79,6 +79,7 @@ const Footer = () => {
       router.pathname !== "/dentist/create-case" &&
       router.pathname !== "/dentist/edit-profile" &&
       router.pathname !== "/dentist/forgot-password" &&
+      router.pathname !== "/admin/overview" &&
       router.pathname !== "/dentist/billing" &&
       router.pathname !== "/dentist/billing-history" &&
       router.pathname !== "/dentist/settings" &&
