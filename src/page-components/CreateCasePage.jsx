@@ -3,6 +3,7 @@ import AuthInput from "@/components/Inputs/AuthInput";
 import Router from "next/router";
 import React, { useRef, useState } from "react";
 import { FaPlus, FaTrash } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
 
 const CreateCasePage = () => {
   const [selectedOption, setSelectedOption] = useState("public");
@@ -21,17 +22,17 @@ const CreateCasePage = () => {
   ];
 
   const uploadFileHandler = () => {
-    uploadFileref.current.click()
-  }
+    uploadFileref.current.click();
+  };
 
   const handleRadioBtn = (option) => {
     setSelectedOption(option);
   };
-  // const handlePrivateRadioBtn = () => {
-  //   setPrivateRadio(!privateRadio);
-  // };
+
+  const notify = () => toast("Wow so easy!");
+
   return (
-    <div className="flex items-center justify-center ">
+    <div className="flex items-center justify-center bg-white">
       <div className="my-8 mx-auto w-[90%]">
         {/* <div
           className="flex flex-row justify-between"
@@ -54,7 +55,7 @@ const CreateCasePage = () => {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            Router.push("/dentist/create-case?tab=create");
+            Router.push("/dentist/create-case");
           }}
         >
           <div className="py-5 flex w-[100%] rounded-[7px] flex-col items-start justify-start ">
@@ -132,7 +133,10 @@ const CreateCasePage = () => {
                 className="focus:outline-none w-[80%] lg:w-[100%] font-normal lg:text-[16px] text-[14px] bg-custom-dashboard-bg hidden"
                 placeholder="Upload Photos"
               />
-              <button className="py-2 px-8 bg-[#D4D4D4] rounded-[7px] h-12 mt-5" onClick={() => uploadFileHandler()}>
+              <button
+                className="py-2 px-8 bg-[#D4D4D4] rounded-[7px] h-12 mt-5"
+                onClick={() => uploadFileHandler()}
+              >
                 <p className="text-left text-[16px] font-semibold">
                   Select Images
                 </p>
@@ -142,7 +146,7 @@ const CreateCasePage = () => {
             <BlueButtons
               buttonText={"Save"}
               className={"bg-[#D4D4D4] rounded-[7px] mt-10"}
-              // onClick={() => Router.push("/dentist/create-case?tab=create")}
+              onClick={() => notify}
             />
           </div>
         </form>

@@ -11,8 +11,12 @@ const DashboardFooter = () => {
           © Copyright 2023 Dentfolio. All Rights Reserved.
         </p>
         <div className="flex gap-x-10 lg:gap-x-3 lg:mr-[50px]">
-          <Link href={'#'} passHref className="text-[14px]">Terms Of Services</Link>
-          <Link href={'#'} passHref className="text-[14px]">Privacy Policy</Link>
+          <Link href={"#"} passHref className="text-[14px]">
+            Terms Of Services
+          </Link>
+          <Link href={"#"} passHref className="text-[14px]">
+            Privacy Policy
+          </Link>
           {/* <p className="text-[14px]">Privacy Policy</p> */}
         </div>
 

@@ -37,6 +37,12 @@ const AdminTabs = (props) => {
 
   const menuHandler = () => {
     setToggleMenu(!toggleMenu);
+
+    if (!toggleMenu) {
+      document.querySelector("body").classList.toggle("bodyStyle");
+    } else {
+      document.querySelector("body").classList.remove("bodyStyle");
+    }
   };
 
   return (
@@ -52,7 +58,7 @@ const AdminTabs = (props) => {
         <div
           className={`${
             toggleMenu
-              ? "bg-gradient-radial from-[#0372E2] to-[#0B5FB4]  h-full w-[60%] lg:block lg:w-[18%] absolute z-[999]"
+              ? "bg-gradient-radial from-[#0372E2] to-[#0B5FB4]  h-full w-[60%] lg:block lg:w-[18%] lg:absolute  lg:z-[999] z-[9999] fixed lg:top-0 bottom-0 top-[80px]"
               : "bg-gradient-radial from-[#0372E2] to-[#0B5FB4] hidden w-0 lg:block lg:w-[18%] z-[999]"
           }`}
         >
@@ -61,24 +67,31 @@ const AdminTabs = (props) => {
               <Link
                 href={{
                   pathname: "/admin/overview",
-                  query: { tab: "overview" },
+                  // query: { tab: "overview" },
+                }}
+                onClick={() => {
+                  setToggleMenu(false);
+                  document.querySelector("body").classList.remove("bodyStyle");
+
+                  // setToggleMenu(false);
                 }}
                 passHref
               >
                 <li
-                  className={`py-3 cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold my-3 w-[80%] ${
-                    router?.query?.tab !== "overview" && "text-white"
+                  className={`py-3 cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold my-3 w-[80%] text-custom-blue  ${
+                    router?.pathname !== "/admin/overview" && "text-white"
                   } ${
-                    router?.query?.tab === "overview" &&
+                    router?.pathname === "/admin/overview" &&
                     "bg-white text-custom-blue rounded-[5px] w-[150px]"
                   }`}
-                  onClick={(e) => {
-                    setActiveTab("viewProfile");
-                  }}
+                  // onClick={(e) => {
+                  //   setActiveTab("viewProfile");
+                  // }}
                 >
                   <BsGridFill
                     className={`w-4 h-4 mx-2 ${
-                      router?.query?.tab === "overview" && "text-custom-blue "
+                      router?.pathname === "/admin/overview" &&
+                      "text-custom-blue "
                     }`}
                   />
                   Overview
@@ -88,20 +101,26 @@ const AdminTabs = (props) => {
               <Link
                 href={{
                   pathname: "/admin/dentist",
-                  query: { tab: "dentist" },
+                  // query: { tab: "dentist" },
+                }}
+                onClick={() => {
+                  setToggleMenu(false);
+                  document.querySelector("body").classList.remove("bodyStyle");
+
+                  // setToggleMenu(false);
                 }}
                 passHref
               >
                 <li
                   className={`py-2 cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold my-3 w-[70%] ${
-                    router?.query?.tab !== "dentist" && "text-white"
+                    router?.pathname !== "/admin/dentist" && "text-white"
                   } ${
-                    router?.query?.tab === "dentist" &&
+                    router?.pathname === "/admin/dentist" &&
                     "bg-white text-custom-blue rounded-[5px] w-[150px]"
                   }`}
-                  onClick={(e) => {
-                    setActiveTab("editProfile");
-                  }}
+                  // onClick={(e) => {
+                  //   setActiveTab("editProfile");
+                  // }}
                 >
                   <FaUserMd className="w-4 h-4 mx-2" />
                   Dentist
@@ -111,21 +130,26 @@ const AdminTabs = (props) => {
               <Link
                 href={{
                   pathname: "/admin/revenue",
-                  query: { tab: "revenue" },
+                  // query: { tab: "revenue" },
+                }}
+                onClick={() => {
+                  document.querySelector("body").classList.remove("bodyStyle");
+
+                  // setToggleMenu(false);
                 }}
                 passHref
               >
                 <li
                   className={` cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold my-3 w-[70%]  ${
-                    router?.query?.tab !== "revenue" &&
+                    router?.pathname !== "/admin/revenue" &&
                     "text-white text-[16px] font-semibold py-3"
                   } ${
-                    router?.query?.tab === "revenue" &&
+                    router?.pathname === "/admin/revenue" &&
                     "bg-white text-custom-blue rounded-[5px]  py-3"
                   }`}
-                  onClick={(e) => {
-                    setActiveTab("createCase");
-                  }}
+                  // onClick={(e) => {
+                  //   setActiveTab("createCase");
+                  // }}
                 >
                   <FaMoneyBillWaveAlt className="w-4 h-4 mx-2" />
                   Revenue
@@ -135,18 +159,23 @@ const AdminTabs = (props) => {
               <Link
                 href={{
                   pathname: "/admin/settings",
-                  query: { tab: "settings" },
+                  // query: { tab: "settings" },
+                }}
+                onClick={() => {
+                  document.querySelector("body").classList.remove("bodyStyle");
+
+                  // setToggleMenu(false);
                 }}
                 passHref
               >
                 <li
                   className={`py-3 cursor-pointer flex flex-row items-center ml-2 text-[16px] font-semibold w-[70%] ${
-                    router?.query?.tab !== "settings" && "text-white"
+                    router?.pathname !== "/admin/settings" && "text-white"
                   } ${
-                    router?.query?.tab === "settings" &&
+                    router?.pathname === "/admin/settings" &&
                     "bg-white text-custom-blue rounded-[5px] w-[150px] py-3"
                   }`}
-                  onClick={(e) => setActiveTab("settings")}
+                  // onClick={(e) => setActiveTab("settings")}
                 >
                   <FaCog className="w-4 h-4 mx-2" />
                   Settings
@@ -163,19 +192,19 @@ const AdminTabs = (props) => {
           />
         </div>
         <div className="bg-gray-100 lg:w-[85%] w-full flex flex-col justify-between">
-          <div className="contentContainer overflow-y-scroll h-full">
-            {router?.query?.tab === "overview" && <OverviewPage />}
+          <div className="lg:contentContainer bg-gray-100 pb-[72px] lg:overflow-y-scroll lg:h-full">
+            {router?.pathname === "/admin/overview" && <OverviewPage />}
 
-            {router?.query?.tab === "dentist" && <AdminDentistPage />}
-            {router?.query?.tab === "revenue" && <RevenuePage />}
-            {router?.query?.tab === "edit" && <EditCasePage />}
+            {router?.pathname === "/admin/dentist" && <AdminDentistPage />}
+            {router?.pathname === "/admin/revenue" && <RevenuePage />}
+            {/* {router?.pathname === "edit" && <EditCasePage />}
 
-            {router?.query?.tab === "billing" && <Billing />}
-            {router?.query?.tab === "bill" && <BillingHistory />}
+            {router?.pathname === "billing" && <Billing />}
+            {router?.query?.tab === "bill" && <BillingHistory />} */}
 
-            {router?.query?.tab === "settings" && <SettingsPage />}
+            {router?.pathname === "/admin/settings" && <SettingsPage />}
           </div>
-          <div className="footerContainer">
+          <div className="footerContainer fixed bottom-0 w-full left-0 z-[999]">
             <DashboardFooter />
           </div>
         </div>

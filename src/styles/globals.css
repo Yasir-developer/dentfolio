@@ -11,7 +11,7 @@
     @apply border border-custom-grey focus:outline-none rounded-[7px] p-4 mt-4 lg:mt-0 w-[90%] text-[16px] placeholder:text-slate-400 placeholder-[#9F9F9F] font-normal
   }
   .dentistBodyStyles{
-    @apply h-full bg-custom-dashboard-bg absolute top-0 bottom-0 w-full
+    @apply h-full absolute top-0 bottom-0 w-full bg-white
   }
   .blueGradient{
     @apply bg-gradient-radial from-[#0372E2] to-[#0B5FB4]
@@ -41,6 +41,7 @@ font-weight: 300;
 
 body {
   font-family: "Poppins";
+  /* overflow: hidden; */
 
   /* color: rgb(var(--foreground-rgb)); */
 
@@ -49,6 +50,9 @@ h1{
   /* font-size: 41px; */
   /* font-weight: bold; */
   
+}
+.bodyStyle{
+  overflow: hidden;
 }
 .stepIndicator {
   display: flex;

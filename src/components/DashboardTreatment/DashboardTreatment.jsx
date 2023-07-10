@@ -60,7 +60,7 @@ const TreatmentProvide = () => {
       <h2 className="text-[25px] lg:text-[32px] text-black text-center font-medium">
         <span className=" text-custom-blue">TREATMENT</span> I PROVIDE
       </h2>
-      <div className="mt-7 lg:gap-x-5 gap-y-5  flex flex-col lg:flex-row">
+      <div className="mt-7 lg:gap-x-5 gap-y-5 flex flex-col lg:flex-row items-center">
         {/* <Slider {...settings}> */}
         {treatmentArray.map((item, index) => {
           return (

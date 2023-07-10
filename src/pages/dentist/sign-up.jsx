@@ -68,7 +68,7 @@ const Signup = () => {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                Router.replace("/dentist/view-profile?tab=view");
+                Router.replace("/dentist/view-profile");
               }}
             >
               <div className="w-full flex flex-wrap gap-x-2 lg:gap-x-7 gap-y-2 items-center justify-center">

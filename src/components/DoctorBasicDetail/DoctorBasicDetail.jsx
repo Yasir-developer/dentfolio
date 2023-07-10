@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import profile from "../../../public/images/profile1.png";
 import Image from "next/image";
 import { FaTimes } from "react-icons/fa";
@@ -10,6 +10,24 @@ import BlueButtons from "../Buttons/BlueButtons";
 const DoctorBasicDetail = () => {
   const [showModal, setShowModal] = useState(false);
   const [showThankYouModal, setShowThankYouModal] = useState(false);
+  const [showContact, setShowContact] = useState(false);
+
+  useEffect(() => {
+    // console.log(window.location, "window");
+    if (typeof window !== undefined) {
+      console.log(window?.location?.pathname, " window?.location?.pathname");
+      if (window?.location?.pathname === "/patient/profile-page") {
+        setShowContact(true);
+      } else {
+        setShowContact(false);
+      }
+    }
+
+    // if()
+    // return () => {
+    //   second
+    // }
+  }, [showContact]);
 
   const thankYouModal = () => {
     return (
@@ -164,19 +182,23 @@ const DoctorBasicDetail = () => {
             Curabitur congue, sapien non efficitur sollicitudin, ex risus semper
             diam, sesectetur adipiscing elit.
           </p>
-          <div className="lg:static lg:bg-transparent bg-[#dce8fa] fixed bottom-0 w-full left-0 lg:text-left text-center pb-5 z-10">
-            <button
-              className="bg-custom-blue font-semibold text-[16px] py-2 px-[60px] mt-[35px] w-139 text-white rounded-[7px]"
-              onClick={() => setShowModal(true)}
-            >
-              Contact Me
-            </button>
-            {/* <BlueButtons
+          {showContact ? (
+            <div className="lg:static lg:bg-transparent bg-[#dce8fa] fixed bottom-0 w-full left-0 lg:text-left text-center pb-5 z-10">
+              <button
+                className="bg-custom-blue font-semibold text-[16px] py-2 px-[60px] mt-[35px] w-139 text-white rounded-[7px]"
+                onClick={() => setShowModal(true)}
+              >
+                Contact Me
+              </button>
+              {/* <BlueButtons
               className={"mt-[35px] font-semibold"}
               buttonText={"Contact Me"}
               onClick={() => setShowModal(true)}
             /> */}
-          </div>
+            </div>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
 
