@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import logo from "../../../public/images/loginLogo.svg";
 import logoWhite from "../../../public/images/logoWhite.png";
+import axios from "axios";
 
 import { FaEye } from "react-icons/fa";
 import BlueButtons from "@/components/Buttons/BlueButtons";
@@ -15,26 +16,38 @@ const Login = () => {
     e.preventDefault();
     console.log(email, password);
     // Send a POST request to the login API endpoint
-    const response = await fetch("/api/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    });
-    console.log(response.body, "========");
-    if (response.ok) {
-      // Login successful, handle the response
-      const data = await response.json();
-
-      Router.push("/dentist/view-profile");
-      // Do something with the token or session data
-      console.log(data);
-    } else {
-      // Login failed, handle the error
-      const errorData = await response.json();
-      console.error(errorData);
-    }
+    let data = {
+      email: "ali@gmail.com",
+      password: "123456",
+    };
+    axios
+      .post("/api/login", {
+        email: "ali@gmail.com",
+        password: "123456",
+      })
+      .then((res) => {
+        console.log(res, "res");
+      });
+    // const response = await fetch("/api/login", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: { email: email, password: password },
+    // });
+    // if (response.ok) {
+    //   console.log(response, "response");
+    //   // Login successful, handle the response
+    //   const data = await response.json();
+    //   console.log(data, "data");
+    //   // Router.push("/dentist/view-profile");
+    //   // Do something with the token or session data
+    //   console.log(data);
+    // } else {
+    //   // Login failed, handle the error
+    //   const errorData = await response.json();
+    //   console.log(errorData, "errorData");
+    // }
   };
   return (
     <div className="lg:w-full flex flex-col lg:flex-row h-screen bg-[#F9FBFC]">
@@ -64,6 +77,7 @@ const Login = () => {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
+                // handleSubmit(e);
                 Router.replace("/dentist/view-profile");
               }}
             >
