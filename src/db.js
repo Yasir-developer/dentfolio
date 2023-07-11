@@ -1,6 +1,8 @@
 import { MongoClient } from "mongodb";
 
-const uri = process.env.MONGODB_URI;
+// const uri = process.env.MONGODB_URI;
+const uri =
+  "mongodb+srv://alirf50:F4omy5EBHUIooNKM@cluster0.nlocabm.mongodb.net/?retryWrites=true&w=majority";
 console.log(uri, "uri");
 const dbName = "dentfolio"; // Update with your database name
 let cachedClient = null;
