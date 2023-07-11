@@ -24,7 +24,7 @@ import BillingHistory from "@/page-components/BillingHistory";
 const DentistTabs = (props) => {
   console.log(props, "props");
   const router = useRouter();
-  console.log(router, "routrer.quey");
+  // console.log(router, "routrer.quey");
   const [activeTab, setActiveTab] = useState("editProfile");
   const [toggleMenu, setToggleMenu] = useState(false);
 

@@ -31,7 +31,7 @@ import RevenuePage from "@/page-components/RevenuePage";
 const AdminTabs = (props) => {
   console.log(props, "props");
   const router = useRouter();
-  console.log(router, "routrer.quey");
+  // console.log(router, "routrer.quey");
   const [activeTab, setActiveTab] = useState("editProfile");
   const [toggleMenu, setToggleMenu] = useState(false);
 
