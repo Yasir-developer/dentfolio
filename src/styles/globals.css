@@ -17,6 +17,13 @@
     @apply bg-gradient-radial from-[#0372E2] to-[#0B5FB4]
   }
 }
+.toast-message {
+  background-color: '#0372E2';
+  /* color: #fff; */
+  font-size: 20px;
+  width: 34vw;
+  padding: 30px 20px;
+}
 ::placeholder {
   color: deeppink;
 font-size: 16px;

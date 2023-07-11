@@ -8,46 +8,63 @@ import { FaEye } from "react-icons/fa";
 import BlueButtons from "@/components/Buttons/BlueButtons";
 import Router from "next/router";
 import AuthInput from "@/components/Inputs/AuthInput";
+import { server } from "../../../config";
+import { toast } from "react-toastify";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loader, setLoader] = useState(false);
 
   const handleSubmit = async (e) => {
+    setLoader(true);
     e.preventDefault();
-    console.log(email, password);
+    // console.log(email, password);
     // Send a POST request to the login API endpoint
     let data = {
-      email: "ali@gmail.com",
-      password: "123456",
+      email,
+      password,
+    };
+    // console.log(data, "data");
+
+    const options = {
+      headers: {
+        "Content-Type": "application/json",
+      },
     };
     axios
-      .post("/api/login", {
-        email: "ali@gmail.com",
-        password: "123456",
+      .post(`${server}/api/login`, {
+        email,
+        password,
+        options,
       })
       .then((res) => {
         console.log(res, "res");
+        setLoader(false);
+        if (res.status == 200) {
+          setLoader(false);
+          toast.success("Login Successfully", {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+          Router.replace("/dentist/view-profile");
+        }
+      })
+      .catch((error) => {
+        toast.error(error?.data?.message, {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       });
-    // const response = await fetch("/api/login", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: { email: email, password: password },
-    // });
-    // if (response.ok) {
-    //   console.log(response, "response");
-    //   // Login successful, handle the response
-    //   const data = await response.json();
-    //   console.log(data, "data");
-    //   // Router.push("/dentist/view-profile");
-    //   // Do something with the token or session data
-    //   console.log(data);
-    // } else {
-    //   // Login failed, handle the error
-    //   const errorData = await response.json();
-    //   console.log(errorData, "errorData");
-    // }
   };
   return (
     <div className="lg:w-full flex flex-col lg:flex-row h-screen bg-[#F9FBFC]">
@@ -69,26 +86,15 @@ const Login = () => {
             <h2 className="my-8 text-center font-semibold text-[32px] md:text-4xl text-custom-black">
               Sign In
             </h2>
-            {/* <form
-              onSubmit={() =>
-                Router.push("/dentist/edit-profile?tab=edit-profile")
-              }
-            > */}
+
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                // handleSubmit(e);
-                Router.replace("/dentist/view-profile");
+                handleSubmit(e);
+                // Router.replace("/dentist/view-profile");
               }}
             >
               <div className="w-full flex flex-col items-center">
-                {/* <input
-                type="text"
-                id="fullName"
-                placeholder="Email Address"
-                className="focus:outline-none border bg-[#F9FBFC] border-custom-grey rounded-[7px] w-full p-3 text-lg placeholder-slate-400 text-[16px] font-light mb-5"
-              /> */}
-
                 <AuthInput
                   placeholder={"Email Address"}
                   className={"w-full"}
@@ -102,41 +108,18 @@ const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                {/* <div className="relative flex items-center bg-[#F9FBFC] border border-custom-grey rounded-[7px] p-3 w-full text-lg placeholder-slate-400 text-[16px] font-light mb-5">
-                <input
-                  type="password"
-                  id="password"
-                  placeholder="Password"
-                  className="w-full text-lg bg-[#F9FBFC] placeholder-[#9F9F9F] font-light focus:outline-none"
-                />
-                <FaEye
-                  style={{
-                    color: "#9F9F9F",
-                    width: "17px",
-                    height: "17px",
-                  }}
-                />
-              </div> */}
+
                 <div className="flex justify-end w-full">
-                  <p
-                    className="text-right text-sm font-medium cursor-pointer"
-                    // onClick={(e) => {
-                    //   e.preventDefault();
-                    //   Router.push("/dentist/forgot-password");
-                    // }}
-                  >
+                  <p className="text-right text-sm font-medium cursor-pointer">
                     Forgot Password
                   </p>
                 </div>
                 <div className="mt-5">
                   <BlueButtons
+                    loading={loader}
                     buttonText="Login"
                     className="px-[50px]"
                     type="submit"
-                    // onSubmit={() =>
-                    //   Router.push("/dentist/edit-profile?tab=edit-profile")
-                    // }
-                    // onClick={() => Router.replace("/dentist/view-profile")}
                   />
                 </div>
               </div>

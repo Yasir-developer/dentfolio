@@ -32,6 +32,7 @@ const AuthInput = ({
             placeholder={placeholder}
             value={value}
             onChange={onChange}
+            required
             {...rest}
             style={btnStyle}
             maxLength={maxLength}
@@ -62,6 +63,7 @@ const AuthInput = ({
               value={value}
               onChange={onChange}
               placeholder={placeholder ? placeholder : "Password"}
+              required
               className={`focus:outline-none w-[100%] lg:w-[100%] lg:text-[16px] text-[14px] font-light bg-custom-dashboard-bg ${className}`}
             />
             {showPassword ? (

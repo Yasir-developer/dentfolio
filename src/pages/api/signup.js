@@ -49,34 +49,23 @@ export default async function handler(req, res) {
   const errors = [];
   if (!email) {
     errors.push("Email is Required");
-  }
-
-  if (!password) {
+  } else if (!password) {
     errors.push("Password is Required");
-  }
-  if (!firstName) {
+  } else if (!firstName) {
     errors.push("First Name is Required");
-  }
-  if (!lastName) {
+  } else if (!lastName) {
     errors.push("Last Name is Required");
-  }
-  if (!displayName) {
+  } else if (!displayName) {
     errors.push("Display Name is Required");
-  }
-  if (!gdcNo) {
+  } else if (!gdcNo) {
     errors.push("GDC Number is Required");
-  }
-  if (!buildingName) {
+  } else if (!buildingName) {
     errors.push("Building Name/No is Required");
-  }
-  if (!streetName) {
+  } else if (!streetName) {
     errors.push("street Name is Required");
-  }
-
-  if (!city) {
+  } else if (!city) {
     errors.push("City is Required");
-  }
-  if (!postCode) {
+  } else if (!postCode) {
     errors.push("PostCode is Required");
   }
 
@@ -105,7 +94,10 @@ export default async function handler(req, res) {
 
     const existingUser = await users.findOne({ email });
     if (existingUser) {
-      return res.status(409).json({ message: "User already exists" });
+      return res.status(400).json({
+        message: "User already exists",
+        errors: ["User already exists"],
+      });
     }
 
     // Hash the password
@@ -141,8 +133,6 @@ export default async function handler(req, res) {
     return res.status(201).json({ message: "User created successfully" });
   } catch (error) {
     console.log(error, "error======");
-    return res
-      .status(500)
-      .json({ message: "Internal server error", errorr: error });
+    return res.status(500).json({ message: "Internal server error" });
   }
 }

@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import "../styles/nprogress.css";
 import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 // import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -32,6 +33,7 @@ export default function App({ Component, pageProps }) {
     <>
       <Layout>
         <Component {...pageProps} />
+        <ToastContainer />
       </Layout>
     </>
   );
