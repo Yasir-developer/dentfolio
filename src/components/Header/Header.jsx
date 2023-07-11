@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const AppHeader = () => {
   const router = useRouter();
-  console.log(router, "router");
+  // console.log(router, "router");
   return (
     <>
       {router.pathname !== "/dentist/login" &&

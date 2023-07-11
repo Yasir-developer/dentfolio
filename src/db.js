@@ -1,7 +1,8 @@
 import { MongoClient } from "mongodb";
 
 const uri = process.env.MONGODB_URI;
-const dbName = "dent-folio"; // Update with your database name
+console.log(uri, "uri");
+const dbName = "dentfolio"; // Update with your database name
 let cachedClient = null;
 
 export async function connectToDatabase() {
