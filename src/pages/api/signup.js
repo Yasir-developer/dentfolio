@@ -140,7 +140,9 @@ export default async function handler(req, res) {
 
     return res.status(201).json({ message: "User created successfully" });
   } catch (error) {
-    console.log(error, "error");
-    return res.status(500).json({ message: "Internal server error" });
+    console.log(error, "error======");
+    return res
+      .status(500)
+      .json({ message: "Internal server error", errorr: error });
   }
 }
