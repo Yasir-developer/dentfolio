@@ -212,11 +212,7 @@ const EditProfilePage = () => {
             </div>
           </div>
           <div>
-            <BlueButtons
-              buttonText={"Save"}
-              className={"mt-6 lg:px-[50px]"}
-              //   onClick={() => Router.push("/dentist/create-case?tab=create")}
-            />
+            <BlueButtons buttonText={"Save"} className={"mt-6 lg:px-[50px]"} />
           </div>
         </div>
       </div>
