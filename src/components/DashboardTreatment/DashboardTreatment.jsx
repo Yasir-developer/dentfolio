@@ -3,7 +3,8 @@ import checkCircle from "../../../public/images/check-circle.svg";
 import Image from "next/image";
 import Slider from "react-slick";
 
-const TreatmentProvide = () => {
+const TreatmentProvide = (props) => {
+  console.log(props, "props.treatmentData");
   const settings = {
     className: "customSlider",
     speed: 500,
@@ -62,7 +63,7 @@ const TreatmentProvide = () => {
       </h2>
       <div className="mt-7 lg:gap-x-5 gap-y-5 flex flex-col lg:flex-row items-center">
         {/* <Slider {...settings}> */}
-        {treatmentArray.map((item, index) => {
+        {props?.treatmentData?.map((item, index) => {
           return (
             <div
               className="min-h-[180px] lg:min-h-full !w-[90%] bg-custom-blue-light items-center justify-center py-7 text-center rounded-[7px]"

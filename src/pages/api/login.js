@@ -57,7 +57,7 @@ export default async function handler(req, res) {
     }
 
     // Return the user data or any additional information you want
-    return res.status(200).json({ user: { email: user.email } });
+    return res.status(200).json({ user: user });
   } catch (error) {
     return res.status(500).json({ message: "Internal server error" });
   }

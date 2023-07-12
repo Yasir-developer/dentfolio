@@ -10,7 +10,11 @@ import Router from "next/router";
 import AuthInput from "@/components/Inputs/AuthInput";
 import { server } from "../../../config";
 import { toast } from "react-toastify";
+import { fetchUser } from "@/redux/actions/auth";
+import { useDispatch } from "react-redux";
 const Login = () => {
+  const dispatch = useDispatch();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loader, setLoader] = useState(false);
@@ -41,7 +45,9 @@ const Login = () => {
         console.log(res, "res");
         setLoader(false);
         if (res.status == 200) {
+          dispatch(fetchUser(res?.data?.user));
           setLoader(false);
+
           toast.success("Login Successfully", {
             position: "top-center",
             autoClose: 2000,

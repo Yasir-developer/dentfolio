@@ -7,7 +7,8 @@ import checkCircle from "../../../public/images/check-circle2.svg";
 import map from "../../../public/images/map.png";
 import AuthInput from "../Inputs/AuthInput";
 import BlueButtons from "../Buttons/BlueButtons";
-const DoctorBasicDetail = () => {
+const DoctorBasicDetail = (props) => {
+  console.log(props, "props ===");
   const [showModal, setShowModal] = useState(false);
   const [showThankYouModal, setShowThankYouModal] = useState(false);
   const [showContact, setShowContact] = useState(false);
@@ -161,7 +162,8 @@ const DoctorBasicDetail = () => {
           </div>
           <div>
             <h2 className="text-custom-blue font-semibold lg:text-[33px] text-[20px]">
-              Dr. Dylan Taylor
+              {/* Dr. Dylan Taylor */}
+              {props?.data?.displayName}
             </h2>
             <div className="flex flex-col">
               <h3 className="text-custom-black lg:text-[22px] text-[17px]">
@@ -176,11 +178,12 @@ const DoctorBasicDetail = () => {
         </div>
         <div className="lg:px-8">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+            {props?.data?.bio ? props?.data?.bio : "No Bio"}
+            {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
             congue, sapien non efficitur sollicitudin, ex risus semper diam, sed
             ornare libero urna ac leo sit amet, consectetur adipiscing elit.
             Curabitur congue, sapien non efficitur sollicitudin, ex risus semper
-            diam, sesectetur adipiscing elit.
+            diam, sesectetur adipiscing elit. */}
           </p>
           {showContact ? (
             <div className="lg:static lg:bg-transparent bg-[#dce8fa] fixed bottom-0 w-full left-0 lg:text-left text-center pb-5 z-10">

@@ -10,10 +10,14 @@ import { useRouter } from "next/router";
 import "../styles/nprogress.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import withReduxStore from "../lib/with-redux-store";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistStore } from "redux-persist";
 
-// import "bootstrap/dist/css/bootstrap.min.css";
+const App = ({ Component, pageProps, reduxStore }) => {
+  const persistor = persistStore(reduxStore);
 
-export default function App({ Component, pageProps }) {
   const router = useRouter();
 
   NProgress.configure({
@@ -31,10 +35,15 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <Layout>
-        <Component {...pageProps} />
-        <ToastContainer />
-      </Layout>
+      <Provider store={reduxStore}>
+        <PersistGate loading={null} persistor={persistor}>
+          <Layout>
+            <Component {...pageProps} />
+            <ToastContainer />
+          </Layout>
+        </PersistGate>
+      </Provider>
     </>
   );
-}
+};
+export default withReduxStore(App);

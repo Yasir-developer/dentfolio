@@ -31,14 +31,7 @@ const EditProfilePage = () => {
   const uploadFileHandler = () => {
     uploadFileref.current.click();
   };
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
 
-  const handleOptionSelect = () => {
-    setIsOpen(false);
-    // Perform any other actions when an option is selected
-  };
   const treatmentType = [
     {
       type: "Aligners",
@@ -48,6 +41,35 @@ const EditProfilePage = () => {
     },
     {
       type: "Aligners",
+    },
+  ];
+
+  const courtesyData = [
+    {
+      id: 1,
+      type: "Dr",
+      value: "Dr",
+    },
+    {
+      id: 2,
+      type: "Mr",
+      value: "Mr",
+    },
+    {
+      id: 3,
+      type: "Mrs",
+      value: "Mrs",
+    },
+
+    {
+      id: 4,
+      type: "Miss",
+      value: "Miss",
+    },
+    {
+      id: 5,
+      type: "Ms",
+      value: "Ms",
     },
   ];
   return (
@@ -78,13 +100,15 @@ const EditProfilePage = () => {
           <div className="w-full flex flex-wrap gap-x-2 lg:gap-x-7 gap-y-1 items-center">
             <div className="relative flex items-center border bg-custom-dashboard-bg border-custom-grey rounded-[7px] p-3 w-[45%] placeholder-slate-400 text-[16px] font-light mb-5">
               <select className="focus:outline-none w-[80%] lg:w-[100%] font-normal lg:text-[16px] text-[14px] bg-custom-dashboard-bg">
-                <option value="Dr" selected>
-                  Dr
-                </option>
-                <option value="Mr">Mr</option>
-                <option value="Mrs">Mrs</option>
-                <option value="Miss">Miss</option>
-                <option value="Ms">Ms</option>
+                {courtesyData?.map((item, index) => {
+                  return (
+                    <>
+                      <option value={item.value} key={index}>
+                        {item.type}
+                      </option>
+                    </>
+                  );
+                })}
               </select>
               {/* <input
                 type="text"
