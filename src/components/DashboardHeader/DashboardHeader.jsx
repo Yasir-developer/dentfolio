@@ -4,11 +4,16 @@ import Image from "next/image";
 import { FaAngleDown, FaRegBell, FaBars } from "react-icons/fa";
 import { HiChevronDown } from "react-icons/hi";
 import Router from "next/router";
+import { useDispatch } from "react-redux";
+import { logoutUser } from "@/redux/actions/auth";
+
 // import Dropdown from "react-bootstrap/Dropdown";
 
 const DashboardHeader = ({ menuToggler }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const dispatch = useDispatch();
+
   useEffect(() => {
     // Add event listener to handle clicks outside the dropdown
     const handleOutsideClick = (event) => {
@@ -31,6 +36,12 @@ const DashboardHeader = ({ menuToggler }) => {
   const handleOptionSelect = () => {
     setDropdownOpen(false);
     // Perform any other actions when an option is selected
+  };
+
+  const handleLogout = async (e) => {
+    e.preventDefault();
+    dispatch(logoutUser());
+    Router.replace("/dentist/dentist-plan");
   };
   return (
     <div className="h-[80px] border-b border-[#70707038] w-full flex">
@@ -125,9 +136,10 @@ const DashboardHeader = ({ menuToggler }) => {
                       </a> */}
                       <a
                         // href="#"
-                        onClick={() => {
+                        onClick={(e) => {
                           // handleOptionSelect;
-                          Router.push("/dentist/dentist-plan");
+                          handleLogout(e);
+                          // Router.push("/dentist/dentist-plan");
                         }}
                         class="block px-4 py-2 text-gray-800 hover:bg-custom-blue hover:text-white"
                       >

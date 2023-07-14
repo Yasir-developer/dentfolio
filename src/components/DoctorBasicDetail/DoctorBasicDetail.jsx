@@ -8,7 +8,7 @@ import map from "../../../public/images/map.png";
 import AuthInput from "../Inputs/AuthInput";
 import BlueButtons from "../Buttons/BlueButtons";
 const DoctorBasicDetail = (props) => {
-  console.log(props, "props ===");
+  console.log(props.data, "props ===");
   const [showModal, setShowModal] = useState(false);
   const [showThankYouModal, setShowThankYouModal] = useState(false);
   const [showContact, setShowContact] = useState(false);
@@ -152,12 +152,12 @@ const DoctorBasicDetail = (props) => {
       {showThankYouModal && thankYouModal()}
       <div className="w-full lg:w-[60%]">
         <div className="lg:px-8 py-10 flex flex-row items-center gap-x-[1rem]">
-          <div className="lg:w-[205px] lg:h-[205px] rounded-[102.5px]">
+          <div className="lg:w-[205px] lg:h-[205px] rounded-[102.5px] border-r-[50%] overflow-hidden">
             <Image
-              src={profile}
+              src={props?.data?.image ? props?.data?.image : profile}
               width={205}
               height={205}
-              className="rounded-[102.5px] max-w-[130px] lg:max-w-[205px]"
+              className="rounded-[102.5px] max-w-[130px] lg:max-w-[205px] text-transparent object-cover	object-top"
             />
           </div>
           <div>
@@ -167,11 +167,11 @@ const DoctorBasicDetail = (props) => {
             </h2>
             <div className="flex flex-col">
               <h3 className="text-custom-black lg:text-[22px] text-[17px]">
-                Orthodontist
+                {props?.data?.speciality}
               </h3>
 
               <h2 className="text-[#5D5D5D] text-[16px] font-normal">
-                BDS | RDS | C.PAED
+                {props?.data?.degree}
               </h2>
             </div>
           </div>

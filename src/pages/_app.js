@@ -9,6 +9,8 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import "../styles/nprogress.css";
 import "react-toastify/dist/ReactToastify.css";
+import "react-tagsinput/react-tagsinput.css";
+
 import { ToastContainer } from "react-toastify";
 import withReduxStore from "../lib/with-redux-store";
 import { Provider } from "react-redux";

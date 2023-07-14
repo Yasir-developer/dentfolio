@@ -10,8 +10,12 @@ import Checkbox from "@/components/Checkbox/Checkbox";
 import { server } from "../../../config";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { fetchUser } from "@/redux/actions/auth";
+import { useDispatch } from "react-redux";
 
 const Signup = () => {
+  const dispatch = useDispatch();
+
   // console.log(server, "server");
   const [loader, setLoader] = useState(false);
 
@@ -27,6 +31,8 @@ const Signup = () => {
   const [streetName, setStreetName] = useState("");
   const [city, setCity] = useState("");
   const [postCode, setPostCode] = useState("");
+  const [speciality, setSpeciality] = useState("");
+  const [degree, setDegree] = useState("");
 
   const handleRegistration = (e) => {
     e.preventDefault();
@@ -42,6 +48,8 @@ const Signup = () => {
       streetName,
       city,
       postCode,
+      speciality,
+      degree,
     };
 
     // return;
@@ -60,6 +68,7 @@ const Signup = () => {
         // return;
         if (res.status == 201) {
           setLoader(false);
+          dispatch(fetchUser(res?.data?.user));
           toast.success("Signup Successfully", {
             position: "top-center",
             autoClose: 2000,
@@ -176,6 +185,23 @@ const Signup = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
+                <AuthInput
+                  placeholder={"Speciality Title"}
+                  // type={"password"}
+                  // className={"!w-[45%]"}
+                  containerClassName={"!w-[45%]"}
+                  value={speciality}
+                  onChange={(e) => setSpeciality(e.target.value)}
+                />
+                <AuthInput
+                  placeholder={"Degree"}
+                  // type={"password"}
+                  // className={"!w-[45%]"}
+                  containerClassName={"!w-[45%]"}
+                  value={degree}
+                  onChange={(e) => setDegree(e.target.value)}
+                />
+
                 <AuthInput
                   placeholder={"GDC Number"}
                   value={gdcNo}

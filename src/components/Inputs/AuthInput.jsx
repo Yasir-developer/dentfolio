@@ -13,6 +13,8 @@ const AuthInput = ({
   containerClassName,
   btnStyle,
   maxLength,
+  disabled,
+  required,
   ...rest
 }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -32,7 +34,8 @@ const AuthInput = ({
             placeholder={placeholder}
             value={value}
             onChange={onChange}
-            required
+            required={required ? required : null}
+            disabled={disabled ? disabled : null}
             {...rest}
             style={btnStyle}
             maxLength={maxLength}

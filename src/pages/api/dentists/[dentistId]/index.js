@@ -39,11 +39,17 @@
 
 import { connectToDatabase } from "../../../../db";
 import { ObjectId } from "mongodb";
-
+import { v2 as cloudinary } from "cloudinary";
+cloudinary.config({
+  cloud_name: "dtnbj2pa5",
+  api_key: "583939563285816",
+  api_secret: "I3JfU0SaBa-ez9Noq2QwSoJCW30",
+});
 export default async function handler(req, res) {
   //   if (req.method !== "GET") {
   //     return res.status(405).json({ message: "Method not allowed" });
   //   }
+
   console.log(req.query, "req.query");
   if (req.method === "GET") {
     const { dentistId } = req.query; // Assuming the ID is provided as a query parameter
@@ -70,6 +76,8 @@ export default async function handler(req, res) {
     const {
       firstName,
       lastName,
+      userName,
+
       displayName,
       gdcNo,
       buildingName,
@@ -77,12 +85,26 @@ export default async function handler(req, res) {
       city,
       postCode,
       bio,
+      phone,
       courtesyTitle,
       profile_photo,
       treatment_type,
       previous_case,
+      image,
     } = req.body;
+    console.log(image, "image");
     try {
+      // console.log(req.files, "req.files");
+      // const imageFile = req.files;
+      // // "https://www.kindpng.com/imgv/ioJmwwJ_dummy-profile-image-jpg-hd-png-download/",
+      // //
+      // const uploadedImage = await cloudinary.uploader.upload(image, {
+      //   folder: "profile_image", // Specify the folder in Cloudinary to store the images
+      //   // format: "jpg", // Specify the desired image format
+      //   // transformation: [{ width: 300, height: 300, crop: "limit" }], // Apply any desired image transformations
+      // });
+
+      // const { secure_url: imageUrl, public_id: imagePublicId } = uploadedImage;
       const { db } = await connectToDatabase();
 
       // Update the user profile in the database
@@ -93,20 +115,34 @@ export default async function handler(req, res) {
           $set: {
             firstName,
             lastName,
+            userName,
+
             displayName,
             gdcNo,
             buildingName,
             streetName,
             city,
             postCode,
+            phone: phone ? phone : "",
             bio: bio ? bio : "",
             courtesyTitle: courtesyTitle ? courtesyTitle : "",
             profile_photo: profile_photo ? profile_photo : "",
             treatment_type: treatment_type ? treatment_type : [],
             previous_case: previous_case ? previous_case : [],
+            image,
+            // imageUrl,
+            // imagePublicId,
           },
         },
-        { returnOriginal: false }
+        { returnDocument: "after" }
+        // { new: true },
+        // (err, doc) => {
+        //   if (err) {
+        //     console.log("Something wrong when updating data!");
+        //   }
+
+        //   console.log(doc, "my updated doc");
+        // }
       );
 
       if (!updatedUser.value) {
@@ -114,9 +150,11 @@ export default async function handler(req, res) {
       }
 
       // Return the updated user profile
+      const updatedProfile = updatedUser.value;
+
       return res
         .status(200)
-        .json({ message: "Updated Sucessfully", user: updatedUser.value });
+        .json({ message: "Updated Sucessfully", user: updatedProfile });
     } catch (error) {
       console.log(error, "edit error ----");
 
@@ -126,10 +164,3 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: "Method not allowed" });
   }
 }
-
-// export default async function editProfile(req, res) {
-// if (req.method !== 'PUT') {
-//   return res.status(405).json({ message: 'Method not allowed' });
-// }
-
-//   }

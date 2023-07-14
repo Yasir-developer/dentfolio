@@ -17,6 +17,8 @@ export default async function handler(req, res) {
     streetName,
     city,
     postCode,
+    speciality,
+    degree,
     bio,
     courtesyTitle,
     profile_photo,
@@ -33,6 +35,10 @@ export default async function handler(req, res) {
     errors.push("First Name is Required");
   } else if (!lastName) {
     errors.push("Last Name is Required");
+  } else if (!speciality) {
+    errors.push("Speciality Name is Required");
+  } else if (!degree) {
+    errors.push("Degree Name is Required");
   } else if (!displayName) {
     errors.push("Display Name is Required");
   } else if (!gdcNo) {
@@ -52,6 +58,8 @@ export default async function handler(req, res) {
     !password ||
     !firstName ||
     !lastName ||
+    !speciality ||
+    !degree ||
     !displayName ||
     !gdcNo ||
     !buildingName ||
@@ -88,6 +96,8 @@ export default async function handler(req, res) {
       firstName,
       lastName,
       displayName,
+      speciality,
+      degree,
       gdcNo,
       buildingName,
       streetName,
@@ -113,7 +123,9 @@ export default async function handler(req, res) {
       }
     });
 
-    return res.status(201).json({ message: "User created successfully" });
+    return res
+      .status(201)
+      .json({ message: "User created successfully", user: newUser });
   } catch (error) {
     console.log(error, "error======");
     return res.status(500).json({ message: "Internal server error" });

@@ -42,7 +42,6 @@ const Login = () => {
         options,
       })
       .then((res) => {
-        console.log(res, "res");
         setLoader(false);
         if (res.status == 200) {
           dispatch(fetchUser(res?.data?.user));
