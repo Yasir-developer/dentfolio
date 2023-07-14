@@ -73,7 +73,7 @@ const EditProfilePage = () => {
     if (user) {
       setFirstName(user?.firstName);
       setLastName(user?.lastName);
-
+      setSelectedOption(user?.courtesyTitle);
       setBuildingName(user?.buildingName);
       setStreetName(user?.streetName);
       setGdcNo(user?.gdcNo);
@@ -94,6 +94,7 @@ const EditProfilePage = () => {
     setTags(tags);
   };
   const handleSelectChange = (event) => {
+    // console.log(event.target.value, "event");
     setSelectedOption(event.target.value);
   };
 
